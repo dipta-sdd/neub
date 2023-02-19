@@ -7,8 +7,8 @@
     background-color: #fefefe;
 }
 .myfs{
-    font-weight: 400;
-    font-size: 1.2rem;
+    font-weight: 500;
+    font-size: 1.15rem;
     color: black;
 }
 .myfs:hover{
@@ -32,6 +32,61 @@
 #logo{
     width: 300px;
 }
+.ddmp{
+    position: relative;
+}
+.ddmu{
+    position: absolute;
+    left: 0;
+    top: 100%;
+    width: 300px;
+    background-color: #fefefe;
+    z-index: 1;
+}
+.ddml{
+    display: block;
+    text-align: left;
+    margin-left: -40px;
+    border-bottom: 1px solid #000;
+}
+.ddma{
+    display: block;
+    text-decoration: none;
+    color: black;
+    padding:10px 10px;
+    font-weight: 400;
+    font-size: 1.05rem;
+}
+.ddma:hover{
+    background-color: aqua;
+    color: #2f00ff;
+    
+}
+
+/* hover of drop dpwn menu */
+/* .ddmu{
+    opacity: 0;
+    visibility: hidden;
+    transform: scaleY(0);
+    transform-origin: top center;
+    transition: .3s;
+}
+.ddmp:hover .ddmu{
+    opacity: 1;
+    visibility: visible;
+    transform: scaleY(1);
+    transition: .3s;
+} */
+
+
+
+
+
+
+
+
+
+
 
 
 #slider{
