@@ -32,52 +32,76 @@
 #logo{
     width: 300px;
 }
-.ddmp{
-    position: relative;
+
+
+@media (max-width: 991px){
+    .ddmb{
+        transform: scale(1);
+    }
+    .ddmu{
+        transform: scale(0);
+        height: 0px;
+    }
 }
-.ddmu{
-    position: absolute;
-    left: 0;
-    top: 100%;
-    width: 300px;
-    background-color: #fefefe;
-    z-index: 1;
-}
-.ddml{
-    display: block;
-    text-align: left;
-    margin-left: -40px;
-    border-bottom: 1px solid #000;
-}
-.ddma{
-    display: block;
-    text-decoration: none;
-    color: black;
-    padding:10px 10px;
-    font-weight: 400;
-    font-size: 1.05rem;
-}
-.ddma:hover{
-    background-color: aqua;
-    color: #2f00ff;
+
+
+
+@media (min-width: 992px) {
+
+    .ddmb{
+        transform: scale(0);
+    }
+
+    .ddmp{
+        position: relative;
+    }
+    .ddmu{
+        position: absolute;
+        left: 0;
+        top: 100%;
+        width: 300px;
+        background-color: #fefefe;
+        z-index: 1;
+        border: 1px solid #fefefe;
+        border-radius: 10px;
+    }
+    .ddml{
+        display: block;
+        text-align: left;
+        margin-left: -40px;
+        border-bottom: 1px solid #000;
+    }
+    .ddma{
+        display: block;
+        text-decoration: none;
+        color: black;
+        padding:10px 10px;
+        font-weight: 400;
+        font-size: 1.05rem;
+    }
+    .ddma:hover{
+        background-color: aqua;
+        color: #2f00ff;
+        
+    }
     
-}
+    /* hover of drop dpwn menu */
+    .ddmu{
+        opacity: 0;
+        visibility: hidden;
+        transform: scaleY(0);
+        transform-origin: top center;
+        transition: .3s;
+    }
+    .ddmp:hover .ddmu{
+        opacity: 1;
+        visibility: visible;
+        transform: scaleY(1);
+        transition: .3s;
+    }
 
-/* hover of drop dpwn menu */
-/* .ddmu{
-    opacity: 0;
-    visibility: hidden;
-    transform: scaleY(0);
-    transform-origin: top center;
-    transition: .3s;
-}
-.ddmp:hover .ddmu{
-    opacity: 1;
-    visibility: visible;
-    transform: scaleY(1);
-    transition: .3s;
-} */
 
+}
 
 
 

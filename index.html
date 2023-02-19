@@ -18,25 +18,41 @@
             <button class="navbar-toggler " type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse " id="navbarSupportedContent">
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <ul class="navbar-nav ms-lg-auto mb-2 mb-lg-0 mybg">
                 <li class="nav-item "><a class="nav-link rounded-2 myfs" aria-current="page" href="#">HOME</a></li>
-                <li class="nav-item ddmp">
-                  <a class="nav-link rounded-2 myfs" aria-current="page" href="#">ACADEMIC</a>
-                  <ul class="ddmu">
+                
+                
+                
+                <li class="nav-item dropdown ddmp">
+                  <a class="nav-link dropdown-toggle rounded-2 myfs" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">ACADEMIC</a>
+                  </button>
+                  <!-- for pc -->
+                  <ul class=" ddmu" id="abcd">
                     <li class="ddml"><a href="" class="ddma"> School of Business</a></li>
                     <li class="ddml"><a href="" class="ddma"> School of Social Science</a></li>
                     <li class="ddml"><a href="" class="ddma"> School of Law and Justice</a></li>
                     <li class="ddml"><a href="" class="ddma"> School of Natural Science and Engineering</a></li>
                   </ul>
+                  <!-- for mbl  -->
+                  <ul class="dropdown-menu ddmb mybg">
+                    <li><a class="dropdown-item myfs2" href="#">School of Business</a></li>
+                    <li><a class="dropdown-item myfs2" href="#">School of Social Science</a></li>
+                    <li><a class="dropdown-item myfs2" href="#">School of Law and Justice</a></li>
+                    <li><a class="dropdown-item myfs2" href="#">School of Natural Science and Engineering</a></li>
+                  </ul>
                 </li>
+
+
+
+
                 <li class="nav-item "><a class="nav-link rounded-2 myfs" aria-current="page" href="#">AUTHORITY</a></li>
                 <li class="nav-item "><a class="nav-link rounded-2 myfs" aria-current="page" href="#">FACULTY</a></li>
                 <li class="nav-item "><a class="nav-link rounded-2 myfs" aria-current="page" href="#"> ADMISSION</a></li>
                 <li class="nav-item "><a class="nav-link rounded-2 myfs" aria-current="page" href="#">RESEARCH</a></li>
                 <li class="nav-item "><a class="nav-link rounded-2 myfs" aria-current="page" href="#">VERIFICATION</a></li>
                 <li class="nav-item dropdown ">
-                  <a class="nav-link dropdown-toggle myfs rounded-2 myfs" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" id="ddb1">
+                  <a class="nav-link dropdown-toggle rounded-2 myfs" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     Dropdown
                   </a>
                   <ul class="dropdown-menu mybg" id="ddm1">
@@ -102,6 +118,16 @@
       <div class="row p-1">
         <div class="col-md-9 left p-1">
           <div class="body">
+            <div class="dropdown">
+              <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Dropdown
+              </button>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                <a class="dropdown-item" href="#!">Action</a>
+                <a class="dropdown-item" href="#!">Another action</a>
+              </div>
+            </div>
+            
           </div>
         </div>
         <div class="col-md-3 right p-1">
