@@ -1,69 +1,4 @@
-/* *{
-    margin: 0px;
-}
 
-#top{
-    background: #0d6efd;
-}
-
-#top ul{
-    text-align: right;
-}
-#top ul li{
-    display: inline-block;
-    margin-left: -4px;
-}
-
-#top ul li a{
-    display: inline-block;
-    padding: 10px 20px;
-    text-decoration: none;
-    color: white;
-}
-#top ul li a:hover{
-    background:#0d6efd;
-    transition: 0.2s;
-} */
-/* dropdown */
-/* #top ul li{
-    position: relative;
-}
-#top ul li ul{
-    position: absolute;
-    left: 0;
-    top:100%;
-    width: 300px;
-    background-color:#0d6efd;
-}
-#top ul li ul li{
-    display: block;
-    margin-left: -40px;
-    text-align: left;
-    border-right: none;
-}
-#top ul li ul li a{
-    display: block;
-    border: none;
-    border-bottom: 1px solid #fff;
-}
-#top ul ul li:first-child a{
-    border-left: none;
-} */
-/* #top ul li ul li a:hover{} */
-/* hover */
-/* #drop_1_p #drop_1{
-    opacity: 0;
-    visibility: hidden;
-    transform: scaleY(0);
-    transform-origin: top center;
-    transition: .3s;
-}
-#drop_1_p:hover #drop_1{
-    opacity: 1;
-    visibility: visible;
-    transform: scaleY(1);
-    transition: .3s;
-} */
 .container{
     max-width: 1600px;
 }
@@ -96,4 +31,9 @@
 }
 .mybg{
     background-color: rgb(27, 203, 230);
+}
+
+
+#slider{
+    background-color: rgb(118, 220, 236);
 }
