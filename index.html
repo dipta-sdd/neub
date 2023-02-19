@@ -24,11 +24,8 @@
               <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ms-lg-auto mb-2 mb-lg-0 mybg">
                   <li class="nav-item "><a class="nav-link rounded-2 myfs" aria-current="page" href="#">HOME</a></li>
-                  
-                  
-                  
                   <li class="nav-item dropdown ddmp">
-                    <a class="nav-link dropdown-toggle rounded-2 myfs" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">ACADEMIC</a>
+                    <a class="nav-link dropdown-toggle rounded-2 myfs" href="#" role="button" onclick="myFunction()" data-bs-toggle="dropdown" aria-expanded="false">ACADEMIC</a>
                     </button>
                     <!-- for pc -->
                     <ul class=" ddmu" id="abcd">
@@ -45,26 +42,21 @@
                       <li><a class="dropdown-item myfs2" href="#">School of Natural Science and Engineering</a></li>
                     </ul>
                   </li>
-
-
-
-
-                  <li class="nav-item "><a class="nav-link rounded-2 myfs" aria-current="page" href="#">AUTHORITY</a></li>
-                  <li class="nav-item "><a class="nav-link rounded-2 myfs" aria-current="page" href="#">FACULTY</a></li>
-                  <li class="nav-item "><a class="nav-link rounded-2 myfs" aria-current="page" href="#"> ADMISSION</a></li>
-                  <li class="nav-item "><a class="nav-link rounded-2 myfs" aria-current="page" href="#">RESEARCH</a></li>
-                  <li class="nav-item "><a class="nav-link rounded-2 myfs" aria-current="page" href="#">VERIFICATION</a></li>
-                  <li class="nav-item dropdown ">
-                    <a class="nav-link dropdown-toggle rounded-2 myfs" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                      Dropdown
-                    </a>
-                    <ul class="dropdown-menu mybg" id="ddm1">
-                      <li><a class="dropdown-item myfs2" href="#">Action</a></li>
-                      <li><a class="dropdown-item myfs2" href="#">Another action</a></li>
-                      <li><hr class="dropdown-divider"></li>
-                      <li><a class="dropdown-item myfs2" href="#">Something else here</a></li>
+<!-- ____________________________________________________________________________________________________________________________________________________________________________________________________________ -->
+                  <li class="nav-item dropdown ddmp">
+                    <a class="nav-link dropdown-toggle rounded-2 myfs" id="ddmp" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">ACADEMIC</a>
+                    </button>
+                    <!-- for pc -->
+                    <ul class=" ddmu" id="ddmu">
+                      <li class="ddml"><a href="" class="ddma"> Board of Trustees  </a></li>
+                      <li class="ddml"><a href="" class="ddma"> Board of Advisors  </a></li>
+                      <li class="ddml"><a href="" class="ddma"> Syndicate  </a></li>
+                      <li class="ddml"><a href="" class="ddma">  Academic Council </a></li>
+                      <li class="ddml"><a href="" class="ddma"> Proctorial body  </a></li>
+                      <li class="ddml"><a href="" class="ddma">  Complaint Committee </a></li>
                     </ul>
                   </li>
+<!-- ____________________________________________________________________________________________________________________________________________________________________________________________________________ -->
                 </ul>
               </div>
             </div>
@@ -156,6 +148,17 @@
       })
 
   </script>
+  <script>
+      document.querySelector('#ddmp').addEventListener('click', () => {
+        if(document.querySelector('#ddmu').classList.contains('ddm_show')){
+          document.querySelector('#ddmu').classList.remove('ddm_show');
+        }else{
+          document.querySelector('#ddmu').classList.add('ddm_show');
+        }
+      });
+  </script>
+
+
 </body>
 <!-- git add --all && git commit -m "b1" && git push -->
 
