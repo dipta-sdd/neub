@@ -3,22 +3,25 @@
     max-width: 1600px;
 }
 
+.mybg{
+    background-color: #fefefe;
+}
 .myfs{
-    font-weight: 600;
+    font-weight: 400;
     font-size: 1.2rem;
-    color: aliceblue;
+    color: black;
 }
 .myfs:hover{
-    background-color: rgb(0, 221, 255);
-    color: rgb(0, 13, 255);
+    background-color: rgb(251, 248, 248);
+    color: blue;
 }
 .myfs2{
     font-size: 1.2rem;
-    color: aliceblue;
+    color: black;
 }
 .myfs2:hover{
     background-color: rgb(0, 221, 255);
-    color: rgb(0, 13, 255);
+    color: blue;
 }
 #ddm1 li a:hover{
     background-color: rgb(0, 216, 250);
@@ -28,9 +31,6 @@
 } */
 #logo{
     width: 300px;
-}
-.mybg{
-    background-color: rgb(27, 203, 230);
 }
 
 
