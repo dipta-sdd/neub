@@ -37,3 +37,43 @@
 #slider{
     background-color: rgb(118, 220, 236);
 }
+#slider a{
+    text-decoration: none;
+}
+#slider p,h4{
+    color: white;
+    font-weight: 500;
+    font-size: 1.2rem;
+}
+#slider h4{
+    font-weight: 800;
+    font-size: 1.7rem;
+    position: relative;
+    z-index: 1;
+    transition: 0.5s;
+}
+#slider h4:hover{
+    text-decoration: none;
+    color: blue;
+    font-size: 1.7rem;
+    transition: 0.5s;
+}
+#slider h4::before{
+    content: "";
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(255,255,255,0.5);
+    visibility: hidden;
+    transform: scale(0);
+    transform-origin: center;
+    transition: 0.5s;
+    z-index: -1;
+}
+#slider h4:hover::before{
+    visibility: visible;
+    transform: scale(1);
+    transition: 0.5s;
+}
