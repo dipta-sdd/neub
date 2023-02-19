@@ -65,40 +65,52 @@
 .ddma:hover{
     background-color: aqua;
     color: #2f00ff;
-    
+    transition: 0.2s;
 }
 .ddmu{
     opacity: 0;
     visibility: hidden;
     transform: scaleY(0);
     transform-origin: top center;
-    transition: .3s;
+    transition: .5s;
 }
 
 @media (max-width: 767px){
     .ddm_show{
+        width: 100%;
         position: relative;
         opacity: 1;
         visibility: visible;
         transform: scaleY(1);
-        transition: .3s;
+        transition: .5s;
+    }
+    .ddm_show .ddma{
+
     }
 }
 
 @media (min-width: 768px) {
     /* hover of drop dpwn menu */
+    .ddma{
+        display: block;
+        text-decoration: none;
+        color: black;
+        padding:10px 10px;
+        font-weight: 400;
+        font-size: 1.05rem;
+    }
     .ddmu{
         opacity: 0;
         visibility: hidden;
         transform: scaleY(0);
         transform-origin: top center;
-        transition: .3s;
+        transition: .5s;
     }
     .ddmp:hover .ddmu{
         opacity: 1;
         visibility: visible;
         transform: scaleY(1);
-        transition: .3s;
+        transition: .5s;
     }
 }
 
@@ -113,7 +125,7 @@
 
 
 #slider{
-    background-color: rgb(118, 220, 236);
+    background-color: #f3f1f1;
 }
 #slider a{
     text-decoration: none;
@@ -157,11 +169,13 @@
     transition: 0.5s;
 }
 #main{
-    background-color: aqua;
+    background-color: #fcf1f1;
 }
  #main .left{
+    background-color: #efe6e6;
  }
  #main .right{
+    background-color: #efe6e6;
     /* padding-left: 0px;
     padding-right: 0px; */
  }
