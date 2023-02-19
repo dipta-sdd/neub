@@ -4,8 +4,8 @@
 }
 
 .myfs{
-    font-weight: 800;
-    font-size: 1.3rem;
+    font-weight: 600;
+    font-size: 1.2rem;
     color: aliceblue;
 }
 .myfs:hover{
@@ -78,3 +78,24 @@
     transform: scale(0);
     transition: 0.5s;
 }
+#main{
+    background-color: aqua;
+}
+ #main .left{
+ }
+ #main .right{
+    /* padding-left: 0px;
+    padding-right: 0px; */
+ }
+ .body{
+    height: 300px;
+    width: 100%;
+    background-color: rgb(254, 254, 254);
+ }
+ .notice{
+    height: 300px;
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+ }
+
+
