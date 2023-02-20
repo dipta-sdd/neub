@@ -184,10 +184,66 @@
     width: 100%;
     background-color: rgb(254, 254, 254);
  }
+ .breadcrumb{
+    background-color: #f0f0f0;
+ }
+ .breadcrumb a{
+    text-decoration: none;
+ }
+
+
+ /* .notice board */
  .notice{
     height: 300px;
     width: 100%;
     background-color: rgb(255, 255, 255);
  }
+.notice .nu{
+    padding: 5px;
+}
+.notice .nu .nl{
+    display: inline-block;
+    width: 100%;
+}
+.notice .nu .nl:hover{
+
+}
+.notice .nu .nl .na{
+    text-decoration: none;
+    font-weight: bold;
+    display: block;
+    padding: 0.2rem 0.2rem 0.0rem 0.2rem ;
+    background-color: #f0f0f0;
+    border-radius: 5px 5px 0px 0px;
+}
+.notice .nu .nl .nd{
+    text-decoration: none;
+    display: block;
+    padding: 0.0rem 0.2rem 0.2rem 2.9rem ;
+    background-color: #eeeeee;
+    border-radius: 0px 0px 5px 5px;
+    font-size: 15px;
+    position: relative;
+    margin-bottom: 5px;
+}
+.notice .nu .nl .nd::before{
+    content: "Date :";
+    text-decoration: none;
+    display: block;
+    padding: 0.0rem 0.2rem 0.2rem 0.5rem ;
+    border-radius: 0px 0px 5px 5px;
+    font-size: 15px;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+.notice .nu .nl:hover .na{
+    background-color: #fff;
+    color: rgb(1, 194, 1);
+}
+.notice .nu .nl:hover .nd{
+    background-color: #fff;
+    color: rgb(4, 0, 255);
+}
 
 
