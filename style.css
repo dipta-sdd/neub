@@ -163,6 +163,9 @@
     transform: scale(0);
     transition: 0.5s;
 }
+
+
+/* body  */
 #main{
     background-color: #f0f0f0;
 }
@@ -183,6 +186,16 @@
     text-decoration: none;
  }
 
+
+ /* card___________________ */
+ .card .card-body .card-text{
+    font-weight: 300;
+    font-style: normal;
+    font-size: 0.9rem;
+ }
+ .col .card{
+    max-width: 350px;
+ }
 
  /* .notice board */
  .notice{
