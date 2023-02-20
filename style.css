@@ -4,37 +4,29 @@
 .container{
     max-width: 1600px;
 }
+#logo{
+    width: 500px;
+}
 
+/* menu___________________ */
+.menu{
+    background-color: rgba(52, 73, 94,0.9);
+}
+.menu .container{
+    background-color: #34495e;
+}
 .mybg{
-    background-color: #dfe4ea;
+    background-color: #34495e;
 }
 .myfs{
     font-weight: 500;
     font-size: 1.15rem;
-    color: black;
+    color: rgba(255, 255, 255,.9);
 }
 .myfs:hover{
-    background-color: rgb(251, 248, 248);
-    color: blue;
+    background-color: #2c3c4c;
+    color: rgb(0, 255,0);
 }
-.myfs2{
-    font-size: 1.2rem;
-    color: black;
-}
-.myfs2:hover{
-    background-color: rgb(0, 221, 255);
-    color: blue;
-}
-#ddm1 li a:hover{
-    background-color: rgb(0, 216, 250);
-}
-/* #ddb1:hover::after{
-    content: "jjjj";
-} */
-#logo{
-    width: 300px;
-}
-
 
 /* navbar  */
 .ddmp{
@@ -45,28 +37,28 @@
     left: 0;
     top: 100%;
     width: 300px;
-    background-color: #fefefe;
+    background-color: #2c3c4c;
     z-index: 2;
-    border: 1px solid #fefefe;
     border-radius: 10px;
 }
 .ddml{
     display: block;
     text-align: left;
     margin-left: -40px;
-    border-bottom: 1px solid #000;
+    color: #fff;
+    border-bottom: 1px solid #fff;
 }
 .ddma{
     display: block;
     text-decoration: none;
-    color: black;
+    color: #fff;
     padding:10px 10px;
     font-weight: 400;
     font-size: 1.05rem;
 }
 .ddma:hover{
-    background-color: aqua;
-    color: #2f00ff;
+    background-color:#34495e;
+    color: #00ff00;
     transition: 0.2s;
 }
 .ddmu{
@@ -86,9 +78,7 @@
         transform: scaleY(1);
         transition: .5s;
     }
-    .ddm_show .ddma{
-
-    }
+    
 }
 
 @media (min-width: 768px) {
@@ -96,7 +86,7 @@
     .ddma{
         display: block;
         text-decoration: none;
-        color: black;
+        color:#fff;
         padding:10px 10px;
         font-weight: 400;
         font-size: 1.05rem;
@@ -116,16 +106,8 @@
     }
 }
 
-/* navbar  */
 
-/* menu___________________ */
-.menu{
-    background-color: rgba(45, 52, 54,.9);
-}
-.menu .container{
-    background-color:#2d3436;
-    color:#2d3436;
-}
+
 
 
 
@@ -289,4 +271,15 @@
 .footer .right ul li a:hover{
     color: #7bed9f;
     transition: 0.3s;
+}
+
+
+
+
+.copy{
+    background-color: rgba(34, 47, 62,.9);
+}
+.copy .container{
+    background-color: #222f3e;
+    height: 40px;
 }
