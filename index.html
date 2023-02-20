@@ -26,7 +26,7 @@
                   <li class="nav-item "><a class="nav-link rounded-2 myfs" aria-current="page" href="#">HOME</a></li>
 <!-- ____________________________________________________________________________________________________________________________________________________________________________________________________________ -->
                   <li class="nav-item dropdown ddmp">
-                    <a class="nav-link dropdown-toggle rounded-2 myfs " id="ddb0" href="#" role="button" >AUTHORITY</a>
+                    <a class="nav-link dropdown-toggle rounded-2 myfs " href="#" role="button" onclick="dropMBL('#ddm0')">AUTHORITY</a>
                     <!-- for pc -->
                     <ul class=" ddmu" id="ddm0">
                       <li class="ddml"><a href="" class="ddma"> Board of Trustees  </a></li>
@@ -39,7 +39,7 @@
                   </li>
 <!-- ____________________________________________________________________________________________________________________________________________________________________________________________________________ -->
                   <li class="nav-item dropdown ddmp">
-                    <a class="nav-link dropdown-toggle rounded-2 myfs " id="ddb1" href="#" role="button" >ACADEMIC</a>
+                    <a class="nav-link dropdown-toggle rounded-2 myfs " id="ddb1" href="#" role="button" onclick="dropMBL('#ddm1')">ACADEMIC</a>
                     <!-- for pc -->
                     <ul class=" ddmu" id="ddm1">
                       <li class="ddml"><a href="" class="ddma"> School of Business</a></li>
@@ -105,22 +105,15 @@
   <div id="main">
     <div class="container">
       <div class="row p-1">
-        <div class="col-md-9 left p-1">
+        <div class=" col-lg-9 col-md-8 left p-1">
           <div class="body">
-            <div class="dropdown">
-              <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Dropdown
-              </button>
-              <div class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                <a class="dropdown-item" href="#!">Action</a>
-                <a class="dropdown-item" href="#!">Another action</a>
-              </div>
-            </div>
+            
             
           </div>
         </div>
-        <div class="col-md-3 right p-1">
+        <div class="col-lg-3 col-md-4 right p-1">
           <div class="notice">
+            
           </div>
         </div>
       </div>
@@ -141,21 +134,15 @@
 
   </script>
   <script>
-      document.querySelector('#ddb1').addEventListener('click', () => {
-        if(document.querySelector('#ddm1').classList.contains('ddm_show')){
-          document.querySelector('#ddm1').classList.remove('ddm_show');
-        }else{
-          document.querySelector('#ddm1').classList.add('ddm_show');
-        }
-      });
 
-      document.querySelector('#ddb0').addEventListener('click', () => {
-        if(document.querySelector('#ddm0').classList.contains('ddm_show')){
-          document.querySelector('#ddm0').classList.remove('ddm_show');
+      function dropMBL(id){
+        if(document.querySelector(id).classList.contains('ddm_show')){
+          document.querySelector(id).classList.remove('ddm_show');
         }else{
-          document.querySelector('#ddm0').classList.add('ddm_show');
+          document.querySelector(id).classList.add('ddm_show');
         }
-      });
+      }
+
   </script>
 
 
