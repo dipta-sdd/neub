@@ -1,5 +1,5 @@
 .header{
-    background-color: rgba(223, 228, 234,0.5);
+    background-color: rgba(223, 228, 234,0.8);
 }
 .container{
     max-width: 1600px;
@@ -120,11 +120,11 @@
 
 /* menu___________________ */
 .menu{
-    background-color: rgba(123, 237, 159,.5);
+    background-color: rgba(45, 52, 54,.9);
 }
 .menu .container{
-    background-color: #7bed9f;
-    color: #7bed9f;
+    background-color:#2d3436;
+    color:#2d3436;
 }
 
 
@@ -132,45 +132,50 @@
 
 /* slider___________________________________________________ */
 
-#slider{
-    background-color: #f3f1f1;
+
+
+.slider{
+    background-color: rgba(99, 110, 114,.9);
 }
-#slider a{
+.slider .container{
+    background-color: #636e72;
+}
+.slider a{
     text-decoration: none;
 }
-#slider p,h4{
+.slider p,h4{
     color: white;
     font-weight: 500;
     font-size: 1.2rem;
 }
-#slider h4{
+.slider h4{
     font-weight: 800;
     font-size: 1.7rem;
     position: relative;
     z-index: 1;
     transition: 0.5s;
 }
-#slider h4:hover{
+.slider h4:hover{
     font-weight: 900;
     color: blue;
     font-size: 1.8rem;
     transition: 0.5s;
 }
-#slider h4::before{
+.slider h4::before{
     content: "";
     height: 100%;
     width: 100%;
     position: absolute;
     top: 0;
     left: 0;
-    background-color: rgba(255,255,255,0.5);
+    background-color: rgba(255,255,255,0.9);
     visibility: hidden;
     transform: scale(0);
     transform-origin: center;
     transition: 0.5s;
     z-index: -1;
 }
-#slider h4:hover::before{
+.slider h4:hover::before{
     /* its turned of */
     visibility: visible;
     transform: scale(0);
@@ -255,7 +260,7 @@
 
 /* footer  */
 .footer{
-    background-color: rgba(51, 73, 94,0.4);
+    background-color: rgba(51, 73, 94,0.9);
 }
 .footer .container h5{
     color: #7bed9f;
