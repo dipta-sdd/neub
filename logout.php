@@ -1,5 +1,5 @@
 <?php 
-  $redirect = '<script>  location.replace("./index.html") </script> ';
+  $redirect = '<script>  location.replace("./index.php") </script> ';
   $login="";
   setcookie("user","",time()-(86400*300));
   echo $redirect;

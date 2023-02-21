@@ -1,9 +1,11 @@
 <?php
+    $redirect = '<script>  location.replace("./index.php") </script> ';
   $login="";
 if(!isset($_COOKIE["user"])) {
   $login='<li class="nav-item "><a class="nav-link rounded-2 myfs" aria-current="page" href="./login.php">Login</a></li>';
 } else {
   // echo $_COOKIE["user"];
+  echo $redirect;
   $login='<li class="nav-item "><a class="nav-link rounded-2 myfs" aria-current="page" href="./logout.php">Logout</a></li>';
 }
 

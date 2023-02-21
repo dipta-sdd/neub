@@ -112,42 +112,80 @@
         <div class=" col-lg-9 col-md-7 left p-0 pe-1">
           <div class="body p-2">
             <nav class="breadcrumb p-2 rounded-2">
-              <a class="breadcrumb-item" href="#">Main</a>
-              <a class="breadcrumb-item" href="#">Sub</a>
-              <span class="breadcrumb-item active" aria-current="page">Active</span>
+              <a class="breadcrumb-item" href="#">Home</a>
+              <a class="breadcrumb-item" href="#">Sign Up</a>
+              <span class="breadcrumb-item active" aria-current="page">Student</span>
             </nav>
-            
-            <div class="row row-cols-1 row-cols-lg-3 g-4">
-              <div class="col">
-                <div class="card">
-                  <img src="./img/card_vc.jpg" height="250" class="card-img-top" alt="...">
-                  <div class="card-body">
-                    <h6 class="card-title">Message from Vice Chancellor </h6>
-                    <p class="card-text">It gives me immense pleasure to offer a message of goodwill, prosperity and welcome to all those... </p>
-                    <button type="button" class="btn btn-outline-info">Read More</button>
+            <div class="sign_up_std m-4">
+              <form class="row g-3">
+                <div class="col-md-6">
+                  <label class="form-label">Name *</label>
+                  <label class="form-label msg"></label>
+                  <input type="text" class="form-control" name="name">
+                </div>
+
+                <div class="col-md-6">
+                  <label class="form-label">ID *</label>
+                  <label class="form-label msg"></label>
+                  <input type="text" class="form-control" name="id">
+                </div>
+
+                <div class="col-md-8">
+                  <label class="form-label">Department *</label>
+                  <label class="form-label msg" ></label>
+                  <select class="form-select" name="dept">
+                    <option selected>Choose...</option>
+                    <option>...</option>
+                  </select>
+                </div> <div class="col-md-4 m-0"></div>
+
+                <div class="col-md-4">
+                  <label class="form-label">Username *</label>
+                  <label class="form-label msg"></label>
+                  <input type="text" class="form-control" name="user">
+                </div><div class="col-md-2"></div>
+
+                <div class="col-md-4 ">
+                  <label class="form-label">Session *</label>
+                  <label class="form-label msg" ></label>
+                  <select class="form-select" name="session">
+                    <option selected>Choose...</option>
+                    <option>...</option>
+                  </select>
+                </div>
+
+                <div class="col-md-4">
+                  <label class="form-label">Mobile</label>
+                  <label class="form-label msg"></label>
+                  <input type="text" class="form-control" name="mobile">
+                </div><div class="col-md-2"></div>
+
+                <div class="col-md-5">
+                  <label class="form-label">Email</label>
+                  <label class="form-label msg"></label>
+                  <input type="email" class="form-control" name="email">
+                </div><div class="col-md-6 m-0"></div>
+
+                <div class="col-md-10">
+                  <label class="form-label"> Address</label>
+                  <label class="form-label msg"></label>
+                  <input type="text" class="form-control" name="user">
+                </div><div class="col-md-2 m-0"></div>
+
+                
+                
+                <div class="col-12">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="gridCheck">
+                    <label class="form-check-label" for="gridCheck">
+                      Check me out
+                    </label>
                   </div>
                 </div>
-              </div>
-              <div class="col">
-                <div class="card">
-                  <img src="./img/card_ch.jpg" height="250" class="card-img-top" alt="...">
-                  <div class="card-body">
-                    <h6 class="card-title">Message from Chairman</h6>
-                    <p class="card-text">We, the people of Sylhet hailing from different ages, profession and political beliefs and united under the aegis</p>
-                    <button type="button" class="btn btn-outline-info">Read More</button>
-                  </div>
+                <div class="col-12">
+                  <button type="submit" class="btn btn-primary">Sign in</button>
                 </div>
-              </div>
-              <div class="col">
-                <div class="card">
-                  <img src="./img/card_v.jpg" height="250" class="card-img-top" alt="...">
-                  <div class="card-body">
-                    <h6 class="card-title">About NEUB</h6>
-                    <p class="card-text"><b> Introduction: </b>the present world has been passing through inevitable but irreversible process of globalization.  </p>
-                    <button type="button" class="btn btn-outline-info">Read More</button>
-                  </div>
-                </div>
-              </div>
+              </form>
             </div>
 
           </div>
