@@ -1,3 +1,4 @@
+
 .header{
     background-color: rgba(223, 228, 234,0.8);
 }
@@ -10,13 +11,13 @@
 
 /* menu___________________ */
 .menu{
-    background-color: rgba(52, 73, 94,0.9);
+    background-color:rgba(39, 60, 117,.9);
 }
 .menu .container{
-    background-color: #34495e;
+    background-color: #273c75;
 }
 .mybg{
-    background-color: #34495e;
+    background-color: #273c75;
 }
 .myfs{
     font-weight: 500;
@@ -57,7 +58,7 @@
     font-size: 1.05rem;
 }
 .ddma:hover{
-    background-color:#34495e;
+    background-color:#273c75;
     color: #00ff00;
     transition: 0.2s;
 }
@@ -70,6 +71,9 @@
 }
 
 @media (max-width: 767px){
+    #nav{
+        padding: 10px;
+    }
     .ddm_show{
         width: 100%;
         position: relative;
@@ -257,7 +261,7 @@
     color: #7bed9f;
 }
 .footer .container{
-    background-color: #34495e;
+    background-color: #273c75;
     color: white;
 }
 /* .footer .left{} */
@@ -286,9 +290,12 @@
 
 
 .copy{
-    background-color: rgba(34, 47, 62,.9);
+    background-color: rgba(51, 217, 178,.6);
 }
 .copy .container{
-    background-color: #222f3e;
+    background-color: #33d9b2;
     height: 40px;
+}
+.copy .container h6{
+    font-family: 'Quicksand', sans-serif;
 }
