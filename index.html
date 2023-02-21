@@ -54,7 +54,7 @@
                       <li class="ddml"><a href="" class="ddma"> School of Natural Science and Engineering</a></li>
                     </ul>
                   </li>
-                  <li class="nav-item "><a class="nav-link rounded-2 myfs" aria-current="page" href="./login.php">Login</a></li>
+                  <li class="nav-item dropdown ddmp"><a class="nav-link rounded-2 myfs" aria-current="page" href="./login.php" onclick="dropMBL('#ddm1')">Login</a><ul class=" ddmu" id="ddms"><li class="ddml"><a href="./signup.php" class="ddma">Sign Up</a></li></ul></li>
                 </ul>
               </div>
             </div>
@@ -119,20 +119,20 @@
             <div class="sign_up_std m-4">
               <form class="row g-3">
                 <div class="col-md-6">
-                  <label class="form-label">Name *</label>
-                  <label class="form-label msg"></label>
+                  <label class="form-label">Name </label>
+                  <label class="form-label msg"> *</label>
                   <input type="text" class="form-control" name="name">
                 </div>
 
                 <div class="col-md-6">
-                  <label class="form-label">ID *</label>
-                  <label class="form-label msg"></label>
+                  <label class="form-label">ID </label>
+                  <label class="form-label msg"> *</label>
                   <input type="text" class="form-control" name="id">
                 </div>
 
                 <div class="col-md-8">
-                  <label class="form-label">Department *</label>
-                  <label class="form-label msg" ></label>
+                  <label class="form-label">Department </label>
+                  <label class="form-label msg" > *</label>
                   <select class="form-select" name="dept">
                     <option selected>Choose...</option>
                     <option>...</option>
@@ -140,14 +140,14 @@
                 </div> <div class="col-md-4 m-0"></div>
 
                 <div class="col-md-4">
-                  <label class="form-label">Username *</label>
-                  <label class="form-label msg"></label>
+                  <label class="form-label">Username </label>
+                  <label class="form-label msg"> *</label>
                   <input type="text" class="form-control" name="user">
                 </div><div class="col-md-2"></div>
 
                 <div class="col-md-4 ">
-                  <label class="form-label">Session *</label>
-                  <label class="form-label msg" ></label>
+                  <label class="form-label">Session </label>
+                  <label class="form-label msg" > *</label>
                   <select class="form-select" name="session">
                     <option selected>Choose...</option>
                     <option>...</option>
@@ -183,7 +183,8 @@
                   </div>
                 </div>
                 <div class="col-12">
-                  <button type="submit" class="btn btn-primary">Sign in</button>
+                  <button type="submit" class="btn btn-primary">Sign up</button>
+                  <label class="form-label">Already have an account?  <a class="forma" href="">Log in</a> Now</label>
                 </div>
               </form>
             </div>

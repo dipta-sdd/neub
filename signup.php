@@ -1,39 +1,3 @@
-<?php
-    $redirect = '<script>  location.replace("./index.php") </script> ';
-  $login="";
-if(!isset($_COOKIE["user"])) {
-  $login='<li class="nav-item dropdown ddmp"><a class="nav-link rounded-2 myfs" aria-current="page" href="./login.php" onclick="dropMBL('."'#ddm1'".')">Login</a><ul class=" ddmu" id="ddms"><li class="ddml"><a href="./signup.php" class="ddma">Sign Up</a></li></ul></li>';
-} else {
-  // echo $_COOKIE["user"];
-  echo $redirect;
-  $login='<li class="nav-item dropdown ddmp"><a class="nav-link rounded-2 myfs" aria-current="page" href="./login.php" onclick="dropMBL('."'#ddm1'".')">Loguin</a><ul class=" ddmu" id="ddms"><li class="ddml"><a href="./signup.php" class="ddma">Sign Up</a></li></ul></li>';
-}
-
-
-
-
-
-
-$name = $pass = "";
-$redirect = '<script>  location.replace("./index.php") </script> ';
-
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-  $name = test_input($_POST["name"]);
-  $pass = test_input($_POST["pass"]);
-  if($name == "root" ){
-    setcookie("user","root",time()+(86400*300));
-    echo $redirect;
-  }
-  
-}
-
-function test_input($data) {
-  $data = trim($data);
-  $data = stripslashes($data);
-  $data = htmlspecialchars($data);
-  return $data;
-}
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -43,7 +7,7 @@ function test_input($data) {
   <title>Document</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Crimson+Pro">
   <link rel="stylesheet" href="./css/bootstrap.css">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="./style.css">
 </head>
 <body>
   <header class="header">
@@ -68,8 +32,8 @@ function test_input($data) {
               </button>
               <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ms-lg-auto mb-2 mb-lg-0 mybg">
-                  <li class="nav-item "><a class="nav-link rounded-2 myfs" aria-current="page" href="./index.php">HOME</a></li>
-                                
+                  <li class="nav-item "><a class="nav-link rounded-2 myfs" aria-current="page" href="">HOME</a></li>
+
                   <li class="nav-item dropdown ddmp">
                     <a class="nav-link dropdown-toggle myfs " href="#" role="button" onclick="dropMBL('#ddm0')">AUTHORITY</a>
                     <ul class=" ddmu" id="ddm0">
@@ -81,10 +45,8 @@ function test_input($data) {
                       <li class="ddml"><a href="" class="ddma">  Complaint Committee </a></li>
                     </ul>
                   </li>
-                     <!-- ____________________________________________________________________________________________________________________________________________________________________________________________________________ -->
                   <li class="nav-item dropdown ddmp">
                     <a class="nav-link dropdown-toggle rounded-2 myfs " id="ddb1" href="#" role="button" onclick="dropMBL('#ddm1')">ACADEMIC</a>
-                    <!-- for pc -->
                     <ul class=" ddmu" id="ddm1">
                       <li class="ddml"><a href="" class="ddma"> School of Business</a></li>
                       <li class="ddml"><a href="" class="ddma"> School of Social Science</a></li>
@@ -92,7 +54,7 @@ function test_input($data) {
                       <li class="ddml"><a href="" class="ddma"> School of Natural Science and Engineering</a></li>
                     </ul>
                   </li>
-                  <?php echo $login ; ?>
+                  <li class="nav-item "><a class="nav-link rounded-2 myfs" aria-current="page" href="./login.php">Login</a></li>
                 </ul>
               </div>
             </div>
@@ -101,9 +63,47 @@ function test_input($data) {
     </div>
   </div>
 
+<!-- 
+  <div class="slider" id="slider">
+    <div class="container">
+      <div id="carouselExample" class="carousel slide p-2"  data-bs-ride="true">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="./img/slide1.jpg" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+              <a href="#"> <h4> First slide label </h4> </a>
+              <p class="lead">Some representative placeholder content for the first slide.</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="./img/slide2.jpg" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+              <a href="#"> <h4> Second slide label </h4> </a>
+              <p class="lead">Some representative placeholder content for the first slide.</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="./img/slide3.jpg" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+              <a href="#"> <h4> Thired slide label </h4> </a>
+              <p class="lead">Some representative placeholder content for the first slide.</p>
+            </div>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
 
 
 
+    </div>
+  </div> -->
 
 
   <div id="main">
@@ -113,32 +113,81 @@ function test_input($data) {
           <div class="body p-2">
             <nav class="breadcrumb p-2 rounded-2">
               <a class="breadcrumb-item" href="#">Home</a>
-              <!-- <a class="breadcrumb-item" href="#">Sub</a> -->
-              <span class="breadcrumb-item active" aria-current="page">Sign Up</span>
+              <a class="breadcrumb-item" href="#">Sign Up</a>
+              <span class="breadcrumb-item active" aria-current="page">Student</span>
             </nav>
-            
-            <div class="row ps-3">
-              <div class="col-md-6">
-                <form method="post"  action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
-                  <div class="mb-3">
-                    <label for="exampleInputEmail1" class="form-label">ID or Username</label>
-                    <input name="name" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+            <div class="sign_up_std m-4">
+              <form class="row g-3">
+                <div class="col-md-6">
+                  <label class="form-label">Name </label>
+                  <label class="form-label msg"> *</label>
+                  <input type="text" class="form-control" name="name">
+                </div>
+
+                <div class="col-md-6">
+                  <label class="form-label">ID </label>
+                  <label class="form-label msg"> *</label>
+                  <input type="text" class="form-control" name="id">
+                </div>
+
+                <div class="col-md-8">
+                  <label class="form-label">Department </label>
+                  <label class="form-label msg" > *</label>
+                  <select class="form-select" name="dept">
+                    <option selected>Choose...</option>
+                    <option>...</option>
+                  </select>
+                </div> <div class="col-md-4 m-0"></div>
+
+                <div class="col-md-4">
+                  <label class="form-label">Username </label>
+                  <label class="form-label msg"> *</label>
+                  <input type="text" class="form-control" name="user">
+                </div><div class="col-md-2"></div>
+
+                <div class="col-md-4 ">
+                  <label class="form-label">Session </label>
+                  <label class="form-label msg" > *</label>
+                  <select class="form-select" name="session">
+                    <option selected>Choose...</option>
+                    <option>...</option>
+                  </select>
+                </div>
+
+                <div class="col-md-4">
+                  <label class="form-label">Mobile</label>
+                  <label class="form-label msg"></label>
+                  <input type="text" class="form-control" name="mobile">
+                </div><div class="col-md-2"></div>
+
+                <div class="col-md-5">
+                  <label class="form-label">Email</label>
+                  <label class="form-label msg"></label>
+                  <input type="email" class="form-control" name="email">
+                </div><div class="col-md-6 m-0"></div>
+
+                <div class="col-md-10">
+                  <label class="form-label"> Address</label>
+                  <label class="form-label msg"></label>
+                  <input type="text" class="form-control" name="user">
+                </div><div class="col-md-2 m-0"></div>
+
+                
+                
+                <div class="col-12">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="gridCheck">
+                    <label class="form-check-label" for="gridCheck">
+                      Check me out
+                    </label>
                   </div>
-                  <div class="mb-3">
-                    <label for="exampleInputPassword1" class="form-label">Password</label>
-                    <input name="pass" type="password" class="form-control" id="exampleInputPassword1">
-                  </div>
-                  <div class="mb-3 form-check">
-                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                    <label class="form-check-label" for="exampleCheck1">Check me out</label>
-                  </div>
-                  <button type="submit" class="btn btn-primary">Submit</button> 
-                  <label class="form-label ms-2">Don't have an account?  <a class="text-decoration-none" href="./signup.php">Sign up</a> Now</label>
-                </form>
-              </div>
+                </div>
+                <div class="col-12">
+                  <button type="submit" class="btn btn-primary">Sign up</button>
+                  <label class="form-label ms-2">Already have an account?  <a class="text-decoration-none" href="./login.php">Log in</a> Now</label>
+                </div>
+              </form>
             </div>
-            
 
           </div>
         </div>
@@ -206,6 +255,7 @@ function test_input($data) {
   <script src="./js/bootstrap.min.js"></script>
   <script src="./script.js"></script>
   
+
 
 </body>
 <!-- git add --all && git commit -m "b1" && git push -->

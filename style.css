@@ -37,10 +37,10 @@
     position: absolute;
     left: 0;
     top: 100%;
-    width: 300px;
+    width: 200%;
     background-color: #2c3c4c;
     z-index: 2;
-    border-radius: 0px 0px 10px 10px;
+    border-radius: 0px 0px 20px 20px;
 }
 .ddml{
     display: block;
@@ -48,6 +48,9 @@
     margin-left: -40px;
     color: #fff;
     border-bottom: 1px solid #fff;
+}
+.ddml:last-child{
+    border-bottom: none;
 }
 .ddma{
     display: block;
@@ -299,3 +302,14 @@
 .copy .container h6{
     font-family: 'Quicksand', sans-serif;
 }
+
+
+/* signup */
+.msg{
+    color: red;
+}
+/* .forma{
+    text-decoration: none;
+} */
+
+
