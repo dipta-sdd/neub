@@ -16,6 +16,6 @@ function dropMBL(id){
       })
 
 // login 
-function login() {
+function logout() {
   location.replace("http://127.0.0.1/neub/index.html");
 }

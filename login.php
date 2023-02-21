@@ -1,13 +1,25 @@
 <?php
+  $login="";
+if(!isset($_COOKIE["user"])) {
+  $login='<li class="nav-item "><a class="nav-link rounded-2 myfs" aria-current="page" href="./login.php">Login</a></li>';
+} else {
+  // echo $_COOKIE["user"];
+  $login='<li class="nav-item "><a class="nav-link rounded-2 myfs" aria-current="page" href="./logout.php">Logout</a></li>';
+}
+
+
+
+
+
 
 $name = $pass = "";
-$redirect = '<script>  location.replace("./index.html") </script> ';
+$redirect = '<script>  location.replace("./index.php") </script> ';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-  $name = $_POST["name"];
-
+  $name = test_input($_POST["name"]);
   $pass = test_input($_POST["pass"]);
   if($name == "root" ){
+    setcookie("user","root",time()+(86400*300));
     echo $redirect;
   }
   
@@ -54,7 +66,7 @@ function test_input($data) {
               </button>
               <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ms-lg-auto mb-2 mb-lg-0 mybg">
-                  <li class="nav-item "><a class="nav-link rounded-2 myfs" aria-current="page" href="#">HOME</a></li>
+                  <li class="nav-item "><a class="nav-link rounded-2 myfs" aria-current="page" href="./index.php">HOME</a></li>
                                 
                   <li class="nav-item dropdown ddmp">
                     <a class="nav-link dropdown-toggle myfs " href="#" role="button" onclick="dropMBL('#ddm0')">AUTHORITY</a>
@@ -78,7 +90,7 @@ function test_input($data) {
                       <li class="ddml"><a href="" class="ddma"> School of Natural Science and Engineering</a></li>
                     </ul>
                   </li>
-                  <li class="nav-item "><a class="nav-link rounded-2 myfs" aria-current="page" href="./login.php">Login</a></li>
+                  <?php echo $login ; ?>
                 </ul>
               </div>
             </div>
