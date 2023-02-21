@@ -14,3 +14,8 @@ function dropMBL(id){
         interval: 2000,
         touch: false
       })
+
+// login 
+function login() {
+  location.replace("http://127.0.0.1/neub/index.html");
+}

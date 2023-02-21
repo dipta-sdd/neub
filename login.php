@@ -1,3 +1,25 @@
+<?php
+
+$name = $pass = "";
+$redirect = '<script>  location.replace("./index.html") </script> ';
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+  $name = $_POST["name"];
+
+  $pass = test_input($_POST["pass"]);
+  if($name == "root" ){
+    echo $redirect;
+  }
+  
+}
+
+function test_input($data) {
+  $data = trim($data);
+  $data = stripslashes($data);
+  $data = htmlspecialchars($data);
+  return $data;
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -33,7 +55,7 @@
               <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ms-lg-auto mb-2 mb-lg-0 mybg">
                   <li class="nav-item "><a class="nav-link rounded-2 myfs" aria-current="page" href="#">HOME</a></li>
-
+                                
                   <li class="nav-item dropdown ddmp">
                     <a class="nav-link dropdown-toggle myfs " href="#" role="button" onclick="dropMBL('#ddm0')">AUTHORITY</a>
                     <ul class=" ddmu" id="ddm0">
@@ -45,8 +67,10 @@
                       <li class="ddml"><a href="" class="ddma">  Complaint Committee </a></li>
                     </ul>
                   </li>
+                     <!-- ____________________________________________________________________________________________________________________________________________________________________________________________________________ -->
                   <li class="nav-item dropdown ddmp">
                     <a class="nav-link dropdown-toggle rounded-2 myfs " id="ddb1" href="#" role="button" onclick="dropMBL('#ddm1')">ACADEMIC</a>
+                    <!-- for pc -->
                     <ul class=" ddmu" id="ddm1">
                       <li class="ddml"><a href="" class="ddma"> School of Business</a></li>
                       <li class="ddml"><a href="" class="ddma"> School of Social Science</a></li>
@@ -63,47 +87,9 @@
     </div>
   </div>
 
-<!-- 
-  <div class="slider" id="slider">
-    <div class="container">
-      <div id="carouselExample" class="carousel slide p-2"  data-bs-ride="true">
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <img src="./img/slide1.jpg" class="d-block w-100" alt="...">
-            <div class="carousel-caption d-none d-md-block">
-              <a href="#"> <h4> First slide label </h4> </a>
-              <p class="lead">Some representative placeholder content for the first slide.</p>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <img src="./img/slide2.jpg" class="d-block w-100" alt="...">
-            <div class="carousel-caption d-none d-md-block">
-              <a href="#"> <h4> Second slide label </h4> </a>
-              <p class="lead">Some representative placeholder content for the first slide.</p>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <img src="./img/slide3.jpg" class="d-block w-100" alt="...">
-            <div class="carousel-caption d-none d-md-block">
-              <a href="#"> <h4> Thired slide label </h4> </a>
-              <p class="lead">Some representative placeholder content for the first slide.</p>
-            </div>
-          </div>
-        </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
-        </button>
-      </div>
 
 
 
-    </div>
-  </div> -->
 
 
   <div id="main">
@@ -112,43 +98,32 @@
         <div class=" col-lg-9 col-md-7 left p-0 pe-1">
           <div class="body p-2">
             <nav class="breadcrumb p-2 rounded-2">
-              <a class="breadcrumb-item" href="#">Main</a>
-              <a class="breadcrumb-item" href="#">Sub</a>
-              <span class="breadcrumb-item active" aria-current="page">Active</span>
+              <a class="breadcrumb-item" href="#">Home</a>
+              <!-- <a class="breadcrumb-item" href="#">Sub</a> -->
+              <span class="breadcrumb-item active" aria-current="page">Sign Up</span>
             </nav>
             
-            <div class="row row-cols-1 row-cols-lg-3 g-4">
-              <div class="col">
-                <div class="card">
-                  <img src="./img/card_vc.jpg" height="250" class="card-img-top" alt="...">
-                  <div class="card-body">
-                    <h6 class="card-title">Message from Vice Chancellor </h6>
-                    <p class="card-text">It gives me immense pleasure to offer a message of goodwill, prosperity and welcome to all those... </p>
-                    <button type="button" class="btn btn-outline-info">Read More</button>
+            <div class="row ps-3">
+              <div class="col-md-6">
+                <form method="post"  action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+                  <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">ID or Username</label>
+                    <input name="name" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
                   </div>
-                </div>
-              </div>
-              <div class="col">
-                <div class="card">
-                  <img src="./img/card_ch.jpg" height="250" class="card-img-top" alt="...">
-                  <div class="card-body">
-                    <h6 class="card-title">Message from Chairman</h6>
-                    <p class="card-text">We, the people of Sylhet hailing from different ages, profession and political beliefs and united under the aegis</p>
-                    <button type="button" class="btn btn-outline-info">Read More</button>
+                  <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label">Password</label>
+                    <input name="pass" type="password" class="form-control" id="exampleInputPassword1">
                   </div>
-                </div>
-              </div>
-              <div class="col">
-                <div class="card">
-                  <img src="./img/card_v.jpg" height="250" class="card-img-top" alt="...">
-                  <div class="card-body">
-                    <h6 class="card-title">About NEUB</h6>
-                    <p class="card-text"><b> Introduction: </b>the present world has been passing through inevitable but irreversible process of globalization.  </p>
-                    <button type="button" class="btn btn-outline-info">Read More</button>
+                  <div class="mb-3 form-check">
+                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                    <label class="form-check-label" for="exampleCheck1">Check me out</label>
                   </div>
-                </div>
+                  <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
               </div>
             </div>
+            
 
           </div>
         </div>
@@ -216,7 +191,6 @@
   <script src="./js/bootstrap.min.js"></script>
   <script src="./script.js"></script>
   
-
 
 </body>
 <!-- git add --all && git commit -m "b1" && git push -->
