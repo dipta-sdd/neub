@@ -1,18 +1,3 @@
-<?php 
-  $login="";
-
-if(!isset($_COOKIE["user"])) {
-  $login='<li class="nav-item dropdown ddmp"><a class="nav-link rounded-2 myfs" aria-current="page" href="./login.php" onclick="dropMBL('."'#ddm1'".')">Login</a><ul class=" ddmu" id="ddms"><li class="ddml"><a href="./signup.php" class="ddma">Sign Up</a></li></ul></li>';
-} else {
-  // echo $_COOKIE["user"];
-  $login='<li class="nav-item "><a class="nav-link rounded-2 myfs" aria-current="page" href="./logout.php">Logout</a></li>';
-}
-
-?>
-
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -25,9 +10,6 @@ if(!isset($_COOKIE["user"])) {
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-
-
   <header class="header">
     <div class="container">
       <div class="row">
@@ -49,9 +31,9 @@ if(!isset($_COOKIE["user"])) {
                 <span class="navbar-toggler-icon"></span>
               </button>
               <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav ms-lg-auto mb-2 mb-lg-0 mybg">
-                  <li class="nav-item "><a class="nav-link rounded-2 myfs" aria-current="page" href="./index.php">HOME</a></li>
-
+                <ul class="navbar-nav ms-lg-auto mb-2 mb-lg-0 mybg" id="nav_menu">
+                  <li class="nav-item "><a class="nav-link rounded-2 myfs" aria-current="page" href="./">HOME</a></li>
+                                
                   <li class="nav-item dropdown ddmp">
                     <a class="nav-link dropdown-toggle myfs " href="#" role="button" onclick="dropMBL('#ddm0')">AUTHORITY</a>
                     <ul class=" ddmu" id="ddm0">
@@ -63,8 +45,10 @@ if(!isset($_COOKIE["user"])) {
                       <li class="ddml"><a href="" class="ddma">  Complaint Committee </a></li>
                     </ul>
                   </li>
+                     <!-- ____________________________________________________________________________________________________________________________________________________________________________________________________________ -->
                   <li class="nav-item dropdown ddmp">
                     <a class="nav-link dropdown-toggle rounded-2 myfs " id="ddb1" href="#" role="button" onclick="dropMBL('#ddm1')">ACADEMIC</a>
+                    <!-- for pc -->
                     <ul class=" ddmu" id="ddm1">
                       <li class="ddml"><a href="" class="ddma"> School of Business</a></li>
                       <li class="ddml"><a href="" class="ddma"> School of Social Science</a></li>
@@ -72,10 +56,7 @@ if(!isset($_COOKIE["user"])) {
                       <li class="ddml"><a href="" class="ddma"> School of Natural Science and Engineering</a></li>
                     </ul>
                   </li>
-                  
-                  <?php echo $login ?>
                 </ul>
-                
               </div>
             </div>
           </nav>
@@ -84,46 +65,8 @@ if(!isset($_COOKIE["user"])) {
   </div>
 
 
-  <div class="slider" id="slider">
-    <div class="container">
-      <div id="carouselExample" class="carousel slide p-2"  data-bs-ride="true">
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <img src="./img/slide1.jpg" class="d-block w-100" alt="...">
-            <div class="carousel-caption d-none d-md-block">
-              <a href="#"> <h4> First slide label </h4> </a>
-              <p class="lead">Some representative placeholder content for the first slide.</p>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <img src="./img/slide2.jpg" class="d-block w-100" alt="...">
-            <div class="carousel-caption d-none d-md-block">
-              <a href="#"> <h4> Second slide label </h4> </a>
-              <p class="lead">Some representative placeholder content for the first slide.</p>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <img src="./img/slide3.jpg" class="d-block w-100" alt="...">
-            <div class="carousel-caption d-none d-md-block">
-              <a href="#"> <h4> Thired slide label </h4> </a>
-              <p class="lead">Some representative placeholder content for the first slide.</p>
-            </div>
-          </div>
-        </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
-        </button>
-      </div>
 
 
-
-    </div>
-  </div>
 
 
   <div id="main">
@@ -132,43 +75,32 @@ if(!isset($_COOKIE["user"])) {
         <div class=" col-lg-9 col-md-7 left p-0 pe-1">
           <div class="body p-2">
             <nav class="breadcrumb p-2 rounded-2">
-              <a class="breadcrumb-item" href="#">Main</a>
-              <a class="breadcrumb-item" href="#">Sub</a>
-              <span class="breadcrumb-item active" aria-current="page">Active</span>
+              <a class="breadcrumb-item" href="#">Home</a>
+              <!-- <a class="breadcrumb-item" href="#">Sub</a> -->
+              <span class="breadcrumb-item active" aria-current="page">Sign Up</span>
             </nav>
             
-            <div class="row row-cols-1 row-cols-lg-3 g-4">
-              <div class="col">
-                <div class="card">
-                  <img src="./img/card_vc.jpg" height="250" class="card-img-top" alt="...">
-                  <div class="card-body">
-                    <h6 class="card-title">Message from Vice Chancellor </h6>
-                    <p class="card-text">It gives me immense pleasure to offer a message of goodwill, prosperity and welcome to all those... </p>
-                    <button type="button" class="btn btn-outline-info">Read More</button>
+            <div class="row ps-3">
+              <div class="col-md-6">
+                <form id="form_login" >
+                  <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">ID or Username</label>
+                    <input name="name" type="text" class="form-control" aria-describedby="emailHelp">
+                    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
                   </div>
-                </div>
-              </div>
-              <div class="col">
-                <div class="card">
-                  <img src="./img/card_ch.jpg" height="250" class="card-img-top" alt="...">
-                  <div class="card-body">
-                    <h6 class="card-title">Message from Chairman</h6>
-                    <p class="card-text">We, the people of Sylhet hailing from different ages, profession and political beliefs and united under the aegis</p>
-                    <button type="button" class="btn btn-outline-info">Read More</button>
+                  <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label">Password</label>
+                    <input name="pass" type="password" class="form-control" >
                   </div>
-                </div>
-              </div>
-              <div class="col">
-                <div class="card">
-                  <img src="./img/card_v.jpg" height="250" class="card-img-top" alt="...">
-                  <div class="card-body">
-                    <h6 class="card-title">About NEUB</h6>
-                    <p class="card-text"><b> Introduction: </b>the present world has been passing through inevitable but irreversible process of globalization.  </p>
-                    <button type="button" class="btn btn-outline-info">Read More</button>
+                  <div class="mb-3">
+                    <p class=" text-danger" id="error_login"></p>
                   </div>
-                </div>
+                  <button type="submit" class="btn btn-primary" id="button_login">Submit</button> 
+                  <label class="form-label ms-2">Don't have an account?  <a class="text-decoration-none" href="./signup.php">Sign up</a> Now</label>
+                </form>
               </div>
             </div>
+            
 
           </div>
         </div>
@@ -234,8 +166,41 @@ if(!isset($_COOKIE["user"])) {
 
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
   <script src="./js/bootstrap.min.js"></script>
-  <script src="./script.js"></script>
+  <script src="./script.js"></script><script src="./js/jquery-3.6.3.min.js"></script>
+  <script>
+    $(document).ready(function(){
+      $.ajax({
+        url: "menu_log.php",
+        success: function (response) {
+          $('#nav_menu').append(response);
+        }
+      });
 
+//login button
+      $('#error_login').hide();
+      $('#button_login').click(function( e){
+        e.preventDefault();
+        $.ajax({
+          type: "POST",
+          url: "./login.php",
+          data: $('#form_login').serialize(),
+          success: function (response) {
+            var data=JSON.parse(response);
+            if(data.status){
+              location.replace("./index.html");
+            } else{
+              $('#error_login').text("* "+ data.error);
+              $('#error_login').slideDown();
+            }
+          }
+        });
+      });
+
+
+
+    });
+  </script>   
+  
 
 </body>
 <!-- git add --all && git commit -m "b1" && git push -->

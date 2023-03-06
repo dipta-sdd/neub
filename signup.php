@@ -1,3 +1,30 @@
+<?php
+    $redirect = '<script>  location.replace("./index.php") </script> ';
+  $login="";
+if(!isset($_COOKIE["user"])) {
+  $login='<li class="nav-item dropdown ddmp"><a class="nav-link rounded-2 myfs" aria-current="page" href="./login.php" onclick="dropMBL('."'#ddm1'".')">Login</a><ul class=" ddmu" id="ddms"><li class="ddml"><a href="./signup.php" class="ddma">Sign Up</a></li></ul></li>';
+} else {
+  // echo $_COOKIE["user"];
+  echo $redirect;
+  $login='<li class="nav-item dropdown ddmp"><a class="nav-link rounded-2 myfs" aria-current="page" href="./login.php" onclick="dropMBL('."'#ddm1'".')">Loguin</a><ul class=" ddmu" id="ddms"><li class="ddml"><a href="./signup.php" class="ddma">Sign Up</a></li></ul></li>';
+}
+
+
+$redirect = '<script>  location.replace("./index.php") </script> ';
+$fname=$fid=$fdept=$fuser=$fsession=$fmobile=$femail=$faddress="";
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+  $name = test_input($_POST["name"]);
+  echo $name;
+  
+}
+
+function test_input($data) {
+  $data = trim($data);
+  $data = stripslashes($data);
+  $data = htmlspecialchars($data);
+  return $data;
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -31,8 +58,8 @@
                 <span class="navbar-toggler-icon"></span>
               </button>
               <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav ms-lg-auto mb-2 mb-lg-0 mybg">
-                  <li class="nav-item "><a class="nav-link rounded-2 myfs" aria-current="page" href="">HOME</a></li>
+                <ul class="navbar-nav ms-lg-auto mb-2 mb-lg-0 mybg" id="nav_menu">
+                  <li class="nav-item "><a class="nav-link rounded-2 myfs" aria-current="page" href="./">HOME</a></li>
 
                   <li class="nav-item dropdown ddmp">
                     <a class="nav-link dropdown-toggle myfs " href="#" role="button" onclick="dropMBL('#ddm0')">AUTHORITY</a>
@@ -54,7 +81,7 @@
                       <li class="ddml"><a href="" class="ddma"> School of Natural Science and Engineering</a></li>
                     </ul>
                   </li>
-                  <li class="nav-item "><a class="nav-link rounded-2 myfs" aria-current="page" href="./login.php">Login</a></li>
+                  
                 </ul>
               </div>
             </div>
@@ -62,48 +89,6 @@
       </div>
     </div>
   </div>
-
-<!-- 
-  <div class="slider" id="slider">
-    <div class="container">
-      <div id="carouselExample" class="carousel slide p-2"  data-bs-ride="true">
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <img src="./img/slide1.jpg" class="d-block w-100" alt="...">
-            <div class="carousel-caption d-none d-md-block">
-              <a href="#"> <h4> First slide label </h4> </a>
-              <p class="lead">Some representative placeholder content for the first slide.</p>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <img src="./img/slide2.jpg" class="d-block w-100" alt="...">
-            <div class="carousel-caption d-none d-md-block">
-              <a href="#"> <h4> Second slide label </h4> </a>
-              <p class="lead">Some representative placeholder content for the first slide.</p>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <img src="./img/slide3.jpg" class="d-block w-100" alt="...">
-            <div class="carousel-caption d-none d-md-block">
-              <a href="#"> <h4> Thired slide label </h4> </a>
-              <p class="lead">Some representative placeholder content for the first slide.</p>
-            </div>
-          </div>
-        </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
-        </button>
-      </div>
-
-
-
-    </div>
-  </div> -->
 
 
   <div id="main">
@@ -117,7 +102,7 @@
               <span class="breadcrumb-item active" aria-current="page">Student</span>
             </nav>
             <div class="sign_up_std m-4">
-              <form class="row g-3">
+              <form class="row g-3" method="post" action="signup.php">
                 <div class="col-md-6">
                   <label class="form-label">Name </label>
                   <label class="form-label msg"> *</label>
@@ -169,7 +154,7 @@
                 <div class="col-md-10">
                   <label class="form-label"> Address</label>
                   <label class="form-label msg"></label>
-                  <input type="text" class="form-control" name="user">
+                  <input type="text" class="form-control" name="address">
                 </div><div class="col-md-2 m-0"></div>
 
                 
@@ -253,7 +238,18 @@
 
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
   <script src="./js/bootstrap.min.js"></script>
-  <script src="./script.js"></script>
+  <script src="./script.js"></script><script src="./js/jquery-3.6.3.min.js"></script>
+  <script>
+    $(document).ready(function(){
+      $.ajax({
+        url: "menu_log.php",
+        success: function (response) {
+          $('#nav_menu').append(response);
+        }
+      });
+
+    });
+  </script>
   
 
 

@@ -1,15 +1,22 @@
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>North East University Bangladesh</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Crimson+Pro">
   <link rel="stylesheet" href="./css/bootstrap.css">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+
+
   <header class="header">
     <div class="container">
       <div class="row">
@@ -31,8 +38,8 @@
                 <span class="navbar-toggler-icon"></span>
               </button>
               <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav ms-lg-auto mb-2 mb-lg-0 mybg">
-                  <li class="nav-item "><a class="nav-link rounded-2 myfs" aria-current="page" href="">HOME</a></li>
+                <ul class="navbar-nav ms-lg-auto mb-2 mb-lg-0 mybg" id="nav_menu">
+                  <li class="nav-item "><a class="nav-link rounded-2 myfs" aria-current="page" href="./">HOME</a></li>
 
                   <li class="nav-item dropdown ddmp">
                     <a class="nav-link dropdown-toggle myfs " href="#" role="button" onclick="dropMBL('#ddm0')">AUTHORITY</a>
@@ -54,8 +61,8 @@
                       <li class="ddml"><a href="" class="ddma"> School of Natural Science and Engineering</a></li>
                     </ul>
                   </li>
-                  <li class="nav-item dropdown ddmp"><a class="nav-link rounded-2 myfs" aria-current="page" href="./login.php" onclick="dropMBL('#ddm1')">Login</a><ul class=" ddmu" id="ddms"><li class="ddml"><a href="./signup.php" class="ddma">Sign Up</a></li></ul></li>
                 </ul>
+                
               </div>
             </div>
           </nav>
@@ -63,7 +70,7 @@
     </div>
   </div>
 
-<!-- 
+
   <div class="slider" id="slider">
     <div class="container">
       <div id="carouselExample" class="carousel slide p-2"  data-bs-ride="true">
@@ -103,7 +110,7 @@
 
 
     </div>
-  </div> -->
+  </div>
 
 
   <div id="main">
@@ -112,81 +119,42 @@
         <div class=" col-lg-9 col-md-7 left p-0 pe-1">
           <div class="body p-2">
             <nav class="breadcrumb p-2 rounded-2">
-              <a class="breadcrumb-item" href="#">Home</a>
-              <a class="breadcrumb-item" href="#">Sign Up</a>
-              <span class="breadcrumb-item active" aria-current="page">Student</span>
+              <a class="breadcrumb-item" href="#">Main</a>
+              <a class="breadcrumb-item" href="#">Sub</a>
+              <span class="breadcrumb-item active" aria-current="page">Active</span>
             </nav>
-            <div class="sign_up_std m-4">
-              <form class="row g-3">
-                <div class="col-md-6">
-                  <label class="form-label">Name </label>
-                  <label class="form-label msg"> *</label>
-                  <input type="text" class="form-control" name="name">
-                </div>
-
-                <div class="col-md-6">
-                  <label class="form-label">ID </label>
-                  <label class="form-label msg"> *</label>
-                  <input type="text" class="form-control" name="id">
-                </div>
-
-                <div class="col-md-8">
-                  <label class="form-label">Department </label>
-                  <label class="form-label msg" > *</label>
-                  <select class="form-select" name="dept">
-                    <option selected>Choose...</option>
-                    <option>...</option>
-                  </select>
-                </div> <div class="col-md-4 m-0"></div>
-
-                <div class="col-md-4">
-                  <label class="form-label">Username </label>
-                  <label class="form-label msg"> *</label>
-                  <input type="text" class="form-control" name="user">
-                </div><div class="col-md-2"></div>
-
-                <div class="col-md-4 ">
-                  <label class="form-label">Session </label>
-                  <label class="form-label msg" > *</label>
-                  <select class="form-select" name="session">
-                    <option selected>Choose...</option>
-                    <option>...</option>
-                  </select>
-                </div>
-
-                <div class="col-md-4">
-                  <label class="form-label">Mobile</label>
-                  <label class="form-label msg"></label>
-                  <input type="text" class="form-control" name="mobile">
-                </div><div class="col-md-2"></div>
-
-                <div class="col-md-5">
-                  <label class="form-label">Email</label>
-                  <label class="form-label msg"></label>
-                  <input type="email" class="form-control" name="email">
-                </div><div class="col-md-6 m-0"></div>
-
-                <div class="col-md-10">
-                  <label class="form-label"> Address</label>
-                  <label class="form-label msg"></label>
-                  <input type="text" class="form-control" name="user">
-                </div><div class="col-md-2 m-0"></div>
-
-                
-                
-                <div class="col-12">
-                  <div class="form-check">
-                    <input class="form-check-input" type="checkbox" id="gridCheck">
-                    <label class="form-check-label" for="gridCheck">
-                      Check me out
-                    </label>
+            
+            <div class="row row-cols-1 row-cols-lg-3 g-4">
+              <div class="col">
+                <div class="card">
+                  <img src="./img/card_vc.jpg" height="250" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <h6 class="card-title">Message from Vice Chancellor </h6>
+                    <p class="card-text">It gives me immense pleasure to offer a message of goodwill, prosperity and welcome to all those... </p>
+                    <button type="button" class="btn btn-outline-info">Read More</button>
                   </div>
                 </div>
-                <div class="col-12">
-                  <button type="submit" class="btn btn-primary">Sign up</button>
-                  <label class="form-label">Already have an account?  <a class="forma" href="">Log in</a> Now</label>
+              </div>
+              <div class="col">
+                <div class="card">
+                  <img src="./img/card_ch.jpg" height="250" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <h6 class="card-title">Message from Chairman</h6>
+                    <p class="card-text">We, the people of Sylhet hailing from different ages, profession and political beliefs and united under the aegis</p>
+                    <button type="button" class="btn btn-outline-info">Read More</button>
+                  </div>
                 </div>
-              </form>
+              </div>
+              <div class="col">
+                <div class="card">
+                  <img src="./img/card_v.jpg" height="250" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <h6 class="card-title">About NEUB</h6>
+                    <p class="card-text"><b> Introduction: </b>the present world has been passing through inevitable but irreversible process of globalization.  </p>
+                    <button type="button" class="btn btn-outline-info">Read More</button>
+                  </div>
+                </div>
+              </div>
             </div>
 
           </div>
@@ -254,7 +222,18 @@
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
   <script src="./js/bootstrap.min.js"></script>
   <script src="./script.js"></script>
-  
+  <script src="./js/jquery-3.6.3.min.js"></script>
+  <script>
+    $(document).ready(function(){
+      $.ajax({
+        url: "menu_log.php",
+        success: function (response) {
+          $('#nav_menu').append(response);
+        }
+      });
+
+    });
+  </script>
 
 
 </body>
