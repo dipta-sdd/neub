@@ -1,13 +1,14 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>NEUB | Signup</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Crimson+Pro">
   <link rel="stylesheet" href="./css/bootstrap.css">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="./style.css">
 </head>
 <body>
   <header class="header">
@@ -33,7 +34,7 @@
               <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ms-lg-auto mb-2 mb-lg-0 mybg" id="nav_menu">
                   <li class="nav-item "><a class="nav-link rounded-2 myfs" aria-current="page" href="./index.html">HOME</a></li>
-                                
+
                   <li class="nav-item dropdown ddmp">
                     <a class="nav-link dropdown-toggle myfs " href="#" role="button" onclick="dropMBL('#ddm0')">AUTHORITY</a>
                     <ul class=" ddmu" id="ddm0">
@@ -45,10 +46,8 @@
                       <li class="ddml"><a href="" class="ddma">  Complaint Committee </a></li>
                     </ul>
                   </li>
-                     <!-- ____________________________________________________________________________________________________________________________________________________________________________________________________________ -->
                   <li class="nav-item dropdown ddmp">
                     <a class="nav-link dropdown-toggle rounded-2 myfs " id="ddb1" href="#" role="button" onclick="dropMBL('#ddm1')">ACADEMIC</a>
-                    <!-- for pc -->
                     <ul class=" ddmu" id="ddm1">
                       <li class="ddml"><a href="" class="ddma"> School of Business</a></li>
                       <li class="ddml"><a href="" class="ddma"> School of Social Science</a></li>
@@ -56,6 +55,7 @@
                       <li class="ddml"><a href="" class="ddma"> School of Natural Science and Engineering</a></li>
                     </ul>
                   </li>
+                  
                 </ul>
               </div>
             </div>
@@ -65,10 +65,6 @@
   </div>
 
 
-
-
-
-
   <div id="main">
     <div class="container">
       <div class="row">
@@ -76,31 +72,89 @@
           <div class="body p-2">
             <nav class="breadcrumb p-2 rounded-2">
               <a class="breadcrumb-item" href="#">Home</a>
-              <!-- <a class="breadcrumb-item" href="#">Sub</a> -->
-              <span class="breadcrumb-item active" aria-current="page">Sign Up</span>
+              <a class="breadcrumb-item" href="#">Sign Up</a>
+              <span class="breadcrumb-item active" aria-current="page">Student</span>
             </nav>
-            
-            <div class="row ps-3">
-              <div class="col-md-6">
-                <form id="form_login" >
-                  <div class="mb-3">
-                    <label for="exampleInputEmail1" class="form-label">ID or Username</label>
-                    <input name="name" type="text" class="form-control" aria-describedby="emailHelp">
-                    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+            <div class="sign_up_std m-4">
+              <form class="row g-3" id="form_signup">
+                <div class="col-md-6">
+                  <label class="form-label">Name </label>
+                  <label class="form-label msg" id="signup_err_name"> *</label>
+                  <input type="text" class="form-control" name="name" id="signup_name">
+                </div>
+
+                <div class="col-md-6">
+                  <label class="form-label">ID </label>
+                  <label class="form-label msg" id="signup_err_id"> *</label>
+                  <input type="text" class="form-control" name="id" id="signup_id">
+                </div>
+
+
+                <div class="col-md-6">
+                  <label class="form-label">Password </label>
+                  <label class="form-label msg" id="signup_err_pass"> *</label>
+                  <input type="password" class="form-control" name="pass" id="signup_pass">
+                </div>
+
+                <div class="col-md-6">
+                  <label class="form-label">Retype Password </label>
+                  <label class="form-label msg" id="signup_err_pass2"> *</label>
+                  <input type="password" class="form-control" name="pass2" id="signup_pass2">
+                </div>
+
+
+                <div class="col-md-8">
+                  <label class="form-label">Department </label>
+                  <label class="form-label msg" id="signup_err_dept"> *</label>
+                  <select class="form-select" name="dept" id="signup_dept">
+                    <option selected value="0">Choose...</option>
+
+                  </select>
+                </div> <div class="col-md-4 m-0"></div>
+
+                <div class="col-md-4 ">
+                  <label class="form-label">Session </label>
+                  <label class="form-label msg" id="signup_err_session"> *</label>
+                  <select class="form-select" name="session" id="signup_session">
+                    <option selected value="0">Choose</option>
+                    <option value="1">ghghg</option>
+                  </select>
+                </div><div class="col-md-8"></div>
+
+                <div class="col-md-4">
+                  <label class="form-label">Mobile</label>
+                  <label class="form-label msg" id="signup_err_mobile"></label>
+                  <input type="text" class="form-control" name="mobile" id="signup_mobile">
+                </div><div class="col-md-2"></div>
+
+                <div class="col-md-5">
+                  <label class="form-label">Email</label>
+                  <label class="form-label msg" id="signup_err_email"></label>
+                  <input type="email" class="form-control" name="email" id="signup_email">
+                </div><div class="col-md-6 m-0"></div>
+
+                <div class="col-md-10">
+                  <label class="form-label"> Address</label>
+                  <label class="form-label msg" id="signup_err_address"></label>
+                  <input type="text" class="form-control" name="address" id="signup_address">
+                </div><div class="col-md-2 m-0"></div>
+
+                
+                
+                <div class="col-12">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="gridCheck">
+                    <label class="form-check-label" for="gridCheck">
+                      Check me out
+                    </label>
                   </div>
-                  <div class="mb-3">
-                    <label for="exampleInputPassword1" class="form-label">Password</label>
-                    <input name="pass" type="password" class="form-control" >
-                  </div>
-                  <div class="mb-3">
-                    <p class=" text-danger" id="error_login"></p>
-                  </div>
-                  <button type="submit" class="btn btn-primary" id="button_login">Submit</button> 
-                  <label class="form-label ms-2">Don't have an account?  <a class="text-decoration-none" href="./signup.php">Sign up</a> Now</label>
-                </form>
-              </div>
+                </div>
+                <div class="col-12">
+                  <button type="submit" class="btn btn-primary" id="button_signup">Sign up</button>
+                  <label class="form-label ms-2">Already have an account?  <a class="text-decoration-none" href="./login.php">Log in</a> Now</label>
+                </div>
+              </form>
             </div>
-            
 
           </div>
         </div>
@@ -169,6 +223,7 @@
   <script src="./script.js"></script><script src="./js/jquery-3.6.3.min.js"></script>
   <script>
     $(document).ready(function(){
+      // check login status
       $.ajax({
         type: "POST",
         url: "./get_user.php",
@@ -179,40 +234,98 @@
           }
         }
       });
-
-      // set up menu 
+      //seting login or logout button
       $.ajax({
         url: "menu_log.php",
         success: function (response) {
           $('#nav_menu').append(response);
         }
       });
-
-//login button
-      $('#error_login').hide();
-      $('#button_login').click(function( e){
+      // loading dept list
+      $.ajax({
+        url: "dept_list.php",
+        success: function (response) {
+          $("#signup_dept").append(response);
+        }
+      });
+      $('#signup_dept').append("dept_list.php");
+      //on click signup
+      $('#button_signup').click(function (e) { 
         e.preventDefault();
-        $.ajax({
-          type: "POST",
-          url: "./login.php",
-          data: $('#form_login').serialize(),
-          success: function (response) {
-            var data=JSON.parse(response);
+        var err=false;
+        if(!$("#signup_name").val() || $("#signup_name").val()==" "){
+          $("#signup_err_name").text("* Name cannot be empty");
+          err=true;
+        } else{
+          $("#signup_err_name").text("*");
+        }
+
+        if(!$("#signup_id").val() || $("#signup_id").val()==" "){
+          $("#signup_err_id").text("* ID cannot be empty");
+          err=true;
+        } else{
+          $("#signup_err_id").text("*");
+        }
+
+        if(!$("#signup_pass").val() || $("#signup_pass").val()==" "){
+          $("#signup_err_pass").text("* Password cannot be empty");
+          err=true;
+        } else{
+          $("#signup_err_pass").text("*");
+        }
+
+        if( !$("#signup_pass2").val()  ||$( "#signup_pass2").val() != $("#signup_pass").val() ){
+          $("#signup_err_pass2").text("* Password must be same");
+          err=true;
+        } else{
+          $("#signup_err_pass2").text("*");
+        }
+
+        if( $("#signup_dept").val()=="0"){
+          $("#signup_err_dept").text("* Select department");
+          err=true;
+        } else{
+          $("#signup_err_dept").text("*");
+        }
+
+        if($("#signup_session").val()=="0"){
+          $("#signup_err_session").text("* Select session");
+          err=true;
+        } else{
+          $("#signup_err_session").text("*");
+        }
+        if(err== false){
+          $.ajax({
+            type: "POST",
+            url: "./signup.php",
+            data: $('#form_signup').serialize(),
+            success: function (response) {
+              var data=JSON.parse(response);
             if(data.status){
-              location.replace("./index.html");
-            } else{
-              $('#error_login').text("* "+ data.error);
-              $('#error_login').slideDown();
+              alert('done');
             }
-          }
-        });
+            },
+            error: function(response){
+              alert('wrong');
+            }
+          });
+        }
+
+
+        
+      });
+
+      $(selector).keyup(function (e) { 
+        
       });
 
 
-
     });
-  </script>   
+
+
+  </script>
   
+
 
 </body>
 <!-- git add --all && git commit -m "b1" && git push -->

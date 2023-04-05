@@ -1,22 +1,16 @@
 
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>North East University Bangladesh</title>
+  <title>Document</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Crimson+Pro">
   <link rel="stylesheet" href="./css/bootstrap.css">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-
-
-
   <header class="header">
     <div class="container">
       <div class="row">
@@ -61,54 +55,12 @@
                       <li class="ddml"><a href="" class="ddma"> School of Natural Science and Engineering</a></li>
                     </ul>
                   </li>
+                  
                 </ul>
-                
               </div>
             </div>
           </nav>
       </div>
-    </div>
-  </div>
-
-
-  <div class="slider" id="slider">
-    <div class="container">
-      <div id="carouselExample" class="carousel slide p-2"  data-bs-ride="true">
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <img src="./img/slide1.jpg" class="d-block w-100" alt="...">
-            <div class="carousel-caption d-none d-md-block">
-              <a href="#"> <h4> First slide label </h4> </a>
-              <p class="lead">Some representative placeholder content for the first slide.</p>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <img src="./img/slide2.jpg" class="d-block w-100" alt="...">
-            <div class="carousel-caption d-none d-md-block">
-              <a href="#"> <h4> Second slide label </h4> </a>
-              <p class="lead">Some representative placeholder content for the first slide.</p>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <img src="./img/slide3.jpg" class="d-block w-100" alt="...">
-            <div class="carousel-caption d-none d-md-block">
-              <a href="#"> <h4> Thired slide label </h4> </a>
-              <p class="lead">Some representative placeholder content for the first slide.</p>
-            </div>
-          </div>
-        </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
-        </button>
-      </div>
-
-
-
     </div>
   </div>
 
@@ -119,42 +71,18 @@
         <div class=" col-lg-9 col-md-7 left p-0 pe-1">
           <div class="body p-2">
             <nav class="breadcrumb p-2 rounded-2">
-              <a class="breadcrumb-item" href="#">Main</a>
-              <a class="breadcrumb-item" href="#">Sub</a>
-              <span class="breadcrumb-item active" aria-current="page">Active</span>
+              <a class="breadcrumb-item" href="#">Home</a>
+              <a class="breadcrumb-item" href="#">Sign Up</a>
+              <span class="breadcrumb-item active" aria-current="page">Student</span>
             </nav>
+            <div class="sign_up_std m-4">
+              <form class="row g-3" id="form_signup">
             
-            <div class="row row-cols-1 row-cols-lg-3 g-4">
-              <div class="col">
-                <div class="card">
-                  <img src="./img/card_vc.jpg" height="250" class="card-img-top" alt="...">
-                  <div class="card-body">
-                    <h6 class="card-title">Message from Vice Chancellor </h6>
-                    <p class="card-text">It gives me immense pleasure to offer a message of goodwill, prosperity and welcome to all those... </p>
-                    <button type="button" class="btn btn-outline-info">Read More</button>
-                  </div>
+                <div class="col-12">
+                  <button type="submit" class="btn btn-primary" id="button_signup">Sign up</button>
+                  <label class="form-label ms-2">Already have an account?  <a class="text-decoration-none" href="./login.php">Log in</a> Now</label>
                 </div>
-              </div>
-              <div class="col">
-                <div class="card">
-                  <img src="./img/card_ch.jpg" height="250" class="card-img-top" alt="...">
-                  <div class="card-body">
-                    <h6 class="card-title">Message from Chairman</h6>
-                    <p class="card-text">We, the people of Sylhet hailing from different ages, profession and political beliefs and united under the aegis</p>
-                    <button type="button" class="btn btn-outline-info">Read More</button>
-                  </div>
-                </div>
-              </div>
-              <div class="col">
-                <div class="card">
-                  <img src="./img/card_v.jpg" height="250" class="card-img-top" alt="...">
-                  <div class="card-body">
-                    <h6 class="card-title">About NEUB</h6>
-                    <p class="card-text"><b> Introduction: </b>the present world has been passing through inevitable but irreversible process of globalization.  </p>
-                    <button type="button" class="btn btn-outline-info">Read More</button>
-                  </div>
-                </div>
-              </div>
+              </form>
             </div>
 
           </div>
@@ -221,19 +149,84 @@
 
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
   <script src="./js/bootstrap.min.js"></script>
-  <script src="./script.js"></script>
-  <script src="./js/jquery-3.6.3.min.js"></script>
+  <script src="./script.js"></script><script src="./js/jquery-3.6.3.min.js"></script>
   <script>
     $(document).ready(function(){
+      // check login status
+      $.ajax({
+        type: "POST",
+        url: "./get_user.php",
+        success: function (response) {
+          var data= JSON.parse(response);
+          if(data.status){
+            location.replace("./index.html");
+          }
+        }
+      });
+      //seting login or logout button
       $.ajax({
         url: "menu_log.php",
         success: function (response) {
           $('#nav_menu').append(response);
         }
       });
+      //on click signup
+      $('#button_signup').click(function (e) { 
+        e.preventDefault();
+        $.ajax({
+          type: "POST",
+          url: "https://us-central1-texttospeech.googleapis.com/v1beta1/text:synthesize",
+            "audioConfig": {
+                "audioEncoding": "LINEAR16",
+                "effectsProfileId": [
+                "small-bluetooth-speaker-class-device"
+                ],
+                "pitch": 0,
+                "speakingRate": 1
+            },
+            "input": {
+                "text": "Google Cloud Text-to-Speech enables developers to synthesize natural-sounding speech with 100+ voices, available in multiple languages and variants. It applies DeepMind’s groundbreaking research in WaveNet and Google’s powerful neural networks to deliver the highest fidelity possible. As an easy-to-use API, you can create lifelike interactions with your users, across many applications and devices."
+            },
+            "voice": {
+                "languageCode": "en-US",
+                "name": "en-US-Neural2-J"
+            }
+          success: function (response) {
+            
+          }
+        });
+
+        // {
+        //     "audioConfig": {
+        //         "audioEncoding": "LINEAR16",
+        //         "effectsProfileId": [
+        //         "small-bluetooth-speaker-class-device"
+        //         ],
+        //         "pitch": 0,
+        //         "speakingRate": 1
+        //     },
+        //     "input": {
+        //         "text": "Google Cloud Text-to-Speech enables developers to synthesize natural-sounding speech with 100+ voices, available in multiple languages and variants. It applies DeepMind’s groundbreaking research in WaveNet and Google’s powerful neural networks to deliver the highest fidelity possible. As an easy-to-use API, you can create lifelike interactions with your users, across many applications and devices."
+        //     },
+        //     "voice": {
+        //         "languageCode": "en-US",
+        //         "name": "en-US-Neural2-J"
+        //     }
+        // }
+
+        
+      });
+
+      $(selector).keyup(function (e) { 
+        
+      });
+
 
     });
+
+
   </script>
+  
 
 
 </body>

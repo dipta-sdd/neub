@@ -6,25 +6,38 @@
 
 
 
-$name = $pass = "";
+$id = $pass = "";
 $redirect = '<script>  location.replace("./index.php") </script> ';
-
+require 'database.php';
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-  $name = test_input($_POST["name"]);
+  $id = test_input($_POST["name"]);
   $pass = test_input($_POST["pass"]);
-  if($name == "root" ){
-    setcookie("user","root",time()+(86400*300));
+}
+
+$sql="select std_pass from student where std_id='";
+$sql.=$id;
+$sql.="';";
+$result = $conn->query($sql);
+if($result->num_rows>0){
+  $row=$result->fetch_assoc();
+  if($pass==$row['std_pass']){
+    setcookie("user",$id,time()+(86400*300));
     $data=array(
         "status"=>true,
     );
   } else{
     $data= array(
-        "status"=> false,
-        'error' => 'Incorect ID or password'
-    );
+      "status"=> false,
+      'error' => 'Incorect ID or password'
+  );
   }
-  
+} else{
+  $data= array(
+    "status"=> false,
+    'error' => 'Incorect ID or password'
+);
 }
+
 
 function test_input($data) {
   $data = trim($data);
