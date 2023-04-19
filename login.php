@@ -8,7 +8,7 @@
 
 $id = $pass = "";
 $redirect = '<script>  location.replace("./index.php") </script> ';
-require 'database.php';
+require 'database_old.php';
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $id = test_input($_POST["name"]);
   $pass = test_input($_POST["pass"]);

@@ -22,7 +22,9 @@
   </header>
 
 
-  <div class="menu" id="menu"></div>
+  <div class="menu" id="menu">
+    
+  </div>
 
 
 
@@ -41,24 +43,6 @@
             </nav>
             
             <div class="row ps-3">
-              <div class="col-md-6">
-                <form id="form_login" >
-                  <div class="mb-3">
-                    <label for="exampleInputEmail1" class="form-label">ID or Username</label>
-                    <input name="name" type="text" class="form-control" aria-describedby="emailHelp">
-                    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
-                  </div>
-                  <div class="mb-3">
-                    <label for="exampleInputPassword1" class="form-label">Password</label>
-                    <input name="pass" type="password" class="form-control" >
-                  </div>
-                  <div class="mb-3">
-                    <p class=" text-danger" id="error_login"></p>
-                  </div>
-                  <button type="submit" class="btn btn-primary" id="button_login">Submit</button> 
-                  <label class="form-label ms-2">Don't have an account?  <a class="text-decoration-none" href="./signup.php">Sign up</a> Now</label>
-                </form>
-              </div>
             </div>
             
 
@@ -129,17 +113,6 @@
   <script src="./script.js"></script><script src="./js/jquery-3.6.3.min.js"></script>
   <script>
     $(document).ready(function(){
-      $.ajax({
-        type: "POST",
-        url: "./get_user.php",
-        success: function (response) {
-          var data= JSON.parse(response);
-          if(data.status){
-            location.replace("./index.html");
-          }
-        }
-      });
-
       // navbar setup 
       $.ajax({
         url: "menu_log.php",
@@ -147,29 +120,6 @@
           $('#menu').append(response);
         }
       });
-
-//login button
-      $('#error_login').hide();
-      $('#button_login').click(function( e){
-        e.preventDefault();
-        $.ajax({
-          type: "POST",
-          url: "./login.php",
-          data: $('#form_login').serialize(),
-          success: function (response) {
-            var data=JSON.parse(response);
-            if(data.status){
-              location.replace("./index.html");
-            } else{
-              $('#error_login').text("* "+ data.error);
-              $('#error_login').slideDown();
-            }
-          }
-        });
-      });
-
-
-
     });
   </script>   
   

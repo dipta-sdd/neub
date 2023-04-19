@@ -28,3 +28,12 @@ $.ajax({
   }
 });
 
+
+// login or logout check menu load 
+$.ajax({
+  url: "menu_log.php",
+  success: function (response) {
+    $('#menu').append(response);
+  }
+});
+

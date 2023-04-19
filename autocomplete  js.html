@@ -1,0 +1,37 @@
+<!doctype html>  
+<html lang="en">  
+<head>  
+  <meta charset="utf-8">  
+  <title>jQuery UI Autocomplete - Default functionality</title>  
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">  
+  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>  
+  <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>  
+  <!-- <link rel="stylesheet" href="/resources/demos/style.css">   -->
+  <script>  
+    $(document).ready(function() {
+        $("#flower").keyup(function (e) { 
+          $.ajax({
+                type: "POST",
+                url: "search_std_id_auto_complete.php",
+                data:{
+                  id:$("#flower").val()
+                } ,
+                success: function (data) {  
+                  const result=JSON.parse(data);
+                  $("#flower").autocomplete({source: result,});
+                  console.log(result);
+                },
+          });
+        });
+ 
+  });
+  </script>  
+</head>  
+<body>  
+<div class="ui-widget">  
+ <p>Favourite Flower:</p>  
+  <label for="flower">Flower: </label>  
+  <input id="flower" name="id">  
+</div>  
+</body>  
+</html>
