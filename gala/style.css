@@ -1,0 +1,25 @@
+.popup_form_new {
+    /* background: #fff; */
+    display: none;
+    position: fixed;
+    max-width: 80%;
+    top: 10px;
+    padding: 10 px;
+    border: 10 px solid #fff;
+    border-radius: 10 px;
+    z-index: 9;
+  }
+.popup_new{
+    display: block;
+    border-radius: 10 px;
+}
+
+.login_form_div{
+  border-color: #982d2d;
+  border: 5 px;
+}
+/* svg{
+  color: blue;
+  width: 32px;
+  height: 32px;
+} */

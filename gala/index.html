@@ -1,0 +1,67 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>North East University Bangladesh</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Crimson+Pro">
+  <link rel="stylesheet" href="./css/bootstrap.css">
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+<div class="container bg-body">
+  <div class="row">
+    <div class="shadow-lg p-3 bg-body rounded text-center">
+      <h1 class="mb-5">Welcome to STV</h1>
+      <!-- Nav tabs -->
+      <ul class="nav nav-tabs mb-3" id="navId" role="tablist">
+        <li class="nav-item"><a href="./create_gala.html" class="nav-link" >Create Gala</a></li>
+        <li class="nav-item"><a href="./email_2022.html" class="nav-link" >Townstar 2022</a></li>
+        <li class="nav-item"><a href="./email_2023.html" class="nav-link" >Townstar 2023</a></li>
+        <li class="nav-item ms-auto">
+          <a href="./logout.php" class="nav-link" >Logout</a>
+        </li>
+      </ul>
+      <h2 class="shadow-sm p-2 me-2">Home</h2>
+    </div>
+  </div>
+</div>
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+  <script src="./js/bootstrap.min.js"></script>
+  <script src="./script.js"></script>
+  <script src="./js/jquery-3.6.3.min.js"></script>
+  <script>
+    $(document).ready(function(){
+
+      $.ajax({
+          type: "POST",
+          url: "./user.php",
+          success: function (response) {
+            var data= JSON.parse(response);
+            
+            if( data.status){
+                // location.replace("./login.html");
+            } else if(! data.status){
+                 location.replace("./login.html");
+            }
+          },
+        });
+       
+
+    });
+  </script>
+
+
+</body>
+<!-- git add --all && git commit -m "b1" && git push -->
+
+</html>

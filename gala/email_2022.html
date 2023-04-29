@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>North East University Bangladesh</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Crimson+Pro">
+  <link rel="stylesheet" href="./css/bootstrap.css">
+  <link rel="stylesheet" href="./style.css">
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+  <script src="./js/bootstrap.min.js"></script>
+  <script src="./script.js"></script><script src="./js/jquery-3.6.3.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+  <div class="row">
+    <div class="shadow-lg p-3 bg-body rounded text-center">
+      <h1 class="mb-5">Welcome to STV</h1>
+      <!-- Nav tabs -->
+      <ul class="nav nav-tabs mb-3" id="navId" role="tablist">
+        <li class="nav-item"><a href="./create_gala.html" class="nav-link" >Create Gala</a></li>
+        <li class="nav-item"><a href="./email_2022.html" class="nav-link active" >Townstar 2022</a></li>
+        <li class="nav-item"><a href="./email_2023.html" class="nav-link" >Townstar 2023</a></li>
+        <li class="nav-item ms-auto">
+          <a href="./logout.php" class="nav-link" >Logout</a>
+        </li>
+      </ul>
+      <h2 class="shadow-sm p-2 me-2">Play Townstar (2022)</h2>
+
+      <div id="prog"></div>
+      
+
+  
+
+      
+      
+      
+      
+
+
+      <div class="table-responsive-md">
+        <table class="table table-hover text-start table-striped table-bordered border-dark">
+            <thead>
+                <tr>
+                    <th scope="col">Email</th>
+                    <th scope="col" class="text-center">PC</th>
+                    <th scope="col" class="text-center">Player</th>
+                    <th scope="col" class="text-center">Discord</th>
+                    <th scope="col" class="text-center">Task 1</th>
+                    <th scope="col" class="text-center">Task 2</th>
+                    <th scope="col" class="text-center">Task 3</th>
+                </tr>
+            </thead>
+            <tbody id="t_body">
+              <!-- <tr class="">  <td class="email_2022" scope="row">chandudyryf@gmail.com</td><td>adgjtw5160</td><td>ddasdrive</td></tr> -->
+            </tbody>
+        </table>  
+      </div>
+    </div>
+
+
+  </div>
+
+  <div class="popup_form_new popup_new pt-3 text-start container" id="form">
+    <!-- <form id="form_email_2022" class="float-start shadow-lg ms-auto me-auto mb-5 g-1 p-3 bg-body col-md-10 rounded text-start">
+
+      <div class="row ">
+        <div class="col-10"></div>
+        <div class="col-2 text-end">
+          <button type="close" class="btn-close btn " id="btn_close"></button>
+        </div>
+        
+        
+        <div class="col-md-12 text-center">
+          <label class="form-label">Email : chandudyryf@gmail.com </label>
+        </div>
+        
+        <div class="form-floating mb-3 mt-3 col-4">
+          <input type="text" class="form-control" name="eth" value="gfgfdgd" id="eth" disabled>
+          <label for="formId1">Eth Address</label>
+        </div> 
+        
+        <div class="col-md-12 ">
+          <label class="form-label">Refered from  :  </label>
+        </div>
+        
+        <div class="form-check ms-3">
+          <input class="form-check-input" type="checkbox" value="Done" name="discord" id="discord">
+          <label class="form-check-label" >Discord</label>
+        </div>
+        <div class="form-check ms-3">
+          <input class="form-check-input" type="checkbox" value="Done" name="task1" id="task1">
+          <label class="form-check-label" >Task 1</label>
+        </div>
+        <div class="form-check ms-3">
+          <input class="form-check-input" type="checkbox" value="Done" name="task2" id="task2">
+          <label class="form-check-label" >Task 2</label>
+        </div>
+        <div class="form-check ms-3">
+          <input class="form-check-input" type="checkbox" value="Done" name="task3">
+          <label class="form-check-label" >Task 3 </label>
+        </div>
+        <div class="form-floating mb-3 mt-3 col-4">
+          <input type="text" class="form-control" name="gala_coin" id="formId1" value="" >
+          <label for="formId1">Gala Coin</label>
+        </div>
+        <div class="form-floating mb-3 mt-3 col-8">
+          <input type="text" class="form-control" name="nft" id="formId1">
+          <label for="formId1">Other Items</label>
+        </div>
+        <select class="form-select d-none" name="email">
+            <option value="chandudyryf@gmail.com" selected=""> email</option> </select> 
+        
+        <div class="col-md-12 ">
+          <label class="form-label">Played by : </label>
+        </div>
+        <div class="col-12 text-end">
+          <button type="Update" id="btn_email_2022_update" class="btn btn-primary">Update</button>
+        </div>
+      </div>
+    </form> -->
+
+
+    <!-- <div class="toast-container position-fixed bottom-0 end-0 p-3">
+      <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="toast-header">
+          <img src="..." class="rounded me-2" alt="...">
+          <strong class="me-auto">email</strong>
+          <small>player</small>
+          <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+        <div class="toast-body" id="not">
+        </div>
+      </div>
+    </div>
+    <script>
+      const toastTrigger = document.getElementById("liveToastBtn")
+      const toastLiveExample = document.getElementById("liveToast")
+      const toast = new bootstrap.Toast(toastLiveExample)
+      toast.hide()
+    </script> -->
+    <!-- <script>
+    $("#btn_email_2022_update").click(function( e){
+      e.preventDefault();
+      
+      // $("#not").text("hi");
+      $.ajax({
+        type: "POST",
+        url: "./email_2022_data_update.php",
+        data: {
+          "eth": $("#eth").val(),
+          "discord": $("#discord").val(),
+          "task1": $("#task1").val(),
+          "task2": $("#task2").val(),
+          "task3": $("#task3").val(),
+          "gala_coin": $("#gala_coin").val(),
+          "nft": $("#nft").val(),
+          "email": $("#email").val(),
+        },
+        success: function (response) {
+          $("#not").html(response);
+          toast.show();
+        }
+      });
+    });
+    </script> -->
+  </div> 
+
+
+</div>
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+  <script src="./js/bootstrap.min.js"></script>
+  <script src="./script.js"></script>
+  <script src="./js/jquery-3.6.3.min.js"></script>
+  <script>
+    $(document).ready(function(){
+      $.ajax({
+          type: "POST",
+          url: "./user.php",
+          success: function (response) {
+            var data= JSON.parse(response);
+            
+            if( data.status){
+                // location.replace("./login.html");
+            } else if(! data.status){
+                 location.replace("./login.html");
+            }
+          },
+        });
+
+      load_table();
+      const timeID = setInterval(load_table, 1000);
+      function load_table(){
+        console
+        $.ajax({
+          type: "POST",
+          url: "./email_list_2022.php",
+          success: function (response) {
+            $("#t_body").html(response);
+          },
+        });
+        $.ajax({
+          type: "POST",
+          url: "./total_2022.php",
+          success: function (response) {
+            $("#prog").html(response);
+          },
+        });
+      }
+
+
+    });
+  </script>
+
+
+</body>
+<!-- git add --all && git commit -m "b1" && git push -->
+
+</html>
