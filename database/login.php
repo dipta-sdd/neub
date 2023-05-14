@@ -8,19 +8,19 @@
 
 $id = $pass = "";
 $redirect = '<script>  location.replace("./index.php") </script> ';
-require 'database_old.php';
+require 'database.php';
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $id = test_input($_POST["name"]);
   $pass = test_input($_POST["pass"]);
 }
 
-$sql="select std_pass from student where std_id='";
+$sql="select pass from student where std_id='";
 $sql.=$id;
 $sql.="';";
 $result = $conn->query($sql);
 if($result->num_rows>0){
   $row=$result->fetch_assoc();
-  if($pass==$row['std_pass']){
+  if($pass==$row['pass']){
     setcookie("user",$id,time()+(86400*300));
     $data=array(
         "status"=>true,

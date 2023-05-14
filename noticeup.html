@@ -138,7 +138,7 @@
     $(document).ready(function(){
       $.ajax({
         type: "POST",
-        url: "./get_user.php",
+        url: "./database/get_user.php",
         success: function (response) {
           var data= JSON.parse(response);
           if(data.status){
@@ -149,7 +149,7 @@
 
       // navbar setup 
       $.ajax({
-        url: "menu_log.php",
+        url: "./database/menu_log.php",
         success: function (response) {
           $('#menu').append(response);
         }
@@ -161,7 +161,7 @@
         var formData = new FormData(this);
 
         $.ajax({
-            url: 'notice_up.php',
+            url: './database/notice_up.php',
             type: 'POST',
             data: formData,
             success: function (data) {

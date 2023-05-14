@@ -1,5 +1,5 @@
 <?php 
-  $redirect = '<script>  location.replace("./index.html") </script> ';
+  $redirect = '<script>  location.replace("../index.html") </script> ';
   $login="";
   setcookie("user","",time()-(86400*300));
   echo $redirect;
@@ -9,9 +9,6 @@
     //     echo $_COOKIE["user"];
     //     echo "cannot delete";
     // }
-
-
-
 ?>
 
 

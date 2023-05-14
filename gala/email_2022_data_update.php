@@ -14,7 +14,8 @@
         $pc=test_input($_POST['pc']);
     }
 
-    $sql="UPDATE `email` SET `discord`='".$discord."',`task1`='".$task_1."',`pc`='".$pc."',`task2`='".$task_2."',`task3`='".$task_3."',`eth`='".$eth."',`other`='".$other."',`player`='".$user."' ,`gala`='".$gala."' WHERE `email`='".$email."'";
+    $sql="UPDATE `email` SET `discord`='".$discord."',`up_time`=CURRENT_TIMESTAMP ,`task1`='".$task_1."',`pc`='".$pc."',`task2`='".$task_2."',`task3`='".$task_3."',`eth`='".$eth."',`other`='".$other."',`player`='".$user."' ,`gala`='".$gala."' WHERE `email`='".$email."'";
+    echo $sql;
     if($conn->query($sql) === TRUE){
         $data ='<p class="text-primary">Successfuly Updated.</p>';
     } else{

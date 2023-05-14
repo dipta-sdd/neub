@@ -5,7 +5,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = test_input($_POST["username"]);
     $password = test_input($_POST["password"]);
   }
-$sql="INSERT INTO `user`(`username`, `password`) VALUES ('".$username."','".$username."')";
+$sql="INSERT INTO `user`(`username`, `password`) VALUES ('".$username."','".$password."')";
 
 if($conn->query($sql)){
  $data= 'Signup succesful, you can login now.';

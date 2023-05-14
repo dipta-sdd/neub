@@ -1,8 +1,8 @@
 <?php
 require_once 'database.php';
-$sql= "SELECT ((((SELECT count(*) FROM `email3` WHERE discord='true' AND task1='true')*100 + (SELECT count(*) FROM `email3` WHERE discord='true' AND task2='true')*200 +(SELECT count(*) FROM `email3` WHERE discord='true' AND task2='true')*400)*0.04) - 
+$sql= "SELECT ((((SELECT count(*) FROM `email3` WHERE discord='true' AND task1='true')*100 + (SELECT count(*) FROM `email3` WHERE discord='true' AND task2='true')*200 +(SELECT count(*) FROM `email3` WHERE discord='true' AND task3='true')*400)*0.04) - 
 (SELECT count(*)*7 FROM `email3` WHERE discord='true' AND (task1='true' or task2='true' or task3='true'))
-+(((SELECT count(*) FROM `email3` WHERE discord='true' AND task1='true')*100 + (SELECT count(*) FROM `email3` WHERE discord='true' AND task2='true')*200 +(SELECT count(*) FROM `email3` WHERE discord='true' AND task2='true')*400)*0.04)*0.25 ) as total; ";
++(((SELECT count(*) FROM `email3` WHERE discord='true' AND task1='true')*100 + (SELECT count(*) FROM `email3` WHERE discord='true' AND task2='true')*200 +(SELECT count(*) FROM `email3` WHERE discord='true' AND task3='true')*400)*0.04)*0.25 ) as total; ";
 
 $result = $conn->query($sql);
 $row = $result->fetch_assoc();

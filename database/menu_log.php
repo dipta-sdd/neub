@@ -88,7 +88,7 @@ if(!isset($_COOKIE["user"])) {
                 </ul>
               </li>
                 <li class="nav-item ">
-                  <a class="nav-link rounded-2 myfs" aria-current="page" href="./logout.php">Logout</a>
+                  <a class="nav-link rounded-2 myfs" aria-current="page" href="./database/logout.php">Logout</a>
                 </li>
             </ul>
           </div>

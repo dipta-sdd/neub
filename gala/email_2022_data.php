@@ -42,7 +42,7 @@ $data='<form id="form_email_2022" class="float-start shadow-lg ms-auto me-auto m
 $data.='</label>
         </div>
         
-        <div class="form-floating mb-3 mt-3 col-4">
+        <div class="form-floating mb-3 mt-3 col-6">
           <input type="text" class="form-control" id="eth" name="eth"';
         if(strlen($eth)>1){
           $data.= ' value="'.$eth.'" disabled> ';
@@ -65,6 +65,7 @@ $data.=' <label for="formId1">Eth Address </label>
       <option value="PC 4">PC 4</option>
       <option value="PC 5">PC 5</option>
       <option value="PC 6">PC 6</option>
+      <option value="PC 7">PC 7</option>
     </select>
     ';
   } else if($pc === 'PC 2'){
@@ -77,6 +78,7 @@ $data.=' <label for="formId1">Eth Address </label>
       <option value="PC 4">PC 4</option>
       <option value="PC 5">PC 5</option>
       <option value="PC 6">PC 6</option>
+      <option value="PC 7">PC 7</option>
     </select>
     ';
   }else if($pc === 'PC 3'){
@@ -89,6 +91,7 @@ $data.=' <label for="formId1">Eth Address </label>
       <option value="PC 4">PC 4</option>
       <option value="PC 5">PC 5</option>
       <option value="PC 6">PC 6</option>
+      <option value="PC 7">PC 7</option>
     </select>
     ';
   }else if($pc === 'PC 4'){
@@ -101,6 +104,7 @@ $data.=' <label for="formId1">Eth Address </label>
       <option value="PC 4" selected>PC 4</option>
       <option value="PC 5">PC 5</option>
       <option value="PC 6">PC 6</option>
+      <option value="PC 7">PC 7</option>
     </select>
     ';
   }else if($pc === 'PC 5'){
@@ -113,6 +117,7 @@ $data.=' <label for="formId1">Eth Address </label>
       <option value="PC 4">PC 4</option>
       <option value="PC 5" selected>PC 5</option>
       <option value="PC 6">PC 6</option>
+      <option value="PC 7">PC 7</option>
     </select>
     ';
   }else if($pc === 'PC 6'){
@@ -125,6 +130,20 @@ $data.=' <label for="formId1">Eth Address </label>
       <option value="PC 4">PC 4</option>
       <option value="PC 5">PC 5</option>
       <option value="PC 6" selected>PC 6</option>
+      <option value="PC 7">PC 7</option>
+    </select>
+    ';
+  }else if($pc === 'PC 6'){
+    $data.='
+    <select id="pc" class="form-select col-2 m-2" style="width:30%" aria-label="Default select example">
+      <option value="">Select the pc you are playing</option>
+      <option value="PC 1">PC 1</option>
+      <option value="PC 2">PC 2</option>
+      <option value="PC 3">PC 3</option>
+      <option value="PC 4">PC 4</option>
+      <option value="PC 5">PC 5</option>
+      <option value="PC 6" selected>PC 6</option>
+      <option value="PC 7">PC 7</option>
     </select>
     ';
   }else {
@@ -137,6 +156,7 @@ $data.=' <label for="formId1">Eth Address </label>
       <option value="PC 4">PC 4</option>
       <option value="PC 5">PC 5</option>
       <option value="PC 6">PC 6</option>
+      <option value="PC 7">PC 7</option>
     </select>
     ';
   }

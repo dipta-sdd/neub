@@ -30,6 +30,12 @@
 }
 
 /* navbar  */
+/* .navbar-nav .nav-item{
+    border-right: 2px solid #fff;
+} */
+.navbar-nav .nav-item:last-child{
+    border-right: none;
+}
 .ddmp{
     position: relative;
 }
@@ -40,7 +46,7 @@
     width: 200%;
     background-color: #2c3c4c;
     z-index: 2;
-    border-radius: 0px 0px 20px 20px;
+    /* border-radius: 0px 0px 20px 20px; */
 }
 .ddml{
     display: block;
@@ -49,7 +55,7 @@
     color: #fff;
     border-bottom: 1px solid #fff;
 }
-.ddml:last-child{
+.ddml:last-child {
     border-bottom: none;
 }
 .ddma{

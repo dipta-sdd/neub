@@ -119,7 +119,7 @@
     $(document).ready(function(){
       $.ajax({
         type: "POST",
-        url: "./get_user.php",
+        url: "./database/get_user.php",
         success: function (response) {
           var data= JSON.parse(response);
           if(data.status){
@@ -130,7 +130,7 @@
 
       // navbar setup 
       $.ajax({
-        url: "menu_log.php",
+        url: "./database/menu_log.php",
         success: function (response) {
           $('#menu').append(response);
         }

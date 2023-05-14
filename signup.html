@@ -91,7 +91,6 @@
                   <label class="form-label msg" id="signup_err_std_session"> *</label>
                   <select class="form-select" name="session" id="signup_session">
                     <option selected value="0">Choose</option>
-                    <option value="1">ghghg</option>
                   </select>
                 </div><div class="col-md-8"></div>
 
@@ -141,7 +140,7 @@
                 <div class="col-md-6">
                   <label class="form-label">Username </label>
                   <label class="form-label msg" id="signup_err_tch_username"> *</label>
-                  <input type="text" class="form-control" name="id" id="signup_tch_username">
+                  <input type="text" class="form-control" name="username" id="signup_tch_username">
                 </div>
 
 
@@ -265,124 +264,211 @@
   <script src="./js/bootstrap.min.js"></script>
   <script src="./script.js"></script><script src="./js/jquery-3.6.3.min.js"></script>
   <script>
-    $(document).ready(function(){
-      // check login status
+$(document).ready(function(){
+  // check login status
+  $.ajax({
+    type: "POST",
+    url: "./get_user.php",
+    success: function (response) {
+      var data= JSON.parse(response);
+      if(data.status){
+        location.replace("./index.html");
+      }
+    }
+  });
+  // navbar setup 
+  $.ajax({
+    url: "./database/menu_log.php",
+    success: function (response) {
+      $('#menu').append(response);
+    }
+  });
+  // loading dept list
+  $.ajax({
+    url: "./database/dept_list.php",
+    success: function (response) {
+      var data= JSON.parse(response);
+      // console.log(data);
+      data.forEach(dept => {
+        $("#signup_dept").append(`
+          <option value="${dept.dept_id}">${dept.dept_name}</option>
+        `);
+        $("#signup_tch_dept").append(`
+          <option value="${dept.dept_id}">${dept.dept_name}</option>
+        `);
+      });
+    }
+  });
+  //loading session list
+  $.ajax({
+    url: "./database/session.php",
+    success: function (response) {
+      var data= JSON.parse(response);
+      // console.log(data);
+      data.forEach(session => {
+        $("#signup_session").append(`
+          <option value="${session.session_id}">${session.session_n}</option>
+        `);
+      });
+    }
+  });
+  
+  //on click signup
+  $('#button_signup').click(function (e) { 
+    e.preventDefault();
+    var err=false;
+    if(!$("#signup_name").val() || $("#signup_name").val()==" "){
+      $("#signup_err_std_name").text("* Name cannot be empty");
+      err=true;
+    } else{
+      $("#signup_err_std_name").text("*");
+    }
+
+    if(!$("#signup_id").val() || $("#signup_id").val()==" "){
+      $("#signup_err_std_id").text("* ID cannot be empty");
+      err=true;
+    } else{
+      $("#signup_err_std_id").text("*");
+    }
+
+    if(!$("#signup_pass").val() || $("#signup_pass").val()==" "){
+      $("#signup_err_std_pass").text("* Password cannot be empty");
+      err=true;
+    } else{
+      $("#signup_err_std_pass").text("*");
+    }
+
+    if( !$("#signup_pass2").val()  ||$( "#signup_pass2").val() != $("#signup_pass").val() ){
+      $("#signup_err_std_pass2").text("* Password must be same");
+      err=true;
+    } else{
+      $("#signup_err_std_pass2").text("*");
+    }
+
+    if( $("#signup_dept").val()=="0"){
+      $("#signup_err_std_dept").text("* Select department");
+      err=true;
+    } else{
+      $("#signup_err_std_dept").text("*");
+    }
+
+    if($("#signup_session").val()=="0"){
+      $("#signup_err_std_session").text("* Select session");
+      err=true;
+    } else{
+      $("#signup_err_std_session").text("*");
+    }
+    if(err== false){
       $.ajax({
         type: "POST",
-        url: "./get_user.php",
+        url: "./database/signup.php",
+        data: $('#form_signup_std').serialize(),
         success: function (response) {
-          var data= JSON.parse(response);
-          if(data.status){
-            location.replace("./index.html");
-          }
+          var data=JSON.parse(response);
+        if(data.status){
+          alert('done');
+        }
+        },
+        error: function(response){
+          alert('wrong');
         }
       });
-      // navbar setup 
+    }
+
+
+    
+  });
+//onclick sifn up teacher
+  $("#button_tch_signup").click(function (e) { 
+    e.preventDefault();
+    var err=false;
+    if(!$("#signup_tch_name").val() || $("#signup_tch_name").val()==" "){
+      $("#signup_err_tch_name").text("* Name cannot be empty");
+      err=true;
+      } else{
+      $("#signup_err_tch_name").text("*");
+    }
+    if(!$("#signup_tch_username").val() || $("#signup_tch_username").val()==" "){
+      $("#signup_err_tch_username").text("* ID cannot be empty");
+      err=true;
+    } else{
+      $("#signup_err_tch_username").text("*");
+    }
+    if(!$("#signup_tch_pass").val() || $("#signup_tch_pass").val()==" "){
+      $("#signup_err_tch_pass").text("* Password cannot be empty");
+      err=true;
+      } else{
+      $("#signup_err_tch_pass").text("*");
+    }
+    if( !$("#signup_tch_pass2").val()  ||$( "#signup_tch_pass2").val() != $("#signup_tch_pass").val() ){
+      $("#signup_err_tch_pass2").text("* Password must be same");
+      err=true;
+      } else{
+      $("#signup_err_tch_pass2").text("*");
+    }
+    if( $("#signup_tch_dept").val()=="0"){
+      $("#signup_err_tch_dept").text("* Select department");
+      err=true;
+    } else{
+      $("#signup_err_tch_dept").text("*");
+    }
+    if(err==false){
       $.ajax({
-        url: "menu_log.php",
+        type: "POST",
+        url: "./database/signup_tch.php",
+        data: $('#form_signup_tch').serialize(),
         success: function (response) {
-          $('#menu').append(response);
+          var data=JSON.parse(response);
+        if(data.status){
+          alert('done');
+        }
+        },
+        error: function(response){
+          alert('wrong');
         }
       });
-      // loading dept list
-      $.ajax({
-        url: "dept_list.php",
-        success: function (response) {
-          $("#signup_dept").append(response);
-        }
-      });
-      $('#signup_dept').append("dept_list.php");
-      //on click signup
-      $('#button_signup').click(function (e) { 
-        e.preventDefault();
-        var err=false;
-        if(!$("#signup_name").val() || $("#signup_name").val()==" "){
-          $("#signup_err_std_name").text("* Name cannot be empty");
-          err=true;
-        } else{
-          $("#signup_err_std_name").text("*");
-        }
-
-        if(!$("#signup_id").val() || $("#signup_id").val()==" "){
-          $("#signup_err_std_id").text("* ID cannot be empty");
-          err=true;
-        } else{
-          $("#signup_err_std_id").text("*");
-        }
-
-        if(!$("#signup_pass").val() || $("#signup_pass").val()==" "){
-          $("#signup_err_std_pass").text("* Password cannot be empty");
-          err=true;
-        } else{
-          $("#signup_err_std_pass").text("*");
-        }
-
-        if( !$("#signup_pass2").val()  ||$( "#signup_pass2").val() != $("#signup_pass").val() ){
-          $("#signup_err_std_pass2").text("* Password must be same");
-          err=true;
-        } else{
-          $("#signup_err_std_pass2").text("*");
-        }
-
-        if( $("#signup_dept").val()=="0"){
-          $("#signup_err_std_dept").text("* Select department");
-          err=true;
-        } else{
-          $("#signup_err_std_dept").text("*");
-        }
-
-        if($("#signup_session").val()=="0"){
-          $("#signup_err_std_session").text("* Select session");
-          err=true;
-        } else{
-          $("#signup_err_std_session").text("*");
-        }
-        if(err== false){
-          $.ajax({
-            type: "POST",
-            url: "./signup.php",
-            data: $('#form_signup_std').serialize(),
-            success: function (response) {
-              var data=JSON.parse(response);
-            if(data.status){
-              alert('done');
-            }
-            },
-            error: function(response){
-              alert('wrong');
-            }
-          });
-        }
-
-
-        
-      });
-
-      
-      $("#form_signup_std").hide();
-      $("#form_signup_tch").hide();
-      //type change std tchr
-      var speed =1000;
-      $('#cb_std').click(function (e) { 
-        if($(this).is(':checked')){
-          $("#cur_page").text('Student');
-          $("#form_signup_std").slideDown(speed);
-          $("#form_signup_tch").slideUp(speed);
-          $('#cb_tch').prop('checked',false);
-        }
-      });
-      $('#cb_tch').click(function (e) { 
-        if($(this).is(':checked')){
-          $("#cur_page").text('Teacher');
-          $("#form_signup_std").slideUp(speed);
-          $("#form_signup_tch").slideDown(speed);
-          $('#cb_std').prop('checked',false);
-        }
-      });
+    }
 
 
 
-    });
+
+
+
+
+
+
+
+
+
+
+
+    
+  });
+  
+  $("#form_signup_std").hide();
+  $("#form_signup_tch").hide();
+  //type change std tchr
+  var speed =1000;
+  $('#cb_std').click(function (e) { 
+    if($(this).is(':checked')){
+      $("#cur_page").text('Student');
+      $("#form_signup_std").slideDown(speed);
+      $("#form_signup_tch").slideUp(speed);
+      $('#cb_tch').prop('checked',false);
+    }
+  });
+  $('#cb_tch').click(function (e) { 
+    if($(this).is(':checked')){
+      $("#cur_page").text('Teacher');
+      $("#form_signup_std").slideUp(speed);
+      $("#form_signup_tch").slideDown(speed);
+      $('#cb_std').prop('checked',false);
+    }
+  });
+
+
+
+});
 
 
   </script>

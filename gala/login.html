@@ -8,7 +8,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>North East University Bangladesh</title>
+  <title>STB | Login</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Crimson+Pro">
   <link rel="stylesheet" href="./css/bootstrap.css">
   <link rel="stylesheet" href="./style.css">
@@ -18,12 +18,12 @@
 <div class="container">
   <div class="row" >
     <div class="shadow-lg ms-auto me-auto mb-5 g-5 p-5 col-md-8 bg-body rounded text-center">
-        <h1 class="mb-5">Welcome to STV</h1>
+        <h1 class="mb-5">Welcome to STB</h1>
 
         <!-- Nav tabs -->
         <ul class="nav nav-pills nav-fill" id="myTab" role="tablist">
           <li class="nav-item" role="presentation">
-            <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">Home</button>
+            <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">Login</button>
           </li>
           <li class="nav-item" role="presentation">
             <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">Signup</button>
@@ -103,15 +103,17 @@
         e.preventDefault();
         if($('#pass').val() != $('#passc').val()){
           alert('Password does not matched');
+        } else{
+          $.ajax({
+            type: "POST",
+            url: "./signup.php",
+            data: $('#form_signup').serialize(),
+            success: function (response) {
+              alert(response);
+            }
+          });
         }
-        $.ajax({
-          type: "POST",
-          url: "./signup.php",
-          data: $('#form_signup').serialize(),
-          success: function (response) {
-            alert(response);
-          }
-        });
+        
       });
     });
   </script>

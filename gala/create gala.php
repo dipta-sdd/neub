@@ -8,9 +8,12 @@
     $color['PC 5']='#0ff';
     $color['PC 6']='#f0f';
 
-    $sql="select * from email3 ";
+    $sql="SELECT * FROM `email3`
+    where `refered_id` is null
+    ORDER BY `email3`.`up_time` DESC;";
     $result = $conn->query($sql);
     $data ="";
+    $s=1;
     while($row = $result->fetch_assoc()) {
       $email=$row['email'];
       $eth=$row["eth"];
@@ -24,7 +27,7 @@
       $played_by=$row["player"];
       $pc=$row['pc'];
 
-      $data.='<tr class="">  <td class="email_2023" scope="row">'.$email.'</td>';
+      $data.='<tr class=""><td>'.$s.'</td>  <td class="email_2023" scope="row">'.$email.'</td>';
       if(strlen($pc)>1){
         $data.='<td class="text-center text-primary">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-pc-display-horizontal" viewBox="0 0 16 16" style="color:'.$color[$pc].'">
@@ -66,6 +69,7 @@
       } else{ $data.='<td></td>'; }
       
       $data.='</tr>';
+      $s++;
 
     }
 

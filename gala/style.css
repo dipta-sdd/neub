@@ -1,13 +1,21 @@
+.container {
+  max-width: 2000px;
+}
+.bg-body{
+  max-width: 2000px;
+}
 .popup_form_new {
     /* background: #fff; */
     display: none;
     position: fixed;
+    text-align: center;
+    margin: auto;
     max-width: 80%;
     top: 10px;
     padding: 10 px;
     border: 10 px solid #fff;
     border-radius: 10 px;
-    z-index: 9;
+    z-index: 5;
   }
 .popup_new{
     display: block;

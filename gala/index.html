@@ -8,24 +8,27 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>North East University Bangladesh</title>
+  <title>STB | Home</title>
+
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Crimson+Pro">
   <link rel="stylesheet" href="./css/bootstrap.css">
   <link rel="stylesheet" href="./style.css">
+  <style>.container{max-width: 1700px;}</style>
 </head>
 <body>
 
 <div class="container bg-body">
   <div class="row">
     <div class="shadow-lg p-3 bg-body rounded text-center">
-      <h1 class="mb-5">Welcome to STV</h1>
+      <h1 class="mb-5">Welcome to STB</h1>
       <!-- Nav tabs -->
       <ul class="nav nav-tabs mb-3" id="navId" role="tablist">
-        <li class="nav-item"><a href="./create_gala.html" class="nav-link" >Create Gala</a></li>
         <li class="nav-item"><a href="./email_2022.html" class="nav-link" >Townstar 2022</a></li>
         <li class="nav-item"><a href="./email_2023.html" class="nav-link" >Townstar 2023</a></li>
+        <li class="nav-item"><a href="https://discord.com/app" class="nav-link" target="_blank" >Discord</a></li>
+        <li class="nav-item"><a href="https://app.gala.games/" class="nav-link" target="_blank" >Gala</a></li>
         <li class="nav-item ms-auto">
-          <a href="./logout.php" class="nav-link" >Logout</a>
+          <a href="./logout.php" class="nav-link" id="logout">Logout</a>
         </li>
       </ul>
       <h2 class="shadow-sm p-2 me-2">Home</h2>
@@ -49,7 +52,8 @@
             var data= JSON.parse(response);
             
             if( data.status){
-                // location.replace("./login.html");
+              $("#logout").text("Logout ("+data.user+")");
+                location.replace("./email_2022.html");
             } else if(! data.status){
                  location.replace("./login.html");
             }

@@ -1,0 +1,480 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>STB | Townstar 2023</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Crimson+Pro">
+  <link rel="stylesheet" href="./css/bootstrap.css">
+  <link rel="stylesheet" href="./style.css">
+  <style>
+          .container{max-width: 1700px;}
+          .copied{
+            display: block;
+            position: fixed;
+            margin-left: 54%;
+            margin-right: 46%;
+            max-width: 80%;
+            top: 60px;
+            padding: 10 px;
+            border: 10 px solid #fff;
+            border-radius: 10 px;
+            z-index: 9;
+          }
+          
+  </style>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+  <script src="./js/bootstrap.min.js"></script>
+  <script src="./script.js"></script><script src="./js/jquery-3.6.3.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+  <div id="not_body" class="position-fixed float-end toast-container bottom-0 start-0 p-3">
+    <!-- <div id="myToast"  class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+      <div class="toast-header">
+        <strong class="me-auto">player</strong>
+        <small class="text-muted">pc</small>
+        <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+      </div>
+      <div class="toast-body">
+        email
+      </div>
+    </div> -->
+  </div>
+  <div class="row">
+    <div class="shadow-lg p-3 bg-body rounded text-center">
+      <h1 class="mb-5">Welcome to STB</h1>
+      <!-- Nav tabs -->
+      <ul class="nav nav-tabs mb-3" id="navId" role="tablist">
+        <li class="nav-item"><a href="./email_2022.html" class="nav-link" >Townstar 2022</a></li>
+        <li class="nav-item"><a href="./email_2023.html" class="nav-link ">Townstar 2023</a></li>
+        <li class="nav-item"><a href="./create_discord.html" class="nav-link active">Create Discord</a></li>
+        <li class="nav-item"><a href="https://discord.com/app" class="nav-link" target="_blank" >Discord</a></li>
+        <li class="nav-item"><a href="https://app.gala.games/" class="nav-link" target="_blank" >Gala</a></li>
+        <li class="nav-item ms-auto">
+          <a href="./logout.php" class="nav-link" id="logout">Logout</a>
+        </li>
+      </ul>
+      <h2 class="shadow-sm p-2 me-2">Play Townstar (2023)</h2>
+      
+      <div id="time">
+      </div>
+      <div id="prog"></div>
+
+      <div class="alert alert-primary text-start" role="alert">
+        To login eshopbd247.com mail  <a href="https://eshopbd247.com:2096/" target="_blank" >click here</a>.
+      </div>
+      <div class="alert alert-primary text-start" role="alert">
+        To login raisonbd.com mail  <a href="https://raisonbd.com:2096/" target="_blank" >click here</a>.
+      </div>
+      
+     
+
+
+      <div class="table-responsive-md">
+        <h2>Discord</h2>
+        <table class="table table-hover text-start table-striped table-bordered border-dark">
+            <thead>
+                <tr>
+                    <th scope="col">S</th>
+                    <th scope="col">Email</th>
+                    <th scope="col" class="text-center">Discord Created</th>
+                    <th scope="col" class="text-center">Discord Conected</th>
+                    <th scope="col" class="text-center">Player</th>
+                </tr>
+            </thead>
+            <tbody id="t_playable">
+              
+            </tbody>
+        </table>  
+      </div>
+    </div>
+
+
+  </div>
+
+  <div class="popup_form_new pt-3 text-start container" id="form">fsfgdgfsdgsdf</div> 
+  <div class="toast-container position-fixed bottom-0 end-0 p-3">
+    <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+      <div class="toast-header">
+        <strong class="me-auto">dasayon5160@gmail.com</strong>
+        <small></small>
+        <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+      </div>
+      <div class="toast-body" id="not">
+      </div>
+    </div>
+  </div>
+  <div id="email_copied" class="copied p-1 rounded-2">Copied</div>
+  <script>
+    const toastTrigger = document.getElementById("liveToastBtn")
+    const toastLiveExample = document.getElementById("liveToast")
+    const toast = new bootstrap.Toast(toastLiveExample)
+    toast.hide()
+  </script>
+</div>
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+  <script src="./js/bootstrap.min.js"></script>
+  <script src="./script.js"></script>
+  <script src="./js/jquery-3.6.3.min.js"></script>
+  <script>
+$(document).ready(function(){
+  var username;
+        
+  $.ajax({
+      type: "POST",
+      url: "./user.php",
+      success: function (response) {
+        var data= JSON.parse(response);
+        async: false;
+        if( data.status){
+          $("#logout").text("Logout ("+data.user+")");
+          username = data.user;
+        } else if(! data.status){
+              location.replace("./login.html");
+        }
+      },
+    });
+    
+
+  const noti_load = setInterval(load_notification, 200);
+  load_notification();
+
+  function load_notification(){
+    $.ajax({
+      type: "POST",
+      url: "./database/not.php",
+      async: false,
+      success: function (response) {
+        var data= JSON.parse(response);
+        data.forEach(row => {
+          if(username != row.player){
+            var content='<div id="myToast'+row.not_id+'"  class="toast" role="alert" aria-live="assertive" aria-atomic="true"><div class="toast-header"><strong class="me-auto">'+ row.player +'</strong><small class="text-muted">'+ row.pc +'</small><button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button></div><div class="toast-body">'+ row.email +'</div></div>';
+            $("#not_body").append(content);
+            $("#myToast"+row.not_id).toast("show");
+            nid= row.not_id;
+          }
+        });
+        
+      }
+    });
+  }
+
+        
+      
+
+
+
+
+
+
+
+
+  // loading data table
+  load_table();
+  const timeID = setInterval(load_table, 500);
+  function load_table(){
+    const utcStr = new Date().toUTCString();
+    $("#time").text(utcStr);
+    // updating tables 
+    $.ajax({
+      type: "POST",
+      url: "./database/email_2023_discord.php",
+      //async: false,
+      success: function (response) {
+        var mydata= JSON.parse(response);
+        var table;
+        sqlTable(table,mydata,'#t_playing');
+      },
+    });
+    $.ajax({
+      type: "POST",
+      url: "./database/email_2023_discord.php",
+      //async: false,
+      success: function (response) {
+        var mydata= JSON.parse(response);
+        var table;
+        sqlTable(table,mydata,'#t_playable');
+      },
+    });
+    $.ajax({
+      type: "POST",
+      url: "./database/email_2023_played.php",
+      //async: false,
+      success: function (response) {
+        var mydata= JSON.parse(response);
+        var table;
+        sqlTable(table,mydata,'#t_played');
+      },
+    });
+    $.ajax({
+      type: "POST",
+      url: "./total_2023.php",
+      success: function (response) {
+        $("#prog").html(response);
+      },
+    });
+    $.ajax({
+      type: "POST",
+      url: "./database/stat_24h.php",
+      success: function (response) {
+        $("#div_stat_24h").html(response);
+      },
+    });
+    $.ajax({
+      type: "POST",
+      url: "./database/stat_total.php",
+      success: function (response) {
+        $("#div_stat_t").html(response);
+      },
+    });
+  }
+  // row clicke d
+  $(document).on('click', '.email_2023', function(){
+    // alert('hi');
+    var val=  $(this).text();
+    // alert(val);
+    $.ajax({
+      type: "POST",
+      url: "./database/email_2023_data.php",
+      data: {
+        email: val,
+      },
+      success: function (response) {
+        // $("#form").html(response);
+        var myData= JSON.parse(response);
+        myData.forEach(row=>{
+          emailDataForm(row);
+          // $("#email_copied").text('');
+          $("#form").addClass("popup_new");
+        })
+        
+      }
+    });
+  });
+
+  // copy to clicp board
+  $(document).on('click', '#btn_copy_email', function(e){
+    e.preventDefault();
+    // copyToClipboard();
+    // Create a "hidden" input
+    var aux = document.createElement("input");
+    // Assign it the value of the specified element
+    aux.setAttribute("value", document.getElementById("email_copy").innerHTML);
+    // Append it to the body
+    document.body.appendChild(aux);
+    // Highlight its content
+    aux.select();
+    // Copy the highlighted text
+    document.execCommand("copy");
+    // Remove it from the body
+    document.body.removeChild(aux);
+    $("#email_copied").text('Copied');
+
+    $("#email_copied").fadeIn();
+    $("#email_copied").delay(1500).fadeOut();
+
+  });
+
+  //click update
+  $(document).on('click', '#btn_email_2023_update', function(e){
+    e.preventDefault();
+    $.ajax({
+      type: "POST",
+      url: "./email_2023_discord_update.php",
+      data:  {
+        "eth": $("#eth").val(),
+        "discord": $("#discord").is(":checked"),
+        "discord_conn": $("#discord_conn").is(":checked"),
+        "gala_coin": $("#gala_coin").val(),
+        "nft": $("#nft").val(),
+        "email": $("#email").val(),
+      },
+      success: function (response) {
+        $("#not").html(response);
+        console.log(response);
+        
+        toast.show();
+      }
+    });
+  });
+  //click close
+  $(document).on('click', '#btn_email_2023_close', function(e){
+    e.preventDefault();
+    $("#form").empty();
+    $("#email_copied").hide();
+  });
+  
+  // load table from sql
+  function sqlTable(table,mydata,tableId){
+    var id=1;
+    var color={
+        1: '#f00',
+        2: '#0f0',
+        3: '#00f',
+        4: '#ff0',
+        5: '#f0f',
+        6: '#0ff',
+        7: '#19f',
+        8: '#f91'
+      };
+    mydata.forEach(row=>{
+      
+      var content=`<tr>`;
+      content+='<td scope="row">'+ id +'</td>';
+      content+='<td class="email_2023" scope="row" role="button">'+ row.email +'</td>';
+      
+      if(row.discord == 'true'){
+        content+=`<td class="text-center"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-discord" viewBox="0 0 16 16" style="color:#00f">
+        <path d="M13.545 2.907a13.227 13.227 0 0 0-3.257-1.011.05.05 0 0 0-.052.025c-.141.25-.297.577-.406.833a12.19 12.19 0 0 0-3.658 0 8.258 8.258 0 0 0-.412-.833.051.051 0 0 0-.052-.025c-1.125.194-2.22.534-3.257 1.011a.041.041 0 0 0-.021.018C.356 6.024-.213 9.047.066 12.032c.001.014.01.028.021.037a13.276 13.276 0 0 0 3.995 2.02.05.05 0 0 0 .056-.019c.308-.42.582-.863.818-1.329a.05.05 0 0 0-.01-.059.051.051 0 0 0-.018-.011 8.875 8.875 0 0 1-1.248-.595.05.05 0 0 1-.02-.066.051.051 0 0 1 .015-.019c.084-.063.168-.129.248-.195a.05.05 0 0 1 .051-.007c2.619 1.196 5.454 1.196 8.041 0a.052.052 0 0 1 .053.007c.08.066.164.132.248.195a.051.051 0 0 1-.004.085 8.254 8.254 0 0 1-1.249.594.05.05 0 0 0-.03.03.052.052 0 0 0 .003.041c.24.465.515.909.817 1.329a.05.05 0 0 0 .056.019 13.235 13.235 0 0 0 4.001-2.02.049.049 0 0 0 .021-.037c.334-3.451-.559-6.449-2.366-9.106a.034.034 0 0 0-.02-.019Zm-8.198 7.307c-.789 0-1.438-.724-1.438-1.612 0-.889.637-1.613 1.438-1.613.807 0 1.45.73 1.438 1.613 0 .888-.637 1.612-1.438 1.612Zm5.316 0c-.788 0-1.438-.724-1.438-1.612 0-.889.637-1.613 1.438-1.613.807 0 1.451.73 1.438 1.613 0 .888-.631 1.612-1.438 1.612Z"/>
+        </svg></td>`;
+      }else{
+        content+=`<td class="text-center"></td>`;
+      }
+      if(row.dis_pl == null || row.dis_pl==''){
+        content+=`<td class="text-center"></td><td class="text-center"></td>`;
+      }else{
+        content+=`<td class="text-center"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-discord" viewBox="0 0 16 16" style="color:#00f">
+        <path d="M13.545 2.907a13.227 13.227 0 0 0-3.257-1.011.05.05 0 0 0-.052.025c-.141.25-.297.577-.406.833a12.19 12.19 0 0 0-3.658 0 8.258 8.258 0 0 0-.412-.833.051.051 0 0 0-.052-.025c-1.125.194-2.22.534-3.257 1.011a.041.041 0 0 0-.021.018C.356 6.024-.213 9.047.066 12.032c.001.014.01.028.021.037a13.276 13.276 0 0 0 3.995 2.02.05.05 0 0 0 .056-.019c.308-.42.582-.863.818-1.329a.05.05 0 0 0-.01-.059.051.051 0 0 0-.018-.011 8.875 8.875 0 0 1-1.248-.595.05.05 0 0 1-.02-.066.051.051 0 0 1 .015-.019c.084-.063.168-.129.248-.195a.05.05 0 0 1 .051-.007c2.619 1.196 5.454 1.196 8.041 0a.052.052 0 0 1 .053.007c.08.066.164.132.248.195a.051.051 0 0 1-.004.085 8.254 8.254 0 0 1-1.249.594.05.05 0 0 0-.03.03.052.052 0 0 0 .003.041c.24.465.515.909.817 1.329a.05.05 0 0 0 .056.019 13.235 13.235 0 0 0 4.001-2.02.049.049 0 0 0 .021-.037c.334-3.451-.559-6.449-2.366-9.106a.034.034 0 0 0-.02-.019Zm-8.198 7.307c-.789 0-1.438-.724-1.438-1.612 0-.889.637-1.613 1.438-1.613.807 0 1.45.73 1.438 1.613 0 .888-.637 1.612-1.438 1.612Zm5.316 0c-.788 0-1.438-.724-1.438-1.612 0-.889.637-1.613 1.438-1.613.807 0 1.451.73 1.438 1.613 0 .888-.631 1.612-1.438 1.612Z"/>
+        </svg></td><td class="text-center">${row.dis_pl}</td>`;
+      }
+        table+=content
+        id++;
+    });
+    $(tableId).html(table);
+  }
+
+  function trueToCheck(state){
+    if(state == 'true'){
+      return 'checked disabled';
+    } else{
+      return '';
+    }
+  }
+  // load an email data to update 
+  function emailDataForm(row){
+    var pc1={1: 'selected',2: '',3: '',4: '',5: '',6: '',7: '',8: ''};
+    var pc2={1: '',2: 'selected',3: '',4: '',5: '',6: '',7: '',8: ''};
+    var pc3={1: '',2: '',3: 'selected',4: '',5: '',6: '',7: '',8: ''};
+    var pc4={1: '',2: '',3: '',4: 'selected',5: '',6: '',7: '',8: ''};
+    var pc5={1: '',2: '',3: '',4: '',5: 'selected',6: '',7: '',8: ''};
+    var pc6={1: '',2: '',3: '',4: '',5: '',6: 'selected',7: '',8: ''};
+    var pc7={1: '',2: '',3: '',4: '',5: '',6: '',7: 'selected',8: ''};
+    var pc8={1: '',2: '',3: '',4: '',5: '',6: '',7: '',8: 'selected'};
+    var form=`<form id="form_email_2023" class=" shadow-lg ms-auto me-auto mb-5 g-1 p-3 bg-body col-md-10 rounded text-start">
+
+    <div class="row">
+    <div class="col-10"></div>
+    <div class="col-2 text-end">
+      <button type="close" class="btn-close btn " id="btn_email_2023_close"></button>
+    </div>
+    
+    
+    <div class="col-md-12 text-center"> Email : 
+      <label id="email_copy" class="form-label">${row.email}</label>
+    <button class="btn" id="btn_copy_email" onclick="copyToClipboard()">
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-paperclip" viewBox="0 0 16 16">
+      <path d="M4.5 3a2.5 2.5 0 0 1 5 0v9a1.5 1.5 0 0 1-3 0V5a.5.5 0 0 1 1 0v7a.5.5 0 0 0 1 0V3a1.5 1.5 0 1 0-3 0v9a2.5 2.5 0 0 0 5 0V5a.5.5 0 0 1 1 0v7a3.5 3.5 0 1 1-7 0V3z"></path>
+    </svg>
+    </button> 
+
+    
+    </div>
+    <div class="col-12">
+    <label class="form-label">
+    Meta Rec Phrase : ${row.rec_phrase_meta}
+      </label></div>
+    
+    
+    <div class="form-floating mb-3 mt-3 col-6">
+      <input type="text" class="form-control" id="eth" name="eth" `;
+      if(row.eth == null || row.eth=='' || row.eth == 'null'){
+        form+=` value=""`;
+      }else{
+        form+=` value="${row.eth}" disabled=""`;
+      }
+      form+=`>  <label for="formId1">Eth Address </label>
+    </div> 
+    
+    <div class="col-md-12 ">
+      <label class="form-label">Refered from  :${row.refered_id}</label>
+    </div>`;
+    form+=`<div class="form-check ms-3">
+      <input class="form-check-input" type="checkbox" value="Done" id="discord" name="discord" ${trueToCheck(row.discord)} >
+      <label class="form-check-label">Discord ( Registration )</label>
+    </div>`;
+    if(row.dis_pl == null || row.dis_pl==''){
+      form+=`<div class="form-check ms-3">
+      <input class="form-check-input" type="checkbox" value="Done" id="discord_conn" name="discord" >
+      <label class="form-check-label">Discord ( Connection )</label>
+      </div>`;
+    }else{
+      form+=`<div class="form-check ms-3">
+      <input class="form-check-input" type="checkbox" value="Done" id="discord_conn" name="discord" checked disabled>
+      <label class="form-check-label">Discord ( Connection )</label>
+      </div>`;
+    }
+
+    form+=`<div class="form-floating mb-3 mt-3 col-4">
+      <input type="text" class="form-control" name="gala_coin" id="gala_coin" `;
+      if(row.gala == null || row.gala=='' || row.gala == 'null'){
+        form+=` value=""`;
+      }else{
+        form+=` value="${row.gala}"`;
+      }
+      form+=`>
+      <label for="formId1">Gala Coin</label>
+    </div>
+    <div class="form-floating mb-3 mt-3 col-8">
+      <input type="text" class="form-control" name="nft" id="nft"  `;
+      if(row.other == null || row.other=='' || row.other == 'null'){
+        form+=` value=""`;
+      }else{
+        form+=` value="${row.other}"`;
+      }
+      form+=`>
+      <label for="formId1">Other Items</label>
+    </div>
+    <select class="form-select d-none" name="email">
+        <option value="${row.email}" selected="" id="email"> email</option> </select> 
+    
+    <div class="col-md-12 ">
+      <label class="form-label">Discord Connected by :`;
+    if(row.dis_pl == null || row.dis_pl==''){
+      form+='';
+    }else{
+      form+=row.dis_pl;
+    }
+    form+=`</label>
+    </div>
+    <div class="col-12 text-end">
+      <button type="Update" id="btn_email_2023_update" class="btn btn-primary">Update</button>
+    </div>
+    </div>
+    </form>`  ;
+    $("#form").html(form);
+  }
+  $("#email_copied").hide();
+  
+
+});
+
+
+
+
+</script>
+
+
+</body>
+<!-- git add --all && git commit -m "b1" && git push -->
+
+</html>
