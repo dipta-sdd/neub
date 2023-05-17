@@ -68,12 +68,46 @@
           <div class="body p-2  shadow-lg">
             <nav class="breadcrumb p-2 rounded-2">
               <a class="breadcrumb-item" href="#">Home</a>
-              <a class="breadcrumb-item" href="#">Student</a>
-              <span class="breadcrumb-item active" aria-current="page" id="cur_page">Result</span>
+              <a class="breadcrumb-item" href="#">Teacher</a>
+              <span class="breadcrumb-item active" aria-current="page" id="cur_page">Course Registration</span>
             </nav>
             <div class="sign_up_std m-3">
               <div class="row">
+                <!-- your body  -->
+                <div class="col-md-2">
+                  <label for="session" class="form-label">Semester</label>
+                  <select id="session" class="form-select">
+                  </select>
+                </div>
+                <div class="col-md-2">
+                  <label for="semester" class="form-label">Semester</label>
+                  <select id="semester" class="form-select">
+                    <option selected>Choose..</option>
+                    <option>1 st</option>
+                    <option>2 nd</option>
+                    <option>3 rd</option>
+                    <option>4 th</option>
+                    <option>5 th</option>
+                    <option>6 th</option>
+                    <option>7 th</option>
+                    <option>8 th</option>
+                    <option>9 th</option>
+                    <option>10 th</option>
+                    <option>11 th</option>
+                    <option>12 th</option>
+                  </select>
+                </div>
+                <div class="input-group mb-3 mt-3">
+                  <input type="text" id="course_code_search" class="form-control" placeholder="Course Code" aria-label="Course Code" aria-describedby="btn_add">
+                  
+                  <button class="btn btn-outline-secondary" type="button" id="btn_add">Add</button>
+                  
+                </div>
                 
+                  
+                
+                
+
               </div>
               
 
@@ -135,7 +169,73 @@
   <!-- <script src="./script.js"></script> -->
   <script src="./js/jquery-3.6.3.min.js"></script>
   <script type="text/javascript" src="./script.js"></script>
-
+  <script>
+    $(document).ready(function(){
+      loadNav();
+      //drop down menu on mbl device
+      function dropMBL(id){
+        alert('hi');
+        $(id).toggleClass("ddm_show");
+      }
+    
+     // page personal script
+      $.ajax({url: "./database/current_session.php",success: function (response) {
+          var session= JSON.parse(response)
+          $('#session').html('<option selected>'+session.session_n+'</option>');
+        }
+      });
+    //suggesstion-box
+     $(course_code_search).keyup(function (e) { 
+      $.ajax({
+        // type: "method",
+        url: "./database/search_std_id_auto_complete.php",
+        // data: "data",
+        success: function (response) {
+          data= JSON.parse(response);
+          console.log(data);
+          console.log(availableTags);
+          // alert('hi');
+          $( "#course_code_search" ).autocomplete({
+            source: availableTags
+          });
+        }
+      });
+     });
+    
+    // $( function() {
+        var availableTags = [
+          "ActionScript",
+          "AppleScript",
+          "Asp",
+          "BASIC",
+          "C",
+          "C++",
+          "Clojure",
+          "COBOL",
+          "ColdFusion",
+          "Erlang",
+          "Fortran",
+          "Groovy",
+          "Haskell",
+          "Java",
+          "JavaScript",
+          "Lisp",
+          "Perl",
+          "PHP",
+          "Python",
+          "Ruby",
+          "Scala",
+          "Scheme"
+        ];
+    //     $( "#course_code_search" ).autocomplete({
+    //       source: availableTags
+    //     });
+    //   } );
+    
+    
+    });
+    </script>
+    
 
 
 </body>

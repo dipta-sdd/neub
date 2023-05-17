@@ -16,29 +16,67 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 $sql="select pass from student where std_id='";
 $sql.=$id;
-$sql.="';";
+$sql.="'";
 $result = $conn->query($sql);
 if($result->num_rows>0){
   $row=$result->fetch_assoc();
   if($pass==$row['pass']){
-    setcookie("user",$id,time()+(86400*300));
+    
     $data=array(
         "status"=>true,
+        "username"=> $id,
+        "type" => 'student'
     );
   } else{
     $data= array(
       "status"=> false,
       'error' => 'Incorect ID or password'
-  );
+    );
   }
 } else{
+
   $data= array(
     "status"=> false,
     'error' => 'Incorect ID or password'
-);
+  );
 }
 
 
+
+if($data['status'] === false){
+  $sql="SELECT `pass` FROM `teacher` WHERE `username`='".$id."'";
+  $result = $conn->query($sql);
+  if($result->num_rows>0){
+    $row=$result->fetch_assoc();
+    if($pass==$row['pass']){
+      
+      $data=array(
+          "status"=>true,
+          "username"=> $id,
+          "type" => 'teacher'
+      );
+    } else{
+      $data= array(
+        "status"=> false,
+        'error' => 'Incorect ID or password'
+      );
+    }
+  } else{
+  
+    $data= array(
+      "status"=> false,
+      'error' => 'Incorect ID or password'
+    );
+  }
+}
+
+if($data['status']=== true){
+  setcookie("user",$id,time()+(86400*300));
+  setcookie("user_type",$data['type'],time()+(86400*300));
+
+}
+
+// echo $sql;
 function test_input($data) {
   $data = trim($data);
   $data = stripslashes($data);

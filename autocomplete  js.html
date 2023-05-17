@@ -11,14 +11,17 @@
     $(document).ready(function() {
         $("#flower").keyup(function (e) { 
           $.ajax({
-                type: "POST",
-                url: "search_std_id_auto_complete.php",
-                data:{
-                  id:$("#flower").val()
-                } ,
+                // type: "POST",
+                url: "./database/search_std_id_auto_complete.php",
+                // data:{
+                //   id:$("#flower").val()
+                // } ,
                 success: function (data) {  
                   const result=JSON.parse(data);
-                  $("#flower").autocomplete({source: result,});
+                  var x=[
+                    211122,254545,44444
+                  ];
+                  $("#flower").autocomplete(x);
                   console.log(result);
                 },
           });

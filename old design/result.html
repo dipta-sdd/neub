@@ -1,0 +1,284 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>North East University Bangladesh</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Crimson+Pro">
+  <link rel="stylesheet" href="./css/bootstrap.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+
+
+  <header class="header">
+    <div class="container">
+      <div class="row">
+        <!-- <div class="col-lg-3 col-md-4"> -->
+          <a class="p-2" href="#"><img class="p-2" src="./img/logo.png" alt="varsity logo" id="logo"></a>
+        <!-- </div> -->
+      </div>
+
+    </div>
+  </header>
+
+
+  <div class="menu" id="menu">
+    <div class="container">
+      <div class="row">
+          <nav class="navbar navbar-expand-md mybg p-0" id="nav">
+            <div class="m-auto">
+              <button class="navbar-toggler " type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-lg-auto mb-2 mb-lg-0 mybg" id="nav_menu">
+                  <li class="nav-item "><a class="nav-link rounded-2 myfs" aria-current="page" href="./index.html">HOME</a>
+                  </li>               
+                  <li class="nav-item dropdown ddmp">
+                    <a class="nav-link dropdown-toggle myfs " href="#" role="button" onclick="dropMBL('#ddm0')">AUTHORITY</a>
+                    <ul class=" ddmu" id="ddm0">
+                      <li class="ddml"><a href="" class="ddma"> Board of Trustees  </a></li>
+                      <li class="ddml"><a href="" class="ddma"> Board of Advisors  </a></li>
+                      <li class="ddml"><a href="" class="ddma"> Syndicate  </a></li>
+                      <li class="ddml"><a href="" class="ddma">  Academic Council </a></li>
+                      <li class="ddml"><a href="" class="ddma"> Proctorial body  </a></li>
+                      <li class="ddml"><a href="" class="ddma">  Complaint Committee </a></li>
+                    </ul>
+                  </li>
+                  <li class="nav-item dropdown ddmp">
+                    <a class="nav-link dropdown-toggle rounded-2 myfs " id="ddb1" href="#" role="button" onclick="dropMBL('ddm1')">ACADEMIC</a>
+        
+                    <ul class=" ddmu" id="ddm1">
+                      <li class="ddml"><a href="" class="ddma"> School of Business</a></li>
+                      <li class="ddml"><a href="" class="ddma"> School of Social Science</a></li>
+                      <li class="ddml"><a href="" class="ddma"> School of Law and Justice</a></li>
+                      <li class="ddml"><a href="" class="ddma"> School of Natural Science and Engineering</a></li>
+                    </ul>
+                  </li>
+                  <li class="nav-item dropdown ddmp" id="nav_li_tp">
+                    <a class="nav-link dropdown-toggle rounded-2 myfs " id="ddb_tp" href="#" role="button" onclick="dropMBL('ddmtp')">Teacher's Portal</a>
+                    <ul class=" ddmu" id="ddmtp">
+                      <li class="ddml"><a href="./course_offer.html" class="ddma"> Course Offer</a></li>
+                      <li class="ddml"><a href="./course_reg.html" class="ddma"> Course Registration</a></li>
+                      <li class="ddml"><a href="./result_publish.html" class="ddma"> Result Publish</a></li>
+                    </ul>
+                  </li>
+                  <li class="nav-item dropdown ddmp" id="nav_li_login">
+                    <a class="nav-link rounded-2 myfs" aria-current="page" href="./login.html" onclick="dropMBL('#ddm1')" id="nav_login">Login</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+      </div>
+    </div>
+    
+  </div>
+
+
+
+
+
+  <div id="main">
+    <div class="container">
+      <div class="row">
+        <div class=" col-lg-9 col-md-7 left p-0 pe-1">
+          <div class="body p-2">
+            <nav class="breadcrumb p-2 rounded-2">
+              <a class="breadcrumb-item" href="#">Home</a>
+              <a class="breadcrumb-item" href="#">Student</a>
+              <span class="breadcrumb-item active" aria-current="page" id="cur_page">Result</span>
+            </nav>
+            <div class="sign_up_std m-3">
+              <div class="row">
+                <div class="col-6">
+                  <div class="input-group mb-3">
+                    <input type="text" class="form-control" placeholder="Student's ID" aria-label="Student's ID" aria-describedby="button-addon2" id="std_search_fld">
+                    <button class="btn btn-outline-secondary" type="button" id="std_search_button">Search</button>
+                  </div>
+                </div>
+                <div class="col-6"></div>
+                
+                <div class="table-responsive">
+                    <table class="table table-hover table-striped  border-dark">
+                      <thead>
+                        <tr>
+                          <th scope="col">ID</th>
+                          <th scope="col">Name</th>
+                          <th scope="col">Dept</th>
+                          <th scope="col">CGPA</th>
+                          <th scope="col">Session</th>
+                        </tr>
+                      </thead>
+                      <tbody id="tbody_std">
+                        <tr class="tbl_std" role="button" std_id="170103020037" onclick="std_result_load()">
+                          <td scope="row">170103020037</td>
+                          <td>Redwan Hossain</td>
+                          <td>Computer Science &amp; Engineering</td>
+                          <td>0.00</td>
+                          <td>Spring-2017</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                </div>
+              </div>
+              
+
+            </div>
+
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-5 right p-0">
+          <div class="notice p-2">
+            <nav class="breadcrumb p-2 rounded-2">
+              <span class="breadcrumb-item active" aria-current="page">Notice</span>
+            </nav>
+            <ul class="nu">
+              <li class="nl"><a class="na" href="">Lorem ipsum dolor sit amet, consectetur </a>
+              <p class="nd">10/02/2023</p></li>
+              <li class="nl"><a class="na" href="">Lorem ipsum dolor sit amet, consectidsj</a>
+              <p class="nd">09/02/2023</p></li>
+            </ul>
+            
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="footer ">
+    <div class="container">
+      <div class="row  p-2 ">
+        <div class="col-lg-4 left">
+          <h5>Contact Us</h5>
+            <p> <b>Address :</b> Telihaor, Sheikhghat, Sylhet-3100 <br>
+              <b> Tel :  </b> +880 02996631220 <br>
+              <b>Enail :</b> info@neub.edu.bd <br>
+              <b>Mobile :</b> 01755566994 <br>
+              <b>Web :</b> www.neub.edu.bd <br>
+            </p>
+        </div>
+        <div class="col-lg-3 right">
+          <h5>Useful Links</h5>
+          <ul>
+            <li><a href="">University Grants Commission</a></li>
+            <li><a href="">Ministry of Education</a></li>
+            <li><a href="">Sylhet City Corporation </a></li>
+            <li><a href="">HEQEP </a></li>
+            <li><a href="">Disclaimer </a></li>
+            <li><a href="">Sitemap </a></li>
+          </ul>
+        </div>
+        <div class="col-lg-5 m-auto rounded-2 map">
+          <h5>Find Us on Map</h5>
+          <iframe class="rounded-2" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3619.2311622569273!2d91.85876681548714!3d24.89009548403999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3751aacd70cd7665%3A0xc8ae330ad72490dd!2sNorth%20East%20University%20Bangladesh!5e0!3m2!1sen!2sbd!4v1676895247502!5m2!1sen!2sbd" width="600" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="copy">
+    <div class="container">
+      <h6 class="text-light text-center pt-1">Copyright © 2023 North East University Bangladesh.</h6>
+    </div>
+  </div>
+
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+  <script src="./js/bootstrap.min.js"></script>
+  <!-- <script src="./script.js"></script> -->
+  <script src="./js/jquery-3.6.3.min.js"></script>
+  <script type="text/javascript" src="./script.js"></script>
+<script>
+$(document).ready(function(){
+  // navbar setup 
+  $('#nav_li_tp').hide();
+  $.ajax({
+    url: "./database/get_user.php",
+    success: function (response) {
+      var user=JSON.parse(response);
+      if(user.status){
+        $("#nav_login").text("Logout");
+        $("#nav_login").attr('href', './database/logout.php');
+        if(user.type == 'teacher'){
+          // alert('hi');
+          $('#nav_li_tp').show();
+        }
+      }else{
+        $("#nav_login").append(`
+          <ul class=" ddmu" id="ddms">
+            <li class="ddml"><a href="./signup.html" class="ddma">Sign Up</a></li>
+          </ul>
+        `);
+      }
+    }
+  });
+  //drop down menu on mbl device
+ 
+  function dropMBL(id){
+    alert('hi');
+    $(id).toggleClass("ddm_show");
+  }
+
+ // page personal script
+  loadTable('');
+
+ 
+  // on search 
+  $('#std_search_fld').on('keyup', function (e) {
+    var std_id= $('#std_search_fld').val();
+    loadTable(std_id);
+  });
+
+  // on click any row 
+  $(document.body).on('click', '.tbl_std' ,function(e){
+    e.preventDefault();
+    var std_id= $(this).attr('std_id');
+  });
+
+  //table data
+  function loadTable(std_id){
+    // console.log(std_id);
+    $.ajax({
+      type: "POST",
+      url: "./database/std_list.php",
+      data: {
+        id : std_id
+      },
+      success: function (response) {
+        var data= JSON.parse(response);
+        $('#tbody_std').empty();
+        data.forEach(std=> {
+          $('#tbody_std').append(`
+            <tr class="tbl_std" role="button" std_id="${std.std_id}">
+              <td scope="row" >${std.std_id}</td>
+              <td>${std.std_name}</td>
+              <td>${std.dept_name}</td>
+              <td>0.00</td>
+              <td>${std.session_n}</td>
+            </tr>
+        `);
+        });
+      }
+    });
+  }
+
+});
+</script>
+
+
+</body>
+<!-- git add --all && git commit -m "b1" && git push -->
+
+</html>

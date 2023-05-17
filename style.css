@@ -1,9 +1,13 @@
-
+body{
+    max-width: 2000px;
+    background-color: #eeeeee;
+}
 .header{
-    background-color: rgba(223, 228, 234,0.8);
+    background-color:#ffffff;
 }
 .container{
     max-width: 1600px;
+    background-color:  #eeeeee;
 }
 #logo{
     width: 500px;
@@ -319,3 +323,30 @@
 } */
 
 
+/* suggesstion_div */
+.suggesstion_div{
+    position: relative;
+}
+.suggesstion_ul{
+    display: inline-block;
+    position: absolute;
+    left: 15px;
+    top: 100%;
+    width: 80%;
+    background-color: #fff;
+    z-index: 9;
+    list-style: none;
+}
+.suggesstion_li{
+    display: block;
+    text-decoration: none;
+    color: #000;
+    padding:10px 10px;
+    font-weight: 400;
+    font-size: 1.05rem;
+    cursor: pointer;
+}
+.suggesstion_li:hover{
+    background-color: #ddd;
+
+}

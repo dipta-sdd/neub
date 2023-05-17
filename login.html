@@ -1,38 +1,68 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>NEUB | Log In</title>
+  <title>North East University Bangladesh</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Crimson+Pro">
   <link rel="stylesheet" href="./css/bootstrap.css">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header class="header">
+
+
+
+
+  <!-- <div class="menu" id="menu"> -->
+  <div>
     <div class="container">
-      <div class="row">
+      <div class="row ">
         <!-- <div class="col-lg-3 col-md-4"> -->
-          <a class="p-2" href="#"><img class="p-2" src="./img/logo.png" alt="varsity logo" id="logo"></a>
+          <a class="p-2 header" href="#"><img class="p-2" src="./img/logo.png" alt="varsity logo" id="logo"></a>
         <!-- </div> -->
       </div>
-
-    </div>
-  </header>
-
-
-  <div class="menu" id="menu"></div>
-
-
-
-
-
-
-  <div id="main">
-    <div class="container">
-      <div class="row">
-        <div class=" col-lg-9 col-md-7 left p-0 pe-1">
+      <div class="row pb-2">
+          <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="#">Navbar</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Link</a>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Dropdown
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      <li><a class="dropdown-item" href="#">Action</a></li>
+                      <li><a class="dropdown-item" href="#">Another action</a></li>
+                      <li><hr class="dropdown-divider"></li>
+                      <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    </ul>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                  </li>
+                </ul>
+                <form class="d-flex">
+                  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                  <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+              </div>
+            </div>
+          </nav>
+      </div>
+      <div class="row pb-2">
+        <div class=" col-lg-9 col-md-7 left p-0 pe-2">
           <div class="body p-2">
             <nav class="breadcrumb p-2 rounded-2">
               <a class="breadcrumb-item" href="#">Home</a>
@@ -56,7 +86,7 @@
                     <p class=" text-danger" id="error_login"></p>
                   </div>
                   <button type="submit" class="btn btn-primary" id="button_login">Submit</button> 
-                  <label class="form-label ms-2">Don't have an account?  <a class="text-decoration-none" href="./signup.php">Sign up</a> Now</label>
+                  <label class="form-label ms-2">Don't have an account?  <a class="text-decoration-none" href="./signup.html">Sign up</a> Now</label>
                 </form>
               </div>
             </div>
@@ -80,13 +110,7 @@
           </div>
         </div>
       </div>
-    </div>
-  </div>
-
-
-  <div class="footer ">
-    <div class="container">
-      <div class="row  p-2 ">
+      <div class="row pb-2 footer">
         <div class="col-lg-4 left">
           <h5>Contact Us</h5>
             <p> <b>Address :</b> Telihaor, Sheikhghat, Sylhet-3100 <br>
@@ -112,21 +136,17 @@
           <iframe class="rounded-2" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3619.2311622569273!2d91.85876681548714!3d24.89009548403999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3751aacd70cd7665%3A0xc8ae330ad72490dd!2sNorth%20East%20University%20Bangladesh!5e0!3m2!1sen!2sbd!4v1676895247502!5m2!1sen!2sbd" width="600" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
       </div>
+      <div class=" row copy">
+        <h6 class="text-light text-center pt-1">Copyright © 2023 North East University Bangladesh.</h6>
+      </div>
     </div>
   </div>
-
-  <div class="copy">
-    <div class="container">
-      <h6 class="text-light text-center pt-1">Copyright © 2023 North East University Bangladesh.</h6>
-    </div>
-  </div>
-
-
-
 
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
   <script src="./js/bootstrap.min.js"></script>
-  <script src="./script.js"></script><script src="./js/jquery-3.6.3.min.js"></script>
+  <!-- <script src="./script.js"></script> -->
+  <script src="./js/jquery-3.6.3.min.js"></script>
+  <script type="text/javascript" src="./script.js"></script>
   <script>
     $(document).ready(function(){
       $.ajax({
@@ -139,16 +159,17 @@
           }
         }
       });
-
-  // navbar setup 
-  $.ajax({
-    url: "./database/menu_log.php",
-    success: function (response) {
-      $('#menu').append(response);
-    }
-  });
-
-//login button
+      loadNav();
+      //drop down menu on mbl device
+      function dropMBL(id){
+        alert('hi');
+        $(id).toggleClass("ddm_show");
+      }
+      
+    
+    
+    
+    //login button
       $('#error_login').hide();
       $('#button_login').click(function( e){
         e.preventDefault();
@@ -167,12 +188,11 @@
           }
         });
       });
-
-
-
+    
+    
+    
     });
-  </script>   
-  
+      </script>   
 
 </body>
 <!-- git add --all && git commit -m "b1" && git push -->

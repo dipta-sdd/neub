@@ -6,8 +6,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   }
 $sql="select std_id from student where std_id like '". $_POST['id']."%'";
 $result = $conn->query($sql);
-$data = $result->fetch_all(MYSQLI_ASSOC);
-
+// $data = $result->fetch_all(MYSQLI_ASSOC);
+$data = $result->fetch_all(MYSQLI_NUM);
+// $data = $result->fetch_all();
 echo json_encode($data);
-
 ?>
