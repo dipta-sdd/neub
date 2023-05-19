@@ -27,42 +27,56 @@
         <!-- </div> -->
       </div>
       <div class="row pb-2">
-          <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <div class="container-fluid">
-              <a class="navbar-brand" href="#">Navbar</a>
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                  <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Home</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">Link</a>
-                  </li>
-                  <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                      Dropdown
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                      <li><a class="dropdown-item" href="#">Action</a></li>
-                      <li><a class="dropdown-item" href="#">Another action</a></li>
-                      <li><hr class="dropdown-divider"></li>
-                      <li><a class="dropdown-item" href="#">Something else here</a></li>
-                    </ul>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-                  </li>
-                </ul>
-                <form class="d-flex">
-                  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                  <button class="btn btn-outline-success" type="submit">Search</button>
-                </form>
-              </div>
+        <nav class="navbar navbar-expand-md navbar-dark bg-dark p-0" id="nav">
+          <div class="m-auto">
+            <button class="navbar-toggler " type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav ms-lg-auto mb-2 mb-lg-0 bg-dark" id="nav_menu">
+                <li class="nav-item dropdown ddmp"><a class="nav-link rounded-2 myfs" aria-current="page" href="./index.html">HOME</a>
+                </li>               
+                <li class="nav-item dropdown ddmp">
+                  <a class="nav-link dropdown-toggle myfs " href="#" role="button" onclick="dropMBL('#ddm0')">AUTHORITY</a>
+                  <ul class=" ddmu" id="ddm0">
+                    <li class="ddml"><a href="" class="ddma"> Board of Trustees  </a></li>
+                    <li class="ddml"><a href="" class="ddma"> Board of Advisors  </a></li>
+                    <li class="ddml"><a href="" class="ddma"> Syndicate  </a></li>
+                    <li class="ddml"><a href="" class="ddma">  Academic Council </a></li>
+                    <li class="ddml"><a href="" class="ddma"> Proctorial body  </a></li>
+                    <li class="ddml"><a href="" class="ddma">  Complaint Committee </a></li>
+                  </ul>
+                </li>
+                <li class="nav-item dropdown ddmp">
+                  <a class="nav-link dropdown-toggle rounded-2 myfs " id="ddb1" href="#" role="button" onclick="dropMBL('ddm1')">ACADEMIC</a>
+      
+                  <ul class=" ddmu" id="ddm1">
+                    <li class="ddml"><a href="" class="ddma"> School of Business</a></li>
+                    <li class="ddml"><a href="" class="ddma"> School of Social Science</a></li>
+                    <li class="ddml"><a href="" class="ddma"> School of Law and Justice</a></li>
+                    <li class="ddml"><a href="" class="ddma"> School of Natural Science and Engineering</a></li>
+                  </ul>
+                </li>
+                <li class="nav-item dropdown ddmp d-none" id="nav_li_tp">
+                  <a class="nav-link dropdown-toggle rounded-2 myfs " href="#" role="button" onclick="dropMBL('ddmtp')">Teacher's Portal</a>
+                  <ul class=" ddmu" id="ddmtp">
+                    <li class="ddml"><a href="./course_offer.html" class="ddma"> Course Offer</a></li>
+                    <li class="ddml"><a href="./course_reg.html" class="ddma"> Course Registration</a></li>
+                    <li class="ddml"><a href="./result_publish.html" class="ddma"> Result Publish</a></li>
+                  </ul>
+                </li>
+                <li class="nav-item dropdown ddmp d-none" id="nav_li_login">
+                  <a class="nav-link rounded-2 myfs" aria-current="page" href="./login.html" onclick="dropMBL('#ddm_login')">Login</a>
+                  <ul class=" ddmu" id="ddm_login">
+                    <li class="ddml"><a href="./signup.html" class="ddma"> Signup</a></li>
+                  </ul>
+                </li>
+                <li class="nav-item dropdown ddmp d-none" id="nav_li_logout"><a class="nav-link rounded-2 myfs" aria-current="page" href="./database/logout.php">Logout</a>
+                </li>  
+              </ul>
             </div>
-          </nav>
+          </div>
+        </nav>
       </div>
       <div class="row pb-2">
         <div class=" col-lg-9 col-md-7 left p-0 pe-2">
@@ -173,7 +187,7 @@
   <script src="./js/bootstrap.min.js"></script>
   <!-- <script src="./script.js"></script> -->
   <script src="./js/jquery-3.6.3.min.js"></script>
-  <script type="text/javascript" src="./script.js"></script>
+  <script src="./script.js"></script>
 <script>
 $(document).ready(function(){
 

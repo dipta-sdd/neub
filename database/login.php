@@ -14,7 +14,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $pass = test_input($_POST["pass"]);
 }
 
-$sql="select pass from student where std_id='";
+$sql="select * from student where std_id='";
 $sql.=$id;
 $sql.="'";
 $result = $conn->query($sql);
@@ -25,7 +25,8 @@ if($result->num_rows>0){
     $data=array(
         "status"=>true,
         "username"=> $id,
-        "type" => 'student'
+        "type" => 'student',
+        "dept_id" => $row['dept_id']
     );
   } else{
     $data= array(
@@ -44,7 +45,7 @@ if($result->num_rows>0){
 
 
 if($data['status'] === false){
-  $sql="SELECT `pass` FROM `teacher` WHERE `username`='".$id."'";
+  $sql="SELECT * FROM `teacher` WHERE `username`='".$id."'";
   $result = $conn->query($sql);
   if($result->num_rows>0){
     $row=$result->fetch_assoc();
@@ -53,7 +54,8 @@ if($data['status'] === false){
       $data=array(
           "status"=>true,
           "username"=> $id,
-          "type" => 'teacher'
+          "type" => 'teacher',
+          "dept_id" => $row['dept_id']
       );
     } else{
       $data= array(
@@ -73,6 +75,7 @@ if($data['status'] === false){
 if($data['status']=== true){
   setcookie("user",$id,time()+(86400*300));
   setcookie("user_type",$data['type'],time()+(86400*300));
+  setcookie("dept_id",$data['dept_id'],time()+(86400*300));
 
 }
 

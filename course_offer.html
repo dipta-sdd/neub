@@ -5,6 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>North East University Bangladesh</title>
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Crimson+Pro">
   <link rel="stylesheet" href="./css/bootstrap.css">
   <link rel="stylesheet" href="style.css">
@@ -23,42 +24,56 @@
         <!-- </div> -->
       </div>
       <div class="row pb-2">
-          <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <div class="container-fluid">
-              <a class="navbar-brand" href="#">Navbar</a>
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                  <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Home</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">Link</a>
-                  </li>
-                  <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                      Dropdown
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                      <li><a class="dropdown-item" href="#">Action</a></li>
-                      <li><a class="dropdown-item" href="#">Another action</a></li>
-                      <li><hr class="dropdown-divider"></li>
-                      <li><a class="dropdown-item" href="#">Something else here</a></li>
-                    </ul>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-                  </li>
-                </ul>
-                <form class="d-flex">
-                  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                  <button class="btn btn-outline-success" type="submit">Search</button>
-                </form>
-              </div>
+        <nav class="navbar navbar-expand-md navbar-dark bg-dark p-0" id="nav">
+          <div class="m-auto">
+            <button class="navbar-toggler " type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav ms-lg-auto mb-2 mb-lg-0 bg-dark" id="nav_menu">
+                <li class="nav-item dropdown ddmp"><a class="nav-link rounded-2 myfs" aria-current="page" href="./index.html">HOME</a>
+                </li>               
+                <li class="nav-item dropdown ddmp">
+                  <a class="nav-link dropdown-toggle myfs " href="#" role="button" onclick="dropMBL('#ddm0')">AUTHORITY</a>
+                  <ul class=" ddmu" id="ddm0">
+                    <li class="ddml"><a href="" class="ddma"> Board of Trustees  </a></li>
+                    <li class="ddml"><a href="" class="ddma"> Board of Advisors  </a></li>
+                    <li class="ddml"><a href="" class="ddma"> Syndicate  </a></li>
+                    <li class="ddml"><a href="" class="ddma">  Academic Council </a></li>
+                    <li class="ddml"><a href="" class="ddma"> Proctorial body  </a></li>
+                    <li class="ddml"><a href="" class="ddma">  Complaint Committee </a></li>
+                  </ul>
+                </li>
+                <li class="nav-item dropdown ddmp">
+                  <a class="nav-link dropdown-toggle rounded-2 myfs " id="ddb1" href="#" role="button" onclick="dropMBL('ddm1')">ACADEMIC</a>
+      
+                  <ul class=" ddmu" id="ddm1">
+                    <li class="ddml"><a href="" class="ddma"> School of Business</a></li>
+                    <li class="ddml"><a href="" class="ddma"> School of Social Science</a></li>
+                    <li class="ddml"><a href="" class="ddma"> School of Law and Justice</a></li>
+                    <li class="ddml"><a href="" class="ddma"> School of Natural Science and Engineering</a></li>
+                  </ul>
+                </li>
+                <li class="nav-item dropdown ddmp d-none" id="nav_li_tp">
+                  <a class="nav-link dropdown-toggle rounded-2 myfs " href="#" role="button" onclick="dropMBL('ddmtp')">Teacher's Portal</a>
+                  <ul class=" ddmu" id="ddmtp">
+                    <li class="ddml"><a href="./course_offer.html" class="ddma"> Course Offer</a></li>
+                    <li class="ddml"><a href="./course_reg.html" class="ddma"> Course Registration</a></li>
+                    <li class="ddml"><a href="./result_publish.html" class="ddma"> Result Publish</a></li>
+                  </ul>
+                </li>
+                <li class="nav-item dropdown ddmp d-none" id="nav_li_login">
+                  <a class="nav-link rounded-2 myfs" aria-current="page" href="./login.html" onclick="dropMBL('#ddm_login')">Login</a>
+                  <ul class=" ddmu" id="ddm_login">
+                    <li class="ddml"><a href="./signup.html" class="ddma"> Signup</a></li>
+                  </ul>
+                </li>
+                <li class="nav-item dropdown ddmp d-none" id="nav_li_logout"><a class="nav-link rounded-2 myfs" aria-current="page" href="./database/logout.php">Logout</a>
+                </li>  
+              </ul>
             </div>
-          </nav>
+          </div>
+        </nav>
       </div>
       <div class="row pb-2">
         <div class=" col-lg-9 col-md-7 left p-0 pe-2">
@@ -99,12 +114,190 @@
                 </div>
                 <div class="input-group mb-3 mt-3">
                   <input type="text" id="course_code_search" class="form-control" placeholder="Course Code" aria-label="Course Code" aria-describedby="btn_add">
-                  
+                  <input type="text" id="course_teacher_search" class="form-control" placeholder="Course Teacher" aria-label="Course Teacher" aria-describedby="btn_add">
                   <button class="btn btn-outline-secondary" type="button" id="btn_add">Add</button>
-                  
+                </div>
+                <div class="alert shadow mb-2" id="div1">
+                  <div class="text-success"> <b> Semester : 1st</b><b class="ms-5">Session :</b> <b class="current_session_from_server"></b> </div>
+                  <table class="table table-striped ">
+                    <thead>
+                      <tr>
+                        <th scope="col">Course Code</th>
+                        <th scope="col">Course Title</th>
+                        <th scope="col">Credit</th>
+                        <th scope="col">Course Teacher</th>
+                      </tr>
+                    </thead>
+                    <tbody id="tbody1">
+                    </tbody>
+                  </table>
+                </div>
+                <div class="alert shadow mb-2" id="div2">
+                  <div class="text-success"> <b> Semester : 2nd</b><b class="ms-5">Session :</b> <b class="current_session_from_server"></b> </div>
+                  <table class="table table-striped ">
+                    <thead>
+                      <tr>
+                        <th scope="col">Course Code</th>
+                        <th scope="col">Course Title</th>
+                        <th scope="col">Credit</th>
+                        <th scope="col">Course Teacher</th>
+                      </tr>
+                    </thead>
+                    <tbody id="tbody2">
+                    </tbody>
+                  </table>
+                </div>
+                <div class="alert shadow mb-2" id="div3">
+                  <div class="text-success"> <b> Semester : 3st</b><b class="ms-5">Session :</b> <b class="current_session_from_server"></b> </div>
+                  <table class="table table-striped ">
+                    <thead>
+                      <tr>
+                        <th scope="col">Course Code</th>
+                        <th scope="col">Course Title</th>
+                        <th scope="col">Credit</th>
+                        <th scope="col">Course Teacher</th>
+                      </tr>
+                    </thead>
+                    <tbody id="tbody3">
+                    </tbody>
+                  </table>
+                </div>
+                <div class="alert shadow mb-2" id="div4">
+                  <div class="text-success"> <b> Semester : 4th</b><b class="ms-5">Session :</b> <b class="current_session_from_server"></b> </div>
+                  <table class="table table-striped ">
+                    <thead>
+                      <tr>
+                        <th scope="col">Course Code</th>
+                        <th scope="col">Course Title</th>
+                        <th scope="col">Credit</th>
+                        <th scope="col">Course Teacher</th>
+                      </tr>
+                    </thead>
+                    <tbody id="tbody4">
+                    </tbody>
+                  </table>
+                </div> 
+                <div class="alert shadow mb-2" id="div5">
+                  <div class="text-success"> <b> Semester : 5th</b><b class="ms-5">Session :</b> <b class="current_session_from_server"></b> </div>
+                  <table class="table table-striped ">
+                    <thead>
+                      <tr>
+                        <th scope="col">Course Code</th>
+                        <th scope="col">Course Title</th>
+                        <th scope="col">Credit</th>
+                        <th scope="col">Course Teacher</th>
+                      </tr>
+                    </thead>
+                    <tbody id="tbody5">
+                    </tbody>
+                  </table>
+                </div>
+                <div class="alert shadow mb-2" id="div6">
+                  <div class="text-success"> <b> Semester : 6th</b><b class="ms-5">Session :</b> <b class="current_session_from_server"></b> </div>
+                  <table class="table table-striped ">
+                    <thead>
+                      <tr>
+                        <th scope="col">Course Code</th>
+                        <th scope="col">Course Title</th>
+                        <th scope="col">Credit</th>
+                        <th scope="col">Course Teacher</th>
+                      </tr>
+                    </thead>
+                    <tbody id="tbody6">
+                    </tbody>
+                  </table>
+                </div>
+                <div class="alert shadow mb-2" id="div7">
+                  <div class="text-success"> <b> Semester : 7th</b><b class="ms-5">Session :</b> <b class="current_session_from_server"></b> </div>
+                  <table class="table table-striped ">
+                    <thead>
+                      <tr>
+                        <th scope="col">Course Code</th>
+                        <th scope="col">Course Title</th>
+                        <th scope="col">Credit</th>
+                        <th scope="col">Course Teacher</th>
+                      </tr>
+                    </thead>
+                    <tbody id="tbody7">
+                    </tbody>
+                  </table>
+                </div>
+                <div class="alert shadow mb-2" id="div8">
+                  <div class="text-success"> <b> Semester : 8th</b><b class="ms-5">Session :</b> <b class="current_session_from_server"></b> </div>
+                  <table class="table table-striped ">
+                    <thead>
+                      <tr>
+                        <th scope="col">Course Code</th>
+                        <th scope="col">Course Title</th>
+                        <th scope="col">Credit</th>
+                        <th scope="col">Course Teacher</th>
+                      </tr>
+                    </thead>
+                    <tbody id="tbody8">
+                    </tbody>
+                  </table>
+                </div>
+                <div class="alert shadow mb-2" id="div9">
+                  <div class="text-success"> <b> Semester : 9th</b><b class="ms-5">Session :</b> <b class="current_session_from_server"></b> </div>
+                  <table class="table table-striped ">
+                    <thead>
+                      <tr>
+                        <th scope="col">Course Code</th>
+                        <th scope="col">Course Title</th>
+                        <th scope="col">Credit</th>
+                        <th scope="col">Course Teacher</th>
+                      </tr>
+                    </thead>
+                    <tbody id="tbody9">
+                    </tbody>
+                  </table>
+                </div>
+                <div class="alert shadow mb-2" id="div10">
+                  <div class="text-success"> <b> Semester : 10th</b><b class="ms-5">Session :</b> <b class="current_session_from_server"></b> </div>
+                  <table class="table table-striped ">
+                    <thead>
+                      <tr>
+                        <th scope="col">Course Code</th>
+                        <th scope="col">Course Title</th>
+                        <th scope="col">Credit</th>
+                        <th scope="col">Course Teacher</th>
+                      </tr>
+                    </thead>
+                    <tbody id="tbody10">
+                    </tbody>
+                  </table>
+                </div>
+                <div class="alert shadow mb-2" id="div11">
+                  <div class="text-success"> <b> Semester : 11th</b><b class="ms-5">Session :</b> <b class="current_session_from_server"></b> </div>
+                  <table class="table table-striped ">
+                    <thead>
+                      <tr>
+                        <th scope="col">Course Code</th>
+                        <th scope="col">Course Title</th>
+                        <th scope="col">Credit</th>
+                        <th scope="col">Course Teacher</th>
+                      </tr>
+                    </thead>
+                    <tbody id="tbody11">
+                    </tbody>
+                  </table>
+                </div>
+                <div class="alert shadow mb-2" id="div12">
+                  <div class="text-success"> <b> Semester : 12th</b><b class="ms-5">Session :</b> <b class="current_session_from_server"></b> </div>
+                  <table class="table table-striped ">
+                    <thead>
+                      <tr>
+                        <th scope="col">Course Code</th>
+                        <th scope="col">Course Title</th>
+                        <th scope="col">Credit</th>
+                        <th scope="col">Course Teacher</th>
+                      </tr>
+                    </thead>
+                    <tbody id="tbody12">
+                    </tbody>
+                  </table>
                 </div>
                 
-                  
                 
                 
 
@@ -166,74 +359,88 @@
   
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
   <script src="./js/bootstrap.min.js"></script>
-  <!-- <script src="./script.js"></script> -->
   <script src="./js/jquery-3.6.3.min.js"></script>
-  <script type="text/javascript" src="./script.js"></script>
+  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+  <script src="./script.js"></script>
   <script>
-    $(document).ready(function(){
-      loadNav();
-      //drop down menu on mbl device
-      function dropMBL(id){
-        alert('hi');
-        $(id).toggleClass("ddm_show");
+$(document).ready(function(){
+  reqTeacher();
+  loadNav();
+  var user ;
+  user =current_user(user);
+  console.log(user);
+  //drop down menu on mbl device
+  function dropMBL(id){
+    alert('hi');
+    $(id).toggleClass("ddm_show");
+  }
+
+  // page personal script
+  $.ajax({url: "./database/current_session.php",success: function (response) {
+      var session= JSON.parse(response)
+      $('#session').html('<option selected>'+session.session_n+'</option>');
+      $(".current_session_from_server").text(session.session_n);
+    }
+  });
+//suggesstion-box
+  $(course_code_search).keyup(function (e) { 
+    $.ajax({
+      type: "POST",
+      url: "./database/course_code_auto.php",
+      data: {
+        id:$('#course_code_search').val()
+      },
+      success: function (response) {
+        data= JSON.parse(response);
+        // console.log(data);
+        $( "#course_code_search" ).autocomplete({
+          source: data
+        });
       }
-    
-     // page personal script
-      $.ajax({url: "./database/current_session.php",success: function (response) {
-          var session= JSON.parse(response)
-          $('#session').html('<option selected>'+session.session_n+'</option>');
-        }
-      });
-    //suggesstion-box
-     $(course_code_search).keyup(function (e) { 
-      $.ajax({
-        // type: "method",
-        url: "./database/search_std_id_auto_complete.php",
-        // data: "data",
-        success: function (response) {
-          data= JSON.parse(response);
-          console.log(data);
-          console.log(availableTags);
-          // alert('hi');
-          $( "#course_code_search" ).autocomplete({
-            source: availableTags
-          });
-        }
-      });
-     });
-    
-    // $( function() {
-        var availableTags = [
-          "ActionScript",
-          "AppleScript",
-          "Asp",
-          "BASIC",
-          "C",
-          "C++",
-          "Clojure",
-          "COBOL",
-          "ColdFusion",
-          "Erlang",
-          "Fortran",
-          "Groovy",
-          "Haskell",
-          "Java",
-          "JavaScript",
-          "Lisp",
-          "Perl",
-          "PHP",
-          "Python",
-          "Ruby",
-          "Scala",
-          "Scheme"
-        ];
-    //     $( "#course_code_search" ).autocomplete({
-    //       source: availableTags
-    //     });
-    //   } );
-    
-    
     });
+  });
+  $(course_teacher_search).keyup(function (e) { 
+    console.log('called');
+    $.ajax({
+      type: "POST",
+      url: "./database/auto_com_teacher.php",
+      data: {
+        id:$('#course_teacher_search').val()
+      },
+      success: function (response) {
+        data= JSON.parse(response);
+        // console.log(data);
+        $( "#course_teacher_search" ).autocomplete({
+          source: data
+        });
+      }
+    });
+  });
+  $(btn_add).click(function (e) { 
+    e.preventDefault();
+    console.log('btn add clicked');
+    var course_code= $(course_code_search).val();
+    console.log(course_code);
+    let course_code_length = course_code.length;
+    console.log('length = '+ course_code_length);
+    let course_title = course_code.slice(10,course_code_length);
+    console.log('title = '+ course_title);
+    course_code = course_code.slice(0,7);
+    console.log('code = '+course_code);
+
+    var course_teacher= $(course_teacher_search).val();
+    console.log(course_teacher);
+    let course_teacher_length = course_teacher.length;
+    console.log('length = '+ course_teacher_length);
+    let index_of_desh= course_teacher.indexOf('-');
+    let course_teacher_name = course_teacher.slice(0,index_of_desh);
+    console.log('name = '+ course_teacher_name);
+    course_teacher_id = course_teacher.slice(index_of_desh+1,course_teacher_length);
+    console.log('id = '+course_teacher_id);
+  });
+
+
+});
     </script>
     
 

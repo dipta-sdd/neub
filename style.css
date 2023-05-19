@@ -48,10 +48,11 @@ body{
     left: 0;
     top: 100%;
     width: 200%;
-    background-color: #2c3c4c;
+    background-color:rgb(33,37,41);
     z-index: 2;
     /* border-radius: 0px 0px 20px 20px; */
 }
+/* drop down menu li under ul  */
 .ddml{
     display: block;
     text-align: left;
@@ -70,17 +71,29 @@ body{
     font-weight: 400;
     font-size: 1.05rem;
 }
-.ddma:hover{
-    background-color:#273c75;
-    color: #00ff00;
-    transition: 0.2s;
+.ddmp:hover {
+    background-color: #01194e;
+}
+.ddmp:hover a{
+    background-color: #01194e;
 }
 .ddmu{
+    background-color: #01194e;
     opacity: 0;
     visibility: hidden;
     transform: scaleY(0);
     transform-origin: top center;
     transition: .5s;
+}
+.ddml:hover {
+    background-color: #fff;
+    color: #000000;
+}
+/* every link of a drop down menu  */
+.ddma:hover{
+    background-color:#000000;
+    color: #00ff00;
+    transition: 0.2s;
 }
 
 @media (max-width: 767px){

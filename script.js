@@ -6,7 +6,6 @@
   //     document.querySelector(id).classList.add('ddm_show');
   //   }
   // }
-
  function hhh(){
   console.log('external js loaded');
  }
@@ -18,34 +17,74 @@
     touch: false
   })
 
+  function current_user(user){
+    console.log('called current user');
+    $.ajax({
+      url: "./database/get_user.php",
+      async: false,
+      success: function (response) {
+        user= JSON.parse(response);
+      }
+    });
+    return user;
+    console.log(user);
+  }
   //nav bar setup
   function loadNav(){
-    $('#nav_li_tp').hide(); 
+    var myUser;
     console.log('nav');
     $.ajax({
       url: "./database/get_user.php",
+      async: false,
       success: function (response) {
-        var user=JSON.parse(response);
-        if(user.status){
-          $("#nav_login").text("Logout");
-          $("#nav_login").attr('href', './database/logout.php');
-          if(user.type == 'teacher'){
-            // alert('hi');
-            $('#nav_li_tp').show();
+        myUser=JSON.parse(response);
+        if(myUser.status){
+          $('#nav_li_logout').removeClass('d-none');
+          if(myUser.type == 'teacher'){
+            $('#nav_li_tp').removeClass('d-none');
           }
          } 
          else {
-          $("#nav_login").append(`
-            <ul class=" ddmu" id="ddms">
-              <li class="ddml"><a href="./signup.html" class="ddma">Sign Up</a></li>
-            </ul>
-          `);
+          $('#nav_li_login').removeClass('d-none');
         }
       }
     });
-  
+    console.log(myUser.type);
   }
- 
+  function reqTeacher(){
+    var myUser;
+    console.log('nav');
+    $.ajax({
+      url: "./database/get_user.php",
+      async: false,
+      success: function (response) {
+        myUser=JSON.parse(response);
+        if(myUser.status){
+          if(myUser.type != 'teacher'){
+            location.replace("./index.html");
+          }
+         } else{
+          location.replace("./index.html");
+         }
+      }
+    });
+    console.log(myUser.type);
+  }
+  function reqLogin(){
+    var myUser;
+    console.log('nav');
+    $.ajax({
+      url: "./database/get_user.php",
+      async: false,
+      success: function (response) {
+        myUser=JSON.parse(response);
+        if(!myUser.status){
+          location.replace("./index.html");
+         } 
+      }
+    });
+    console.log(myUser.type);
+  }
   // // login 
   // function logout() {
   //   location.replace("http://127.0.0.1/neub/index.html");
