@@ -95,21 +95,21 @@
                   </select>
                 </div>
                 <div class="col-md-2">
-                  <label for="semester" class="form-label">Semester</label>
-                  <select id="semester" class="form-select">
+                  <label for="semester_f" class="form-label">Semester</label>
+                  <select id="semester_f" class="form-select">
                     <option selected>Choose..</option>
-                    <option>1 st</option>
-                    <option>2 nd</option>
-                    <option>3 rd</option>
-                    <option>4 th</option>
-                    <option>5 th</option>
-                    <option>6 th</option>
-                    <option>7 th</option>
-                    <option>8 th</option>
-                    <option>9 th</option>
-                    <option>10 th</option>
-                    <option>11 th</option>
-                    <option>12 th</option>
+                    <option value="1">1 st</option>
+                    <option value="2">2 nd</option>
+                    <option value="3">3 rd</option>
+                    <option value="4">4 th</option>
+                    <option value="5">5 th</option>
+                    <option value="6">6 th</option>
+                    <option value="7">7 th</option>
+                    <option value="8">8 th</option>
+                    <option value="9">9 th</option>
+                    <option value="10">10 th</option>
+                    <option value="11">11 th</option>
+                    <option value="12">12 th</option>
                   </select>
                 </div>
                 <div class="input-group mb-3 mt-3">
@@ -117,7 +117,7 @@
                   <input type="text" id="course_teacher_search" class="form-control" placeholder="Course Teacher" aria-label="Course Teacher" aria-describedby="btn_add">
                   <button class="btn btn-outline-secondary" type="button" id="btn_add">Add</button>
                 </div>
-                <div class="alert shadow mb-2" id="div1">
+                <div class="alert shadow mb-2 d-none" id="div1">
                   <div class="text-success"> <b> Semester : 1st</b><b class="ms-5">Session :</b> <b class="current_session_from_server"></b> </div>
                   <table class="table table-striped ">
                     <thead>
@@ -132,7 +132,7 @@
                     </tbody>
                   </table>
                 </div>
-                <div class="alert shadow mb-2" id="div2">
+                <div class="alert shadow mb-2 d-none" id="div2">
                   <div class="text-success"> <b> Semester : 2nd</b><b class="ms-5">Session :</b> <b class="current_session_from_server"></b> </div>
                   <table class="table table-striped ">
                     <thead>
@@ -147,7 +147,7 @@
                     </tbody>
                   </table>
                 </div>
-                <div class="alert shadow mb-2" id="div3">
+                <div class="alert shadow mb-2 d-none" id="div3">
                   <div class="text-success"> <b> Semester : 3st</b><b class="ms-5">Session :</b> <b class="current_session_from_server"></b> </div>
                   <table class="table table-striped ">
                     <thead>
@@ -162,7 +162,7 @@
                     </tbody>
                   </table>
                 </div>
-                <div class="alert shadow mb-2" id="div4">
+                <div class="alert shadow mb-2 d-none" id="div4">
                   <div class="text-success"> <b> Semester : 4th</b><b class="ms-5">Session :</b> <b class="current_session_from_server"></b> </div>
                   <table class="table table-striped ">
                     <thead>
@@ -177,7 +177,7 @@
                     </tbody>
                   </table>
                 </div> 
-                <div class="alert shadow mb-2" id="div5">
+                <div class="alert shadow mb-2 d-none" id="div5">
                   <div class="text-success"> <b> Semester : 5th</b><b class="ms-5">Session :</b> <b class="current_session_from_server"></b> </div>
                   <table class="table table-striped ">
                     <thead>
@@ -192,7 +192,7 @@
                     </tbody>
                   </table>
                 </div>
-                <div class="alert shadow mb-2" id="div6">
+                <div class="alert shadow mb-2 d-none" id="div6">
                   <div class="text-success"> <b> Semester : 6th</b><b class="ms-5">Session :</b> <b class="current_session_from_server"></b> </div>
                   <table class="table table-striped ">
                     <thead>
@@ -207,7 +207,7 @@
                     </tbody>
                   </table>
                 </div>
-                <div class="alert shadow mb-2" id="div7">
+                <div class="alert shadow mb-2 d-none" id="div7">
                   <div class="text-success"> <b> Semester : 7th</b><b class="ms-5">Session :</b> <b class="current_session_from_server"></b> </div>
                   <table class="table table-striped ">
                     <thead>
@@ -222,7 +222,7 @@
                     </tbody>
                   </table>
                 </div>
-                <div class="alert shadow mb-2" id="div8">
+                <div class="alert shadow mb-2 d-none" id="div8">
                   <div class="text-success"> <b> Semester : 8th</b><b class="ms-5">Session :</b> <b class="current_session_from_server"></b> </div>
                   <table class="table table-striped ">
                     <thead>
@@ -237,7 +237,7 @@
                     </tbody>
                   </table>
                 </div>
-                <div class="alert shadow mb-2" id="div9">
+                <div class="alert shadow mb-2 d-none" id="div9">
                   <div class="text-success"> <b> Semester : 9th</b><b class="ms-5">Session :</b> <b class="current_session_from_server"></b> </div>
                   <table class="table table-striped ">
                     <thead>
@@ -252,7 +252,7 @@
                     </tbody>
                   </table>
                 </div>
-                <div class="alert shadow mb-2" id="div10">
+                <div class="alert shadow mb-2 d-none" id="div10">
                   <div class="text-success"> <b> Semester : 10th</b><b class="ms-5">Session :</b> <b class="current_session_from_server"></b> </div>
                   <table class="table table-striped ">
                     <thead>
@@ -267,7 +267,7 @@
                     </tbody>
                   </table>
                 </div>
-                <div class="alert shadow mb-2" id="div11">
+                <div class="alert shadow mb-2 d-none" id="div11">
                   <div class="text-success"> <b> Semester : 11th</b><b class="ms-5">Session :</b> <b class="current_session_from_server"></b> </div>
                   <table class="table table-striped ">
                     <thead>
@@ -282,7 +282,7 @@
                     </tbody>
                   </table>
                 </div>
-                <div class="alert shadow mb-2" id="div12">
+                <div class="alert shadow mb-2 d-none" id="div12">
                   <div class="text-success"> <b> Semester : 12th</b><b class="ms-5">Session :</b> <b class="current_session_from_server"></b> </div>
                   <table class="table table-striped ">
                     <thead>
@@ -376,7 +376,7 @@ $(document).ready(function(){
   }
 
   // page personal script
-  $.ajax({url: "./database/current_session.php",success: function (response) {
+  $.ajax({  url: "./database/current_session.php",success: function (response) {
       var session= JSON.parse(response)
       $('#session').html('<option selected>'+session.session_n+'</option>');
       $(".current_session_from_server").text(session.session_n);
@@ -420,24 +420,104 @@ $(document).ready(function(){
     e.preventDefault();
     console.log('btn add clicked');
     var course_code= $(course_code_search).val();
-    console.log(course_code);
-    let course_code_length = course_code.length;
-    console.log('length = '+ course_code_length);
-    let course_title = course_code.slice(10,course_code_length);
-    console.log('title = '+ course_title);
     course_code = course_code.slice(0,7);
     console.log('code = '+course_code);
 
     var course_teacher= $(course_teacher_search).val();
     console.log(course_teacher);
     let course_teacher_length = course_teacher.length;
-    console.log('length = '+ course_teacher_length);
     let index_of_desh= course_teacher.indexOf('-');
-    let course_teacher_name = course_teacher.slice(0,index_of_desh);
-    console.log('name = '+ course_teacher_name);
     course_teacher_id = course_teacher.slice(index_of_desh+1,course_teacher_length);
-    console.log('id = '+course_teacher_id);
+    console.log('teacher id = '+course_teacher_id);
+    let semester= $(semester_f).val();
+    console.log('semester = '+ semester);
+    $.ajax({
+      type: "POST",
+      url: "./database/course_offer_add.php",
+      data: {
+        'semester' : semester,
+        'course_id' : course_code,
+        'teacher_id' : course_teacher_id
+      },
+      success: function (response) {
+        var course_offer = JSON.parse(response);
+        console.log(course_offer);
+        create_row(
+          course_offer.course_offer_id,
+          course_offer.course_id,
+          course_offer.course_tittle,
+          course_offer.course_credit,
+          course_offer.tch_name,
+          semester
+          );
+      }
+    });
   });
+  var visibility = [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ];
+  function create_row(course_offer_id,course_code,course_title,course_credit,course_teacher,semester){
+    var table=[
+      '#tbody',
+      '#tbody1',
+      '#tbody2',
+      '#tbody3',
+      '#tbody4',
+      '#tbody5',
+      '#tbody6',
+      '#tbody7',
+      '#tbody8',
+      '#tbody9',
+      '#tbody10',
+      '#tbody11',
+      '#tbody12',
+    ];
+    var div=[
+      '#div',
+      '#div1',
+      '#div2',
+      '#div3',
+      '#div4',
+      '#div5',
+      '#div6',
+      '#div7',
+      '#div8',
+      '#div9',
+      '#div10',
+      '#div11',
+      '#div12',
+    ];
+    var row= `
+    <tr>
+      <td scope="row">${course_code}</td>
+      <td>${course_title}</td>
+      <td>${course_credit}</td>
+      <td>${course_teacher}</td>
+    </tr>
+    `;
+    $(table[semester]).append(row);
+    if(visibility[semester] == 0){
+      visibility[semester]++;
+      $(div[semester]).removeClass('d-none');
+      console.log(visibility[semester]);
+    } else {
+      visibility[semester]++;
+      console.log(visibility[semester]);
+    }
+    
+  }
 
 
 });

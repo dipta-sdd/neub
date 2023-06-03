@@ -1,0 +1,337 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>STB | Townstar 2023</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Crimson+Pro">
+  <link rel="stylesheet" href="./css/bootstrap.css">
+  <link rel="stylesheet" href="./style.css">
+  <style>
+          .container{max-width: 1700px;}
+          .copied{
+            display: block;
+            position: fixed;
+            margin-left: 54%;
+            margin-right: 46%;
+            max-width: 80%;
+            top: 60px;
+            padding: 10 px;
+            border: 10 px solid #fff;
+            border-radius: 10 px;
+            z-index: 9;
+          }
+          
+  </style>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+  <script src="./js/bootstrap.min.js"></script>
+  <script src="./script.js"></script><script src="./js/jquery-3.6.3.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+  <div id="not_body" class="position-fixed float-end toast-container bottom-0 start-0 p-3">
+    <!-- <div id="myToast"  class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+      <div class="toast-header">
+        <strong class="me-auto">player</strong>
+        <small class="text-muted">pc</small>
+        <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+      </div>
+      <div class="toast-body">
+        email
+      </div>
+    </div> -->
+  </div>
+  <div class="row">
+    <div class="shadow-lg p-3 bg-body rounded text-center">
+      <h1 class="mb-5">Welcome to STB</h1>
+      <!-- Nav tabs -->
+      <ul class="nav nav-tabs mb-3" id="navId" role="tablist">
+        <li class="nav-item"><a href="./email_2022.html" class="nav-link" >Townstar 2022</a></li>
+        <li class="nav-item"><a href="./email_2023.html" class="nav-link active">Townstar 2023</a></li>
+        <li class="nav-item"><a href="./create_discord_2022.html" class="nav-link ">Create Discord 22</a></li>
+        <li class="nav-item"><a href="./create_discord_2023.html" class="nav-link ">Create Discord 23</a></li>
+        <li class="nav-item"><a href="https://discord.com/app" class="nav-link" target="_blank" >Discord</a></li>
+        <li class="nav-item"><a href="https://app.gala.games/" class="nav-link" target="_blank" >Gala</a></li>
+        <li class="nav-item ms-auto">
+          <a href="./logout.php" class="nav-link" id="logout">Logout</a>
+        </li>
+      </ul>
+      <h2 class="shadow-sm p-2 me-2">Create gala 1</h2>
+      
+      <div id="time">
+      </div>
+
+      
+      
+
+
+
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      <div class="alert alert-primary text-start" role="alert">
+        To login eshopbd247.com mail  <a href="https://eshopbd247.com:2096/" target="_blank" >click here</a>.
+      </div>
+      <div class="alert alert-primary text-start" role="alert">
+        To login raisonbd.com mail  <a href="https://raisonbd.com:2096/" target="_blank" >click here</a>.
+      </div>
+      
+     
+
+      <div class="table-responsive-md">
+        <h2></h2>
+        <table class="table table-hover text-start table-striped table-bordered border-dark">
+            <thead>
+                <tr>
+                    <th scope="col">S</th>
+                    <th scope="col">Email</th>
+                </tr>
+            </thead>
+            <tbody id="t_playing">
+              
+            </tbody>
+        </table>  
+      </div>
+
+
+
+
+    </div>
+
+
+  </div>
+
+  <div class="popup_form_new pt-3 text-start container" id="form">fsfgdgfsdgsdf</div> 
+  <div class="toast-container position-fixed bottom-0 end-0 p-3">
+    <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+      <div class="toast-header">
+        <strong class="me-auto">dasayon5160@gmail.com</strong>
+        <small></small>
+        <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+      </div>
+      <div class="toast-body" id="not">
+      </div>
+    </div>
+  </div>
+  <div id="email_copied" class="copied p-1 rounded-2">Copied</div>
+  <script>
+    const toastTrigger = document.getElementById("liveToastBtn")
+    const toastLiveExample = document.getElementById("liveToast")
+    const toast = new bootstrap.Toast(toastLiveExample)
+    toast.hide()
+  </script>
+</div>
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+  <script src="./js/bootstrap.min.js"></script>
+  <script src="./script.js"></script>
+  <script src="./js/jquery-3.6.3.min.js"></script>
+  <script>
+$(document).ready(function(){
+  var username;
+        
+  $.ajax({
+      type: "POST",
+      url: "./user.php",
+      success: function (response) {
+        var data= JSON.parse(response);
+        async: false;
+        if( data.status){
+          $("#logout").text("Logout ("+data.user+")");
+          username = data.user;
+        } else if(! data.status){
+              location.replace("./login.html");
+        }
+      },
+    });
+    
+
+       
+      
+
+
+
+
+
+
+
+
+  // loading data table
+  load_table();
+  const timeID = setInterval(load_table, 500);
+  function load_table(){
+    const utcStr = new Date().toUTCString();
+    $("#time").text(utcStr);
+    // updating tables 
+    $.ajax({
+      type: "POST",
+      url: "./database/create1.php",
+      //async: false,
+      success: function (response) {
+        var mydata= JSON.parse(response);
+        var table;
+        sqlTable(table,mydata,'#t_playing');
+      },
+    });
+  }
+  // row clicke d
+  $(document).on('click', '.email_2023', function(){
+    // alert('hi');
+    var val=  $(this).text();
+    // alert(val);
+    emailDataForm(val);
+    $("#form").addClass("popup_new");
+
+  });
+
+  // copy to clicp board
+  $(document).on('click', '#btn_copy_email', function(e){
+    e.preventDefault();
+    // copyToClipboard();
+    // Create a "hidden" input
+    var aux = document.createElement("input");
+    // Assign it the value of the specified element
+    aux.setAttribute("value", document.getElementById("email_copy").innerHTML);
+    // Append it to the body
+    document.body.appendChild(aux);
+    // Highlight its content
+    aux.select();
+    // Copy the highlighted text
+    document.execCommand("copy");
+    // Remove it from the body
+    document.body.removeChild(aux);
+    $("#email_copied").text('Copied');
+
+    $("#email_copied").fadeIn();
+    $("#email_copied").delay(1500).fadeOut();
+
+  });
+
+  //click update
+  $(document).on('click', '#btn_email_2023_update', function(e){
+    e.preventDefault();
+    $.ajax({
+      type: "POST",
+      url: "./create_acc1.php",
+      data:  {
+        "meta": $("#eth").val(),
+        "email": $("#email").val(),
+      },
+      success: function (response) {
+        $("#not").html(response);
+        console.log(response);
+        toast.show(); 
+        $("#form").empty();
+        $("#email_copied").hide();
+      }
+    });
+  });
+  //click close
+  $(document).on('click', '#btn_email_2023_close', function(e){
+    e.preventDefault();
+    $("#form").empty();
+    $("#email_copied").hide();
+  });
+  
+  // load table from sql
+  function sqlTable(table,mydata,tableId){
+    var id=1;
+    
+    mydata.forEach(row=>{
+      
+      var content=`<tr>`;
+        
+      content+='<td scope="row">'+ id +'</td>';
+      content+='<td class="email_2023" scope="row" role="button">'+ row.email +'</td>';
+      
+      content+=`/tr>`;
+
+        // console.log(content);
+        table+=content
+        id++;
+    });
+    $(tableId).html(table);
+  }
+
+  function trueToCheck(state){
+    if(state == 'true'){
+      return 'checked disabled';
+    } else{
+      return '';
+    }
+  }
+  // load an email data to update 
+  function emailDataForm(email){
+    
+    var form=`<form id="form_email_2023" class=" shadow-lg ms-auto me-auto mb-5 g-1 p-3 bg-body col-md-10 rounded text-start">
+
+    <div class="row">
+    <div class="col-10"></div>
+    <div class="col-2 text-end">
+      <button type="close" class="btn-close btn " id="btn_email_2023_close"></button>
+    </div>
+    
+    
+    <div class="col-md-12 text-center"> Email : 
+      <label id="email_copy" class="form-label">${email}</label>
+    <button class="btn" id="btn_copy_email" onclick="copyToClipboard()">
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-paperclip" viewBox="0 0 16 16">
+      <path d="M4.5 3a2.5 2.5 0 0 1 5 0v9a1.5 1.5 0 0 1-3 0V5a.5.5 0 0 1 1 0v7a.5.5 0 0 0 1 0V3a1.5 1.5 0 1 0-3 0v9a2.5 2.5 0 0 0 5 0V5a.5.5 0 0 1 1 0v7a3.5 3.5 0 1 1-7 0V3z"></path>
+    </svg>
+    </button> 
+
+    
+    </div>
+    <div class="form-floating mb-3 mt-3 col-10">
+      <input type="text" class="form-control" id="eth" name="eth" `;
+      form+=`>  <label for="formId1">Meta mask</label>
+    </div>
+    <select class="form-select d-none" name="email">
+        <option value="${email}" selected="" id="email"> email</option> </select> 
+    
+    
+    <div class="col-12 text-end">
+      <button type="Update" id="btn_email_2023_update" class="btn btn-primary">Update</button>
+    </div>
+    </div>
+    </form>`  ;
+    $("#form").html(form);
+  }
+  $("#email_copied").hide();
+  
+
+});
+
+
+
+
+</script>
+
+
+</body>
+<!-- git add --all && git commit -m "b1" && git push -->
+
+</html>

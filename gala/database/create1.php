@@ -1,11 +1,6 @@
 <?php
     require 'database.php';
-    $sql="( SELECT * FROM `email2023` NATURAL JOIN (SELECT COUNT(email) as c, `refered_id` FROM `email2023` GROUP BY `refered_id`) as t 
-        
-       where 
-       refered_id is not null and 
-       (discord is null or discord = '' or dis_pl is null or dis_pl = ''))
-        ORDER by c DESC, discord desc , email";
+    $sql="(select * from email_raison);";
     // $sql="
     //   (select * from email3 where (refered_id='ovi' or refered_id='ddasdrive') and player is null) union
     //   (select * from email3 where (refered_id='ovi' or refered_id='ddasdrive') and player is not null and (task2='false' or task2 is null)) union

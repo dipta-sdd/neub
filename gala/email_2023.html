@@ -71,7 +71,7 @@
       <div class="row">
         <div class="p-2 col-6" >
           <div class="rounded-3">
-            <h2>Last 24 Hour Statistics</h2> <div id="div_stat_24h" ></div>
+            <h2 id="weekly">Weekly Hour Statistics</h2> <div id="div_stat_24h" ></div>
           </div>
         </div>
         <div class="p-2 col-6" >
@@ -228,6 +228,37 @@ $(document).ready(function(){
         }
       },
     });
+
+
+//countdown
+// Set the target date and time for the countdown
+const targetDate = new Date('2023-05-30T00:00:00Z');
+
+// Function to calculate and update the countdown
+function updateCountdown() {
+  const now = new Date();
+  const timeZoneOffset = now.getTimezoneOffset() * 60 * 1000; // Time zone offset in milliseconds
+  const targetTime = targetDate.getTime() + timeZoneOffset;
+  const timeDifference =  now.getTime() - targetTime ;
+
+  // Calculate days, hours, minutes, and seconds
+  const days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+  const hours = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  const minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
+  const seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
+
+  // Display the countdown in the HTML element with the id "countdown"
+  document.getElementById('weekly').textContent = `${days} days, ${hours} hours, ${minutes} minutes, ${seconds} seconds`;
+
+  // Check if the countdown has reached zero
+  if (timeDifference <= 0) {
+    clearInterval(countdownInterval);
+    document.getElementById('weekly').textContent = 'Week does not started yet';
+  }
+}
+
+// Call the updateCountdown function every second
+const countdownInterval = setInterval(updateCountdown, 1000);
     
 
   const noti_load = setInterval(load_notification, 200);
@@ -290,16 +321,16 @@ $(document).ready(function(){
         sqlTable(table,mydata,'#t_playable');
       },
     });
-    $.ajax({
-      type: "POST",
-      url: "./database/email_2023_played.php",
-      //async: false,
-      success: function (response) {
-        var mydata= JSON.parse(response);
-        var table;
-        sqlTable(table,mydata,'#t_played');
-      },
-    });
+    // $.ajax({
+    //   type: "POST",
+    //   url: "./database/email_2023_played.php",
+    //   //async: false,
+    //   success: function (response) {
+    //     var mydata= JSON.parse(response);
+    //     var table;
+    //     sqlTable(table,mydata,'#t_played');
+    //   },
+    // });
     $.ajax({
       type: "POST",
       url: "./total_2023.php",
