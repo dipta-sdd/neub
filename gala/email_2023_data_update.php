@@ -14,22 +14,39 @@
         $other=test_input($_POST['nft']);
         $pc=test_input($_POST['pc']);
     }
-    $sqlnot="INSERT INTO `noti`(`email`, `pc`, `player`) VALUES ('".$email."','".$pc."','".$user."')";
-    if($conn->query($sqlnot)){
-        $hh='';
-    }
-    if($discord_conn==='true'){
-        $sql="UPDATE `email2023` SET `discord`='".$discord."',`dis_pl`='".$user."',`up_time`=CURRENT_TIMESTAMP ,`task1`='".$task_1."',`pc`='".$pc."',`task2`='".$task_2."',`task3`='".$task_3."',`eth`='".$eth."',`other`='".$other."',`player`='".$user."' ,`gala`='".$gala."' WHERE `email`='".$email."'";
-    }
-    else{
-        $sql="UPDATE `email2023` SET `discord`='".$discord."',`up_time`=CURRENT_TIMESTAMP ,`task1`='".$task_1."',`pc`='".$pc."',`task2`='".$task_2."',`task3`='".$task_3."',`eth`='".$eth."',`other`='".$other."',`player`='".$user."' ,`gala`='".$gala."' WHERE `email`='".$email."'";
-    }
-    
-    if($conn->query($sql) === TRUE){
-        $data ='<p class="text-primary">Successfuly Updated.</p>';
+    $sql="select player from email2023 where email='" . $email . "'";
+    $result = $conn->query($sql);
+    $row = $result->fetch_assoc();
+    $player = $row['player'];
+    if($player === null || $player==='null'|| $player==='NULL' || $player === $user){
+        $sqlnot="INSERT INTO `noti`(`email`, `pc`, `player`) VALUES ('".$email."','".$pc."','".$user."')";
+        if($conn->query($sqlnot)){
+            $hh='';
+        }
+        if($discord_conn==='true'){
+            $sql="UPDATE `email2023` SET `discord`='".$discord."',`dis_pl`='".$user."',`up_time`=CURRENT_TIMESTAMP ,`task1`='".$task_1."',`pc`='".$pc."',`task2`='".$task_2."',`task3`='".$task_3."',`eth`='".$eth."',`other`='".$other."',`player`='".$user."' ,`gala`='".$gala."' WHERE `email`='".$email."'";
+        }
+        else{
+            $sql="UPDATE `email2023` SET `discord`='".$discord."',`up_time`=CURRENT_TIMESTAMP ,`task1`='".$task_1."',`pc`='".$pc."',`task2`='".$task_2."',`task3`='".$task_3."',`eth`='".$eth."',`other`='".$other."',`player`='".$user."' ,`gala`='".$gala."' WHERE `email`='".$email."'";
+        }
+        
+        if($conn->query($sql) === TRUE){
+            $data ='<p class="text-primary">Successfuly Updated.</p>';
+        } else{
+            $data ='<p class="text-danger">Something went wrong.</p>';
+        }
     } else{
         $data ='<p class="text-danger">Something went wrong.</p>';
     }
+        
+
+
+
+
+
+
+
+
     function test_input($data) {
         $data = trim($data);
         $data = stripslashes($data);
