@@ -651,15 +651,21 @@ const countdownInterval = setInterval(updateCountdown, 1000);
     
     <div class="col-md-12 ">
       <label class="form-label">Played by : `;
+    var dis_up;
+    
     if(row.player == null || row.player==''){
       form+='';
     }else{
+      if(username != row.player){
+        dis_up= 'disabled';
+      }
       form+=row.player;
     }
+    
     form+=`</label>
     </div>
     <div class="col-12 text-end">
-      <button type="Update" id="btn_email_2023_update" class="btn btn-primary">Update</button>
+      <button type="Update" id="btn_email_2023_update" class="btn btn-primary" ${dis_up}>Update</button>
     </div>
     </div>
     </form>`  ;
