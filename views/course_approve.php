@@ -8,13 +8,13 @@
       <span class="breadcrumb-item active" aria-current="page">Course Approve</span>
     </nav>
     <div class="row ps-3">
-    <div class="table-responsive-md" id="">
+      <div class="table-responsive-md" id="">
         <h5 class="text-center">Course Registration ( Status : Pending)
         </h5>
         <table class="table
-        table-hover	
-        table-bordered
-        align-middle">
+          table-hover	
+          table-bordered
+          align-middle">
           <thead class="">
             <caption class="test-danger">Registration status Pending</caption>
             <tr>
@@ -31,7 +31,6 @@
         </table>
       </div>
     </div>
-    
   </div>
 </div>
  <?php include_once 'body_mid.php';  ?>
@@ -39,18 +38,6 @@
 $(document).ready(function(){
 
   loadNav();
-  //drop down menu on mbl device
- 
-  function dropMBL(id){
-    alert('hi');
-    $(id).toggleClass("ddm_show");
-  }
-  // setTimeout(function(){
-  //   window.location.reload(1);
-  // }, 1000);
-
-  // page personal script
-  //  loading all std list of student reg status pending
   $.ajax({
     type: "GET",
     url: "../database/course_taken_all_pending.php",
@@ -67,11 +54,15 @@ $(document).ready(function(){
       });
     }
   });
-
+  // when a row is closed
+  $(document).on('click','.row_course_taken_pending',function(e){
+    var std_id= $(this).attr('id');
+    location.replace(`./course_approve-${std_id}`);
+  });
   // create row function
   function createRow(name, id, credit, semester){
     var row=`
-    <tr class="row_course_taken" role="button" id="${id}">
+    <tr class="row_course_taken_pending" role="button" id="${id}">
       <td scope="row">${name}</td>
       <td>${id}</td>
       <td>${credit}</td>

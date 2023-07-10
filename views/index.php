@@ -7,9 +7,9 @@
       <span class="breadcrumb-item active" aria-current="page">Active</span>
     </nav>
     
-    <div class="row row-cols-1 row-cols-lg-3 g-4">
+    <div class="row row-cols-1 row-cols-lg-3 g-4 ">
       <div class="col">
-        <div class="card">
+        <div class="card bg-trans shadow-lg">
           <img src="../img/card_vc.jpg" height="250" class="card-img-top" alt="...">
           <div class="card-body">
             <h6 class="card-title">Message from Vice Chancellor </h6>
@@ -19,7 +19,7 @@
         </div>
       </div>
       <div class="col">
-        <div class="card">
+        <div class="card bg-trans shadow-lg">
           <img src="../img/card_ch.jpg" height="250" class="card-img-top" alt="...">
           <div class="card-body">
             <h6 class="card-title">Message from Chairman</h6>
@@ -29,7 +29,7 @@
         </div>
       </div>
       <div class="col">
-        <div class="card">
+        <div class="card bg-trans shadowlg">
           <img src="../img/card_v.jpg" height="250" class="card-img-top" alt="...">
           <div class="card-body">
             <h6 class="card-title">About NEUB</h6>

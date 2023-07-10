@@ -2,8 +2,8 @@
 <?php
 
 $request = $_SERVER['REQUEST_URI'];
-
-switch ($request) {
+$requests= explode('-',$request);
+switch ($requests[0]) {
     case '/' :
         require __DIR__ . '/views/index.php';
         break;
@@ -26,11 +26,22 @@ switch ($request) {
         require __DIR__ . '/views/course_reg.php';
         break;
     case '/course_approve' :
-        require __DIR__ . '/views/course_approve.php';
+        if(count($requests)==1){
+            require __DIR__ . '/views/course_approve.php';
+        } else {
+            require __DIR__ . '/views/course_approve_std.php';
+        }
         break;
     default:
-        http_response_code(404);
+        // if( strpos($request ,'/course_approve/student/')==0 ){
+        //     echo strpos($request,'/course_approve/student/');
+        //     require __DIR__ . '/views/course_approve.php';
+        //     break;
+        // }else {
+            http_response_code(404);
         require __DIR__ . '/views/404.php';
+        // }
+        
         break;
 }
 

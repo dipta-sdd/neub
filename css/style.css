@@ -3,8 +3,26 @@ body{
     background-image: url(../img/back.jpg);
     background-size: cover;
       background-attachment: fixed;
+      /* animation: bg_change  5s infinite ; */
 }
+@keyframes bg_change {
+    0%{
+        background-image: url(../img/back.jpg);
+    }
+    40%{
+        background-image: url(../img/back.jpg);
+    }
+    50%{
+        background-image: url(../img/back4.jpg);
+    }
+    90%{
+        background-image: url(../img/back4.jpg);
+    }
+    100%{
+        background-image: url(../img/back.jpg);
+    }
 
+}
 .container{
     max-width: 1400px;
     /* box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px; */
@@ -16,10 +34,6 @@ body{
     width: 500px;
 }
 /* menu___________________ */
-
-
-.mybg{
-}
 .myfs{
     font-weight: 500;
     font-size: 1.15rem;
@@ -89,7 +103,11 @@ font-weight: 500;
 }
 
 @media (max-width: 767px){
+    .m-right_auto{
+        margin-right: auto;
+    }
     #nav{
+        width: 100%;
         padding: 10px;
     }
     .ddm_show{
@@ -360,5 +378,39 @@ font-weight: 500;
     background-color: transparent;
 }
 .bg-trans3{
-    background-color: rgba(255,255,255,0.7);
+    background-color: rgba(255,255,255,0.8);
+}
+.bg-trans1{
+    background-color: rgba(255,255,255,0.01);
+}
+.bg-trans2{
+    background-color: rgba(255,255,255,0.2);
+}
+.body input , .body select{
+    background-color: transparent;
+   }
+.font-5{
+    font-weight: 500;
+}
+
+
+/* code for any label inside icon */
+.button{    
+    display: inline-block;
+    position:relative;
+    z-index: 2;
+}
+.button label{
+    display:none;
+    position: absolute;
+    left:-5px;
+    top: -15px;
+    /* background-color:#eee; */
+    font-size:10px;
+}
+
+.button:hover label{
+    display:inline-block;
+    z-index: 9;
+    transition: 0.9s;
 }

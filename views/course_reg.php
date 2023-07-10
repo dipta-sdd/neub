@@ -55,8 +55,8 @@
       </div>
       
       <div class="table-responsive-md">
-      <h5 class="text-center">Course Taken
-      </h5>
+        <h5 class="text-center">Course Taken
+        </h5>
         <table class="table
         table-hover	
         table-bordered
@@ -104,9 +104,10 @@ $(document).ready(function(){
   $.ajax({
     type: "GET",
     url: "../database/course_taken_std.php",
+    // async : false ,
     success: function (response) {
       var course= JSON.parse(response);
-      async : false ,
+      
       course.forEach(data => {
         $(div_course_offered).empty();
         $(div_course_offered).html('');
