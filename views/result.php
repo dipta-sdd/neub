@@ -28,18 +28,12 @@
                           <th scope="col">ID</th>
                           <th scope="col">Name</th>
                           <th scope="col">Dept</th>
-                          <th scope="col">CGPA</th>
+                          <!-- <th scope="col">CGPA</th> -->
                           <th scope="col">Session</th>
                         </tr>
                       </thead>
                       <tbody id="tbody_std">
-                        <tr class="tbl_std" role="button" std_id="170103020037" onclick="std_result_load()">
-                          <td scope="row">170103020037</td>
-                          <td>Redwan Hossain</td>
-                          <td>Computer Science &amp; Engineering</td>
-                          <td>0.00</td>
-                          <td>Spring-2017</td>
-                        </tr>
+                       
                       </tbody>
                     </table>
                 </div>
@@ -54,61 +48,68 @@
 
 
 
-        <script>
-    $(document).ready(function(){
-      // navbar setup 
-      loadNav();
-      //drop down menu on mbl device
-     
-      function dropMBL(id){
-        alert('hi');
-        $(id).toggleClass("ddm_show");
-      }
+<script>
+  $(document).ready(function(){
+    // navbar setup 
+    loadNav();
+    //drop down menu on mbl device
     
-     // page personal script
-      loadTable('');
+    function dropMBL(id){
+      alert('hi');
+      $(id).toggleClass("ddm_show");
+    }
+  
+    // page personal script
+    loadTable('');
+  
     
-     
-      // on search 
-      $('#std_search_fld').on('keyup', function (e) {
-        var std_id= $('#std_search_fld').val();
-        loadTable(std_id);
-      });
-    
-      // on click any row 
-      $(document.body).on('click', '.tbl_std' ,function(e){
-        e.preventDefault();
-        var std_id= $(this).attr('std_id');
-      });
-    
-      //table data
-      function loadTable(std_id){
-        // console.log(std_id);
-        $.ajax({
-          type: "POST",
-          url: "../database/std_list.php",
-          data: {
-            id : std_id
-          },
-          success: function (response) {
-            var data= JSON.parse(response);
-            $('#tbody_std').empty();
-            data.forEach(std=> {
-              $('#tbody_std').append(`
-                <tr class="tbl_std" role="button" std_id="${std.std_id}">
-                  <td scope="row" >${std.std_id}</td>
-                  <td>${std.std_name}</td>
-                  <td>${std.dept_name}</td>
-                  <td>0.00</td>
-                  <td>${std.session_n}</td>
-                </tr>
-            `);
-            });
-          }
-        });
-      }
-    
+    // on search 
+    $('#std_search_fld').on('keyup', function (e) {
+      var std_id= $('#std_search_fld').val();
+      loadTable(std_id);
     });
-    </script>
+  
+    // on click any row 
+    $(document.body).on('click', '.tbl_std' ,function(e){
+      e.preventDefault();
+      var std_id= $(this).attr('std_id');
+    });
+  
+    //table data
+    function loadTable(std_id){
+      // console.log(std_id);
+      $.ajax({
+        type: "POST",
+        url: "../database/std_list.php",
+        data: {
+          id : std_id
+        },
+        success: function (response) {
+          var data= JSON.parse(response);
+          $('#tbody_std').empty();
+          data.forEach(std=> {
+            $('#tbody_std').append(`
+              <tr class="tbl_std" role="button" id="${std.std_id}">
+                <td scope="row" >${std.std_id}</td>
+                <td>${std.std_name}</td>
+                <td>${std.dept_name}</td>
+                
+                <td>${std.session_n}</td>
+              </tr>
+          `);
+          });
+        }
+      });
+    }
+
+
+    // when a row is closed
+    $(document).on('click','.tbl_std',function(e){
+      var std_id= $(this).attr('id');
+      location.replace(`./result-${std_id}`);
+    });
+  
+  });
+</script>
 
 <?php include_once 'body_last.php';  ?>

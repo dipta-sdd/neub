@@ -1,6 +1,7 @@
 <?php
     $redirect = '<script>  location.replace("/") </script> ';
     $data['status']=false;
+    $data['tch_id']=0;
 
 
 
@@ -55,7 +56,8 @@ if($data['status'] === false){
           "status"=>true,
           "username"=> $id,
           "type" => 'teacher',
-          "dept_id" => $row['dept_id']
+          "dept_id" => $row['dept_id'],
+          "tch_id" => $row['tch_id']
       );
     } else{
       $data= array(
@@ -72,11 +74,12 @@ if($data['status'] === false){
   }
 }
 
-if($data['status']=== true){
+if($data['status']=== true ){
   setcookie("user",$id,time()+(86400*300));
   setcookie("user_type",$data['type'],time()+(86400*300));
   setcookie("dept_id",$data['dept_id'],time()+(86400*300));
-
+  if($data['type'] === 'teacher')
+  setcookie("tch_id",$data['tch_id'],time()+(86400*300));
 }
 
 // echo $sql;

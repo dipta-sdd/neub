@@ -57,6 +57,7 @@
                     <li class="ddml"><a href="/course_offer" class="ddma"> Course Offer</a></li>
                     <li class="ddml"><a href="/course_approve" class="ddma"> Course Approve</a></li>
                     <li class="ddml"><a href="/result_publish" class="ddma"> Result Publish</a></li>
+                    <li class="ddml"><a href="/result" class="ddma"> Results</a></li>
                   </ul>
                 </li>
                 <li class="nav-item dropdown ddmp d-none" id="nav_li_std">

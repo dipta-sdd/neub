@@ -17,13 +17,21 @@ switch ($requests[0]) {
         require __DIR__ . '/views/signup.php';
         break;
     case '/result' :
-        require __DIR__ . '/views/result.php';
+        if(count($requests)==1){
+            require __DIR__ . '/views/result.php';
+        } else {
+            require __DIR__ . '/views/result_std.php';
+        }
+        // require __DIR__ . '/views/result.php';
         break;
     case '/course_offer' :
         require __DIR__ . '/views/course_offer.php';
         break;
     case '/course_reg' :
         require __DIR__ . '/views/course_reg.php';
+        break;
+    case '/result_publish' :
+        require __DIR__ . '/views/result_publish.php';
         break;
     case '/course_approve' :
         if(count($requests)==1){
@@ -33,14 +41,8 @@ switch ($requests[0]) {
         }
         break;
     default:
-        // if( strpos($request ,'/course_approve/student/')==0 ){
-        //     echo strpos($request,'/course_approve/student/');
-        //     require __DIR__ . '/views/course_approve.php';
-        //     break;
-        // }else {
             http_response_code(404);
         require __DIR__ . '/views/404.php';
-        // }
         
         break;
 }

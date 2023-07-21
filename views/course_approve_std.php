@@ -110,6 +110,17 @@ $(document).ready(function(){
       });
     }
   });
+  // load prev and next id
+  $.ajax({
+    type: "POST",
+    url: "../database/course_taken_all_pending_next_prev.php",
+    data: {
+      'std_id' :value
+    },
+    success: function (response) {
+      
+    }
+  });
   
   //  hover on button
   $(document).on('mouseenter', '.button', function(event){
