@@ -58,14 +58,14 @@
                     <li class="ddml"><a href="/course_approve" class="ddma"> Course Approve</a></li>
                     <li class="ddml"><a href="/result_publish" class="ddma"> Result Publish</a></li>
                     <li class="ddml"><a href="/result" class="ddma"> Results</a></li>
+                    <li class="ddml"><a href="/new_notice" class="ddma"> Publish Notice</a></li>
                   </ul>
                 </li>
                 <li class="nav-item dropdown ddmp d-none" id="nav_li_std">
                   <a class="nav-link dropdown-toggle  myfs " href="#" role="button" >Student's Portal</a>
                   <ul class=" ddmu" id="ddmstd">
-                    <li class="ddml"><a href="/course_reg" class="ddma"> Course Reg</a></li>
                     <li class="ddml"><a href="/course_reg" class="ddma"> Course Registration</a></li>
-                    <li class="ddml"><a href="/result_publish" class="ddma"> Result Publish</a></li>
+                    <li class="ddml"><a href="/my_result" class="ddma"> Result </a></li>
                   </ul>
                 </li>
                 <li class="nav-item dropdown ddmp d-none" id="nav_li_login">

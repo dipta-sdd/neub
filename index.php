@@ -16,6 +16,8 @@ switch ($requests[0]) {
     case '/signup' :
         require __DIR__ . '/views/signup.php';
         break;
+    case '/new_notice' :
+        require __DIR__ . '/views/createNotice.php';
     case '/result' :
         if(count($requests)==1){
             require __DIR__ . '/views/result.php';
@@ -24,8 +26,19 @@ switch ($requests[0]) {
         }
         // require __DIR__ . '/views/result.php';
         break;
+    case '/notice' :
+        if(count($requests)==1){
+            require __DIR__ . '/views/404.php';
+        } else {
+            require __DIR__ . '/views/notice.php';
+        }
+        // require __DIR__ . '/views/result.php';
+        break;
     case '/course_offer' :
         require __DIR__ . '/views/course_offer.php';
+        break;
+    case '/my_result' :
+        require __DIR__ . '/views/my_result.php';
         break;
     case '/course_reg' :
         require __DIR__ . '/views/course_reg.php';

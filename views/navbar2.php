@@ -8,29 +8,30 @@
   <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Crimson+Pro">
   <link rel="stylesheet" href="../css/bootstrap.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
   <!-- <div class="menu" id="menu"> -->
   <div>
     <div class="container">
-        <div class="row ">
+        <div class="row shadow bg-trans3">
         <!-- <div class="col-lg-3 col-md-4"> -->
           <a class="p-2 header" href="#"><img class="p-2" src="../img/logo_neub.png" alt="varsity logo" id="logo"></a>
         <!-- </div> -->
         </div>
-      <div class="row pb-2" >
-        <nav class="navbar navbar-expand-md navbar-dark bg-dark p-0" id="nav">
-          <div class="m-auto">
+      <div class="row pb-2 bg-black " >
+        <nav class="navbar navbar-dark bg-dark navbar-expand-md p-0 shadow " id="nav">
+          <div class="ml-auto ms-1">
             <button class="navbar-toggler " type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul class="navbar-nav ms-lg-auto mb-2 mb-lg-0 bg-dark" id="nav_menu">
-                <li class="nav-item dropdown ddmp"><a class="nav-link rounded-2 myfs" aria-current="page" href="/">HOME</a>
+              <ul class="navbar-nav ms-lg-auto mb-2 mb-lg-0 " id="nav_menu">
+                <li class="nav-item dropdown ddmp"><a class="nav-link  myfs" aria-current="page" href="/">HOME</a>
                 </li>               
                 <li class="nav-item dropdown ddmp">
-                  <a class="nav-link dropdown-toggle myfs " href="#" role="button" onclick="dropMBL('#ddm0')">AUTHORITY</a>
+                  <a class="nav-link dropdown-toggle myfs " href="#" role="button" >AUTHORITY</a>
                   <ul class=" ddmu" id="ddm0">
                     <li class="ddml"><a href="" class="ddma"> Board of Trustees  </a></li>
                     <li class="ddml"><a href="" class="ddma"> Board of Advisors  </a></li>
@@ -41,7 +42,7 @@
                   </ul>
                 </li>
                 <li class="nav-item dropdown ddmp">
-                  <a class="nav-link dropdown-toggle rounded-2 myfs " id="ddb1" href="#" role="button" onclick="dropMBL('ddm1')">ACADEMIC</a>
+                  <a class="nav-link dropdown-toggle  myfs " id="ddb1" href="#" role="button" >ACADEMIC</a>
       
                   <ul class=" ddmu" id="ddm1">
                     <li class="ddml"><a href="" class="ddma"> School of Business</a></li>
@@ -51,15 +52,16 @@
                   </ul>
                 </li>
                 <li class="nav-item dropdown ddmp d-none" id="nav_li_tp">
-                  <a class="nav-link dropdown-toggle rounded-2 myfs " href="#" role="button" onclick="dropMBL('ddmtp')">Teacher's Portal</a>
+                  <a class="nav-link dropdown-toggle  myfs " href="#" role="button" >Teacher's Portal</a>
                   <ul class=" ddmu" id="ddmtp">
                     <li class="ddml"><a href="/course_offer" class="ddma"> Course Offer</a></li>
                     <li class="ddml"><a href="/course_approve" class="ddma"> Course Approve</a></li>
                     <li class="ddml"><a href="/result_publish" class="ddma"> Result Publish</a></li>
+                    <li class="ddml"><a href="/result" class="ddma"> Results</a></li>
                   </ul>
                 </li>
                 <li class="nav-item dropdown ddmp d-none" id="nav_li_std">
-                  <a class="nav-link dropdown-toggle rounded-2 myfs " href="#" role="button" onclick="dropMBL('ddmstd')">Student's Portal</a>
+                  <a class="nav-link dropdown-toggle  myfs " href="#" role="button" >Student's Portal</a>
                   <ul class=" ddmu" id="ddmstd">
                     <li class="ddml"><a href="/course_reg" class="ddma"> Course Reg</a></li>
                     <li class="ddml"><a href="/course_reg" class="ddma"> Course Registration</a></li>
@@ -67,16 +69,16 @@
                   </ul>
                 </li>
                 <li class="nav-item dropdown ddmp d-none" id="nav_li_login">
-                  <a class="nav-link rounded-2 myfs" aria-current="page" href="./login" onclick="dropMBL('#ddm_login')">Login</a>
+                  <a class="nav-link  myfs" aria-current="page" href="./login" >Login</a>
                   <ul class=" ddmu" id="ddm_login">
                     <li class="ddml"><a href="./signup" class="ddma"> Signup</a></li>
                   </ul>
                 </li>
-                <li class="nav-item dropdown ddmp d-none" id="nav_li_logout"><a class="nav-link rounded-2 myfs" aria-current="page" href="./database/logout.php">Logout</a>
+                <li class="nav-item dropdown ddmp d-none" id="nav_li_logout"><a class="nav-link  myfs" aria-current="page" href="./database/logout.php">Logout</a>
                 </li>  
               </ul>
             </div>
           </div>
         </nav>
       </div>
-      <div class="row pb-2">
+      <div class="row pb-2 body_main_part_editable bg-trans3">

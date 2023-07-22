@@ -14,6 +14,7 @@ SELECT total_credit, (total_gpa/total_credit) as cgpa FROM (SELECT SUM(course_cr
 ";
 $result1=$conn->query($sql1)->fetch_array();
 $data = array(
+    'id' => $std_id,
     'name' => $result[0],
     'dept' => $result[1],
     'session' => $result[2],

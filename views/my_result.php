@@ -91,54 +91,48 @@
 
     loadNav();
   // page personal script
-    const url = window.location.href;
-    // Extract the value after the hyphen
-    const value = url.split('-')[1];
-    // Log the extracted value
-    console.log(value);
-    // load std details
+  // Sample URL
+ 
     $.ajax({
-      type: "POST",
+      type: "GET",
       url: "../database/result_std_get_cgpa.php",
-      data:{
-        std_id : value
-      },
       success: function (response) {
         var row = JSON.parse(response);
         // console.log(row);
         $(stdName).text(row.name);
-        $(stdId).text(value);
+        $(stdId).text(row.id);
         $(stdDept).text(row.dept);
         $(stdSession).text(row.session);
         $(stdCredit).text(row.credit);
         $(stdCgpa).text(sort( row.cgpa ));
         // console.log(datas);
+        $.ajax({
+          type: "POST",
+          url: "../database/result_std_get_result.php",
+          data: {
+            std_id : row.id
+          },
+          success: function (response) {
+            var courses=JSON.parse(response);
+            courses.forEach(course => {
+              $(tbody_result).append(
+                createRow(
+                  course.course_id,
+                  course.course_tittle,
+                  course.course_credit,
+                  course.session_n,
+                  course.gpa
+                )
+              );
+            });
+          }
+        });
         
       }
     });
     
 
-    $.ajax({
-      type: "POST",
-      url: "../database/result_std_get_result.php",
-      data: {
-        std_id : value
-      },
-      success: function (response) {
-        var courses=JSON.parse(response);
-        courses.forEach(course => {
-          $(tbody_result).append(
-            createRow(
-              course.course_id,
-              course.course_tittle,
-              course.course_credit,
-              course.session_n,
-              course.gpa
-            )
-          );
-        });
-      }
-    });
+    
 
     
 

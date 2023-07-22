@@ -3,11 +3,7 @@
             <nav class="breadcrumb p-2 rounded-2">
               <span class="breadcrumb-item active" aria-current="page">Notice</span>
             </nav>
-            <ul class="nu">
-              <li class="nl"><a class="na" href="">Lorem ipsum dolor sit amet, consectetur </a>
-              <p class="nd">10/02/2023</p></li>
-              <li class="nl"><a class="na" href="">Lorem ipsum dolor sit amet, consectidsj</a>
-              <p class="nd">09/02/2023</p></li>
+            <ul class="nu" id="notice_board">
             </ul>
             
 
@@ -53,3 +49,19 @@
   <script src="../js/jquery-3.6.3.min.js"></script>
   <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
   <script src="../js/script.js"></script>
+  <script>
+    $(document).ready(function () {
+      $.ajax({
+        url: "../database/notice_list.php",
+        success: function (response) {
+          var notices =JSON.parse(response);
+          notices.forEach(notice => {
+            $(notice_board).append(`
+              <li class="nl"><a class="na" href="/notice-${notice.notice_id}">${notice.notice_tittle} </a>
+              <p class="nd">${notice.date}</p></li>
+            `);
+          });
+        }
+      });
+    });
+  </script>

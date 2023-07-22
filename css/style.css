@@ -98,8 +98,8 @@ font-weight: 500;
 
 /* every link of a drop down menu  */
 .ddmp a:hover{
-     background-color:#4f00ff;
- color: #00ff39;
+     background-color:#000000;
+ color: #ffffff;
 }
 
 @media (max-width: 767px){
